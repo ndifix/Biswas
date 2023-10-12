@@ -9,6 +9,14 @@ XmlElement::XmlElement (
 }
 
 void
+XmlElement::AddChildElement (
+    XmlElement *child
+    )
+{
+    this->childs.push_back(child);
+}
+
+void
 XmlElement::Write (
     std::ofstream &ofs
     ) const
