@@ -4,17 +4,36 @@
 #include <Library/DocumentLib.hpp>
 #include <Library/ZipLib.hpp>
 
+Document::Document (
+    )
+{
+    // tmp ディレクトリがなければ作成し、あれば中を空にする。
+    std::string cmd = "mkdir -p " + this->tmp;
+    std::system(cmd.c_str());
+    cmd = "rm -rf " + tmp + "*";
+    std::system(cmd.c_str());
+}
+
 Status
 Document::Write (
     std::string path
     ) const
 {
     Status Status;
-    std::string SrcDir = "tmp";
+    std::string cmd;
 
-    std::string cmd = "mkdir -p " + SrcDir;
+    std::string presDir = this->tmp + "ppt/";
+    cmd = "mkdir " + presDir;
     std::system(cmd.c_str());
-    Status = Zip(SrcDir, path);
+    this->presentation.Write(presDir);
 
-    return Status;
+    Status = Zip(this->tmp, path);
+    if (Status != Status::Success) {
+        return Status;
+    }
+
+    cmd = "mv " + path + ".zip " + path;
+    std::system(cmd.c_str());
+
+    return Status::Success;
 }
