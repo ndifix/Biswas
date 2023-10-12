@@ -15,6 +15,11 @@ public:
         );
 
     void
+    AddChildElement (
+        XmlElement *child
+        );
+
+    void
     Write (
         std::ofstream &ofs
         ) const;
