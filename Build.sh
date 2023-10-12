@@ -5,6 +5,7 @@ LibDir='Library/'
 Library=(
     'ZipLib'
     'DocumentLib'
+    'PresentationLib'
     )
 
 mkdir -p ${OutDir} ${TmpDir}
