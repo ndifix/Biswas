@@ -9,6 +9,17 @@ XmlElement::XmlElement (
 }
 
 void
+XmlElement::AddAttribute (
+    std::string &key,
+    std::string &val
+    )
+{
+    this->attributes.push_back(
+        std::make_pair(key, val)
+        );
+}
+
+void
 XmlElement::AddChildElement (
     XmlElement *child
     )
@@ -21,7 +32,11 @@ XmlElement::Write (
     std::ofstream &ofs
     ) const
 {
-    ofs << "<" << this->tagName << ">";
+    ofs << '<' << this->tagName;
+    for (auto &attr:this->attributes) {
+        ofs << ' ' << attr.first << "=\"" << attr.second << '\"';
+    }
+    ofs << '>';
 
     for (auto& child:this->childs) {
         child->Write(ofs);
