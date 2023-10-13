@@ -4,14 +4,22 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <utility>
 
 class XmlElement {
 private:
     const std::string tagName;
+    std::vector<std::pair<std::string, std::string>> attributes;
     std::vector<XmlElement*> childs;
 public:
     XmlElement (
         const char *tag
+        );
+
+    void
+    AddAttribute (
+        std::string &key,
+        std::string &val
         );
 
     void
