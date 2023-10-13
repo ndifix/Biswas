@@ -22,6 +22,11 @@ Document::Write (
     Status Status;
     std::string cmd;
 
+    std::string relsDir = this->tmp + "_rels/";
+    cmd = "mkdir " + relsDir;
+    std::system(cmd.c_str());
+    this->rels.Write(relsDir + ".rels");
+
     std::string presDir = this->tmp + "ppt/";
     cmd = "mkdir " + presDir;
     std::system(cmd.c_str());

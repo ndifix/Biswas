@@ -5,6 +5,7 @@ LibDir='Library/'
 Library=(
     'ZipLib'
     'XmlBaseLib'
+    'XmlLib'
     'DocumentLib'
     'PresentationLib'
     )

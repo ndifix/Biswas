@@ -4,10 +4,12 @@
 #include <string>
 #include <Biswas.hpp>
 #include <Library/PresentationLib.hpp>
+#include <Library/XmlFileLib.hpp>
 
 class Document {
 private:
     const std::string tmp = "tmp/";
+    Relationships rels;
     Presentation presentation;
 public:
     Document ();
