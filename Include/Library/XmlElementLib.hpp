@@ -4,11 +4,15 @@
 #include <Library/XmlBaseLib.hpp>
 #include <string>
 
-class XmlRelationships : public XmlElement {
+namespace xmlElm {
+
+class Relationships : public XmlElement {
 private:
 public:
-    inline XmlRelationships() : XmlElement("Relationships") {};
+    inline Relationships() : XmlElement("Relationships") {};
     virtual void Write(std::ofstream &ofs) const override;
 };
+
+}
 
 #endif

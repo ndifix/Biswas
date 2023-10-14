@@ -1,8 +1,10 @@
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlFileLib.hpp>
 
+using namespace xmlElm;
+
 void
-XmlRelationships::Write (
+Relationships::Write (
     std::ofstream &ofs
     ) const
 {
@@ -15,8 +17,8 @@ XmlRelationships::Write (
     ofs << "</" << this->tagName << '>';
 }
 
-Relationships::Relationships (
+xmlFile::Relationships::Relationships (
     )
 {
-    this->RootElement = new XmlRelationships();
+    this->RootElement = new xmlElm::Relationships();
 }
