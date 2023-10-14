@@ -34,13 +34,21 @@ public:
         ) const;
 };
 
+class XmlRootElement : public XmlElement {
+private:
+public:
+    XmlRootElement(const char *tag);
+};
+
 class XmlFile {
 private:
     std::string
     Declare (
         ) const;
 public:
-    XmlElement *RootElement;
+    XmlRootElement *RootElement = nullptr;
+
+    ~XmlFile();
 
     void
     Write (
