@@ -36,3 +36,23 @@ MakeDir (
 
     return Execute(cmd);
 }
+
+Status
+RemoveAll (
+    std::string path
+    )
+{
+    std::string cmd = "rm -rf " + path + "*";
+
+    return Execute(cmd);
+}
+
+Status
+RenameZipToPptx (
+    std::string path
+    )
+{
+    std::string cmd = "mv " + path + ".zip " + path;
+
+    return Execute(cmd);
+}
