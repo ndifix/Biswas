@@ -4,4 +4,5 @@ XmlRootElement::XmlRootElement (
     const char *tag
     ) : XmlElement(tag)
 {
+    this->parent = nullptr;
 }
