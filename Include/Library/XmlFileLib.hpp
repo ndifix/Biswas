@@ -12,6 +12,12 @@ public:
     Relationships();
 };
 
+class Presentation : public XmlFile {
+private:
+public:
+    Presentation();
+};
+
 }
 
 #endif

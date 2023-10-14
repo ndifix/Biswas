@@ -8,5 +8,6 @@ Presentation::Write (
     std::string presDir
     ) const
 {
+    this->presentation.Write(presDir + "presentation.xml");
     return Status::Success;
 }

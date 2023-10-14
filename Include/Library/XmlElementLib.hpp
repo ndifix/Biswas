@@ -13,6 +13,13 @@ public:
     virtual void Write(std::ofstream &ofs) const override;
 };
 
+class Presentation : public XmlElement {
+private:
+public:
+    inline Presentation() : XmlElement("presentation") {};
+    virtual void Write(std::ofstream &ofs) const override;
+};
+
 }
 
 #endif
