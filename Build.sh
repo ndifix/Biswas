@@ -3,7 +3,7 @@ TmpDir='tmp/'
 LibDir='Library/'
 
 Library=(
-    'ZipLib'
+    'UtilLib'
     'XmlBaseLib'
     'XmlLib'
     'DocumentLib'
