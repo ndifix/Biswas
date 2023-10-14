@@ -12,13 +12,17 @@ private:
     const std::string relsDir;
     xmlFile::Relationships rels;
     Presentation presentation;
+
+    Status
+    SetRelation (
+        );
 public:
     Document ();
 
     Status
     Write (
         std::string path
-        ) const;
+        );
 };
 
 #endif

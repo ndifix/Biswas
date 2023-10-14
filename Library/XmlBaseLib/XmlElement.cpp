@@ -10,6 +10,17 @@ XmlElement::XmlElement (
 {
 }
 
+XmlElement::~XmlElement (
+    )
+{
+    for (auto &child:this->childs) {
+        if (child != nullptr) {
+            delete child;
+            child = nullptr;
+        }
+    }
+}
+
 void
 XmlElement::NotifyAddChildElement (
     const xmlns::XmlNameSpace &xmlns
