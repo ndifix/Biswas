@@ -10,6 +10,8 @@ class XmlElement {
 protected:
     const std::string tagName;
     std::vector<std::pair<std::string, std::string>> attributes;
+
+    XmlElement *parent;
     std::vector<XmlElement*> childs;
 public:
     XmlElement (

@@ -25,6 +25,7 @@ XmlElement::AddChildElement (
     )
 {
     this->childs.push_back(child);
+    child->parent = this;
 }
 
 void
