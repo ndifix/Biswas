@@ -42,7 +42,7 @@ XmlElement::NotifyNameSpaceSignature (
 
 void
 XmlElement::AddAttribute (
-    std::string &key,
+    std::string key,
     std::string &val
     )
 {
@@ -64,7 +64,7 @@ XmlElement::AddChildElement (
 void
 XmlElement::Write (
     std::ofstream &ofs
-    ) const
+    )
 {
     ofs << '<';
     if (this->xmlnsSelf.signature != xmlns::emptystrSign) {

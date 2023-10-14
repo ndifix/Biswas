@@ -3,19 +3,6 @@
 
 using namespace xmlElm;
 
-void
-Presentation::Write (
-    std::ofstream &ofs
-    ) const
-{
-    ofs << '<' << this->tagName
-        << '>';
-    for (auto &child:childs) {
-        child->Write(ofs);
-    }
-    ofs << "</" << this->tagName << '>';
-}
-
 xmlFile::Presentation::Presentation (
     )
 {
