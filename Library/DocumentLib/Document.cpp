@@ -10,9 +10,8 @@ Document::Document (
         presentation(this->tmp + "ppt/")
 {
     // tmp ディレクトリがなければ作成し、あれば中を空にする。
-    std::string cmd = "mkdir -p " + this->tmp;
-    std::system(cmd.c_str());
-    cmd = "rm -rf " + tmp + "*";
+    MakeDir(this->tmp);
+    std::string cmd = "rm -rf " + tmp + "*";
     std::system(cmd.c_str());
 }
 
@@ -24,12 +23,16 @@ Document::Write (
     Status Status;
     std::string cmd;
 
-    cmd = "mkdir " + this->relsDir;
-    std::system(cmd.c_str());
+    Status = MakeDir(this->relsDir);
+    if (Status != Status::Success) {
+        return Status;
+    }
     this->rels.Write();
 
-    cmd = "mkdir " + this->presentation.presDir;
-    std::system(cmd.c_str());
+    Status = MakeDir(this->presentation.presDir);
+    if (Status != Status::Success) {
+        return Status;
+    }
     this->presentation.Write();
 
     Status = Zip(this->tmp, path);

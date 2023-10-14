@@ -10,4 +10,9 @@ Zip (
     std::string outFile
     );
 
+Status
+MakeDir (
+    std::string path
+    );
+
 #endif
