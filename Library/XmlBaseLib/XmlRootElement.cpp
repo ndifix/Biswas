@@ -68,7 +68,7 @@ XmlRootElement::NotifyNameSpaceSignature (
 void
 XmlRootElement::Write (
     std::ofstream &ofs
-    ) const
+    )
 {
     ofs << '<';
     if (this->xmlnsSelf.signature != xmlns::emptystrSign) {

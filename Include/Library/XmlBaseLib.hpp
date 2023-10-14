@@ -62,7 +62,7 @@ public:
 
     void
     AddAttribute (
-        std::string &key,
+        std::string key,
         std::string &val
         );
 
@@ -75,7 +75,7 @@ public:
     void
     Write (
         std::ofstream &ofs
-        ) const;
+        );
 
 friend class XmlRootElement;
 };
@@ -110,7 +110,7 @@ public:
     void
     Write (
         std::ofstream &ofs
-        ) const override;
+        ) final override;
 };
 
 class XmlFile {
