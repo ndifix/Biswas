@@ -1,5 +1,5 @@
-#ifndef ZIP_LIB_HPP
-#define ZIP_LIB_HPP
+#ifndef UTIL_LIB_HPP
+#define UTIL_LIB_HPP
 
 #include <string>
 #include <Biswas.hpp>
