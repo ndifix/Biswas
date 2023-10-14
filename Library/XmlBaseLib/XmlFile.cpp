@@ -3,6 +3,12 @@
 #include <iostream>
 #include <string>
 
+XmlFile::XmlFile (
+    std::string &path
+    ) : filePath(path)
+{
+}
+
 XmlFile::~XmlFile (
     )
 {
@@ -22,13 +28,12 @@ XmlFile::Declare (
 
 void
 XmlFile::Write (
-    std::string path
     ) const
 {
-    std::ofstream ofs(path);
+    std::ofstream ofs(this->filePath);
     if (!ofs) {
         std::cerr << "Failed to write xml file of "
-            << path
+            << this->filePath
             << std::endl;
         return;
     }

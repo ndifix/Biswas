@@ -115,17 +115,21 @@ public:
 
 class XmlFile {
 private:
+    const std::string filePath;
+
     std::string
     Declare (
         ) const;
 public:
     XmlRootElement *RootElement = nullptr;
 
+    XmlFile (
+        std::string &path
+        );
     ~XmlFile();
 
     void
     Write (
-        std::string path
         ) const;
 };
 

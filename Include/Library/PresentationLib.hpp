@@ -9,9 +9,14 @@ class Presentation {
 private:
     xmlFile::Presentation presentation;
 public:
+    const std::string presDir;
+
+    Presentation (
+        std::string dir
+        );
+
     Status
     Write (
-        std::string presDir
         ) const;
 };
 

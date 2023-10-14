@@ -9,13 +9,13 @@ namespace xmlFile {
 class Relationships : public XmlFile {
 private:
 public:
-    Relationships();
+    Relationships(std::string path);
 };
 
 class Presentation : public XmlFile {
 private:
 public:
-    Presentation();
+    Presentation(std::string path);
 };
 
 }
