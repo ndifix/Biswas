@@ -15,4 +15,18 @@ MakeDir (
     std::string path
     );
 
+Status
+RemoveAll (
+    std::string path
+    );
+
+/**
+ * ファイル拡張子をzipからpptxにする。
+ * *.pptx.zip というファイル名を想定している。
+*/
+Status
+RenameZipToPptx (
+    std::string path
+    );
+
 #endif

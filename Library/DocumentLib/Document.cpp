@@ -1,4 +1,3 @@
-#include <cstdlib>
 #include <string>
 #include <Biswas.hpp>
 #include <Library/DocumentLib.hpp>
@@ -11,8 +10,7 @@ Document::Document (
 {
     // tmp ディレクトリがなければ作成し、あれば中を空にする。
     MakeDir(this->tmp);
-    std::string cmd = "rm -rf " + tmp + "*";
-    std::system(cmd.c_str());
+    RemoveAll(this->tmp);
 }
 
 Status
@@ -21,7 +19,6 @@ Document::Write (
     ) const
 {
     Status Status;
-    std::string cmd;
 
     Status = MakeDir(this->relsDir);
     if (Status != Status::Success) {
@@ -40,8 +37,10 @@ Document::Write (
         return Status;
     }
 
-    cmd = "mv " + path + ".zip " + path;
-    std::system(cmd.c_str());
+    Status = RenameZipToPptx(path);
+    if (Status != Status::Success) {
+        return Status;
+    }
 
     return Status::Success;
 }
