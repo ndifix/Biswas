@@ -5,7 +5,9 @@
 #include <Library/ZipLib.hpp>
 
 Document::Document (
-    )
+    ) : relsDir(this->tmp + "_rels/"),
+        rels(this->relsDir + ".rels"),
+        presentation(this->tmp + "ppt/")
 {
     // tmp ディレクトリがなければ作成し、あれば中を空にする。
     std::string cmd = "mkdir -p " + this->tmp;
@@ -22,15 +24,13 @@ Document::Write (
     Status Status;
     std::string cmd;
 
-    std::string relsDir = this->tmp + "_rels/";
-    cmd = "mkdir " + relsDir;
+    cmd = "mkdir " + this->relsDir;
     std::system(cmd.c_str());
-    this->rels.Write(relsDir + ".rels");
+    this->rels.Write();
 
-    std::string presDir = this->tmp + "ppt/";
-    cmd = "mkdir " + presDir;
+    cmd = "mkdir " + this->presentation.presDir;
     std::system(cmd.c_str());
-    this->presentation.Write(presDir);
+    this->presentation.Write();
 
     Status = Zip(this->tmp, path);
     if (Status != Status::Success) {

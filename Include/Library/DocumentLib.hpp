@@ -9,6 +9,7 @@
 class Document {
 private:
     const std::string tmp = "tmp/";
+    const std::string relsDir;
     xmlFile::Relationships rels;
     Presentation presentation;
 public:

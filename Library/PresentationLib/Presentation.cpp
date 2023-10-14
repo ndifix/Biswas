@@ -3,11 +3,17 @@
 #include <Biswas.hpp>
 #include <Library/DocumentLib.hpp>
 
+Presentation::Presentation (
+    std::string dir
+    ) : presDir(dir),
+        presentation(dir + "presentation.xml")
+{
+}
+
 Status
 Presentation::Write (
-    std::string presDir
     ) const
 {
-    this->presentation.Write(presDir + "presentation.xml");
+    this->presentation.Write();
     return Status::Success;
 }
