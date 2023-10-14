@@ -3,10 +3,11 @@
 
 #include <string>
 #include <Biswas.hpp>
+#include <Library/XmlFileLib.hpp>
 
 class Presentation {
 private:
-
+    xmlFile::Presentation presentation;
 public:
     Status
     Write (
