@@ -26,3 +26,13 @@ Zip (
 
     return Execute(cmd);
 }
+
+Status
+MakeDir (
+    std::string path
+    )
+{
+    std::string cmd = "mkdir -p " + path;
+
+    return Execute(cmd);
+}
