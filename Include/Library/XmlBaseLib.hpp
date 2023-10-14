@@ -60,6 +60,10 @@ public:
         xmlns::XmlNameSpace &xmlns
         );
 
+    virtual
+    ~XmlElement (
+        );
+
     void
     AddAttribute (
         std::string key,
