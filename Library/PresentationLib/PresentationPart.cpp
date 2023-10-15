@@ -11,12 +11,18 @@ PresentationPart::PresentationPart (
         partDir(dir),
         presentation(root + dir + "presentation.xml")
 {
+    this->presPropPart = new PresentationPropertiesPart(root, dir);
     this->themePart = new ThemePart(root, dir + "theme/");
 }
 
 PresentationPart::~PresentationPart (
     )
 {
+    if (this->presPropPart != nullptr) {
+        delete this->presPropPart;
+        this->presPropPart = nullptr;
+    }
+
     if (this->themePart != nullptr) {
         delete this->themePart;
         this->themePart = nullptr;
@@ -30,6 +36,13 @@ PresentationPart::Write (
     Status Status;
 
     this->presentation.Write();
+
+    if (this->presPropPart != nullptr) {
+        Status = this->presPropPart->Write();
+        if (Status != Status::Success) {
+            return Status;
+        }
+    }
 
     if (this->themePart != nullptr) {
         Status = MakeDir(this->themePart->rootDir + this->themePart->partDir);
