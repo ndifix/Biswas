@@ -2,12 +2,19 @@
 #define PART_LIB_HPP
 
 #include <string>
+#include <vector>
 #include <Biswas.hpp>
 #include <Library/XmlBaseLib.hpp>
 
 class IPart {
 protected:
     XmlFile *xmlfile = nullptr;
+    std::vector<IPart*> childParts;
+
+    void
+    AddChildPart (
+        IPart *newPart
+        );
 public:
     const std::string rootDir;
     const std::string partDir;
