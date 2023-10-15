@@ -19,4 +19,19 @@ IPart::~IPart (
         delete this->xmlfile;
         this->xmlfile = nullptr;
     }
+
+    while (!this->childParts.empty()) {
+        if (this->childParts.back() != nullptr) {
+            delete this->childParts.back();
+        }
+        this->childParts.pop_back();
+    }
+}
+
+void
+IPart::AddChildPart (
+    IPart *newPart
+    )
+{
+    this->childParts.push_back(newPart);
 }

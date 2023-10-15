@@ -29,9 +29,6 @@ public:
         std::string dir
         );
 
-    ~PresentationPart (
-        );
-
     Status
     Write (
         ) final override;

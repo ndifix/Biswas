@@ -18,20 +18,8 @@ PresentationPart::PresentationPart (
     this->xmlfile = new xmlFile::Presentation(root + dir + "presentation.xml");
     this->presPropPart = new PresentationPropertiesPart(root, dir);
     this->themePart = new ThemePart(root, dir + "theme/");
-}
-
-PresentationPart::~PresentationPart (
-    )
-{
-    if (this->presPropPart != nullptr) {
-        delete this->presPropPart;
-        this->presPropPart = nullptr;
-    }
-
-    if (this->themePart != nullptr) {
-        delete this->themePart;
-        this->themePart = nullptr;
-    }
+    this->AddChildPart(this->presPropPart);
+    this->AddChildPart(this->themePart);
 }
 
 Status
