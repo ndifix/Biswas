@@ -2,6 +2,7 @@
 #include <string>
 #include <Biswas.hpp>
 #include <Library/DocumentLib.hpp>
+#include <Library/PartLib.hpp>
 #include <Library/PresentationLib.hpp>
 #include <Library/UtilLib.hpp>
 

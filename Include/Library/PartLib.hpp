@@ -38,4 +38,49 @@ public:
         ) = 0;
 };
 
+class PresentationPropertiesPart;
+class PresentationPart;
+class ThemePart;
+
+class PresentationPropertiesPart : public IPart {
+private:
+public:
+    PresentationPropertiesPart (
+        const std::string &root,
+        std::string dir
+        );
+
+    Status
+    Write (
+        ) final override;
+};
+
+class PresentationPart : public IPart {
+private:
+    PresentationPropertiesPart *presPropPart = nullptr;
+    ThemePart *themePart = nullptr;
+public:
+    PresentationPart (
+        const std::string &root,
+        std::string dir
+        );
+
+    Status
+    Write (
+        ) final override;
+};
+
+class ThemePart : public IPart {
+private:
+public:
+    ThemePart (
+        const std::string &root,
+        std::string dir
+        );
+
+    Status
+    Write (
+        ) final override;
+};
+
 #endif
