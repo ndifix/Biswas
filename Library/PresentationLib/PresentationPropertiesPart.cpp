@@ -3,15 +3,14 @@
 PresentationPropertiesPart::PresentationPropertiesPart (
     const std::string &root,
     std::string dir
-    ) : rootDir(root),
-        partDir(dir),
+    ) : IPart(root, dir),
         presentationProperties(root + dir + "presProps.xml")
 {
 }
 
 Status
 PresentationPropertiesPart::Write(
-    ) const
+    )
 {
     this->presentationProperties.Write();
     return Status::Success;

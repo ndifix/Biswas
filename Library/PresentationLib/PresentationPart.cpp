@@ -7,8 +7,7 @@
 PresentationPart::PresentationPart (
     const std::string &root,
     std::string dir
-    ) : rootDir(root),
-        partDir(dir),
+    ) : IPart(root, dir),
         presentation(root + dir + "presentation.xml")
 {
     this->presPropPart = new PresentationPropertiesPart(root, dir);

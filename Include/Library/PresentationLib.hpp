@@ -3,16 +3,14 @@
 
 #include <string>
 #include <Biswas.hpp>
+#include <Library/PartLib.hpp>
 #include <Library/ThemeLib.hpp>
 #include <Library/XmlFileLib.hpp>
 
-class PresentationPropertiesPart {
+class PresentationPropertiesPart : public IPart {
 private:
     xmlFile::PresentationProperties presentationProperties;
 public:
-    const std::string rootDir;
-    const std::string partDir;
-
     PresentationPropertiesPart (
         const std::string &root,
         std::string dir
@@ -20,18 +18,15 @@ public:
 
     Status
     Write (
-        ) const;
+        ) final override;
 };
 
-class PresentationPart {
+class PresentationPart : public IPart {
 private:
     xmlFile::Presentation presentation;
     PresentationPropertiesPart *presPropPart = nullptr;
     ThemePart *themePart = nullptr;
 public:
-    const std::string rootDir;
-    const std::string partDir;
-
     PresentationPart (
         const std::string &root,
         std::string dir
@@ -42,7 +37,7 @@ public:
 
     Status
     Write (
-        );
+        ) final override;
 };
 
 class Presentation {

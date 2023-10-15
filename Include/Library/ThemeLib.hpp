@@ -3,15 +3,13 @@
 
 #include <string>
 #include <Biswas.hpp>
+#include <Library/PartLib.hpp>
 #include <Library/XmlFileLib.hpp>
 
-class ThemePart {
+class ThemePart : public IPart {
 private:
     xmlFile::Theme theme;
 public:
-    const std::string rootDir;
-    const std::string partDir;
-
     ThemePart (
         const std::string &root,
         std::string dir
@@ -19,7 +17,7 @@ public:
 
     Status
     Write (
-        ) const;
+        ) final override;
 };
 
 #endif
