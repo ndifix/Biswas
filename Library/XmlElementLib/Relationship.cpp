@@ -1,5 +1,4 @@
-#include <Library/XmlFileLib.hpp>
-#include <Library/XmlRootElementLib.hpp>
+#include <Library/XmlElementLib.hpp>
 
 using namespace xmlElm;
 
@@ -19,21 +18,4 @@ Relationship::Write (
     }
 
     XmlElement::Write(ofs);
-}
-
-xmlFile::Relationships::Relationships (
-    std::string path
-    ) : XmlFile(path)
-{
-    this->RootElement = new xmlElm::Relationships();
-}
-
-Status
-Relationships::AddRelation (
-    Relationship *relation
-    )
-{
-    this->AddChildElement(relation);
-
-    return Status::Success;
 }
