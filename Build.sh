@@ -9,7 +9,6 @@ Library=(
     'PartLib'
     'DocumentLib'
     'PresentationLib'
-    'ThemeLib'
     )
 
 mkdir -p ${OutDir} ${TmpDir}
