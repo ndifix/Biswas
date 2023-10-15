@@ -8,6 +8,7 @@ Library=(
     'XmlLib'
     'DocumentLib'
     'PresentationLib'
+    'ThemeLib'
     )
 
 mkdir -p ${OutDir} ${TmpDir}
