@@ -9,10 +9,14 @@ protected:
 public:
     const std::string rootDir;
     const std::string partDir;
+    const char *relationType;
+    const char *contentType;
 
-    IPart(
+    IPart (
         const std::string &root,
-        std::string dir
+        std::string dir,
+        const char *relType,
+        const char *conType
         );
 
     virtual

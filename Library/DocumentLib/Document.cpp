@@ -75,7 +75,7 @@ Document::SetContentTypes (
         return Status::Error;
     }
     presPart->PartName = "/ppt/presentation.xml";
-    presPart->ContentType = "application/vnd.openxmlformats-officedocument.presentationml.presentation.main+xml";
+    presPart->ContentType = this->presentation.part->contentType;
     Status = types->AddContentType(presPart);
     if (Status != Status::Success) {
         return Status;

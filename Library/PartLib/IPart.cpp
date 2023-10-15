@@ -1,9 +1,13 @@
 #include <Library/PartLib.hpp>
 
-IPart::IPart(
+IPart::IPart (
     const std::string &root,
-    std::string dir
+    std::string dir,
+    const char *relType,
+    const char *conType
     ) : rootDir(root),
-        partDir(dir)
+        partDir(dir),
+        relationType(relType),
+        contentType(conType)
 {
 }

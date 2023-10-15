@@ -4,10 +4,15 @@
 #include <Library/PresentationLib.hpp>
 #include <Library/UtilLib.hpp>
 
+namespace {
+const char *relType = "http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument";
+const char *conType = "application/vnd.openxmlformats-officedocument.presentationml.presentation.main+xml";
+}
+
 PresentationPart::PresentationPart (
     const std::string &root,
     std::string dir
-    ) : IPart(root, dir),
+    ) : IPart(root, dir, relType, conType),
         presentation(root + dir + "presentation.xml")
 {
     this->presPropPart = new PresentationPropertiesPart(root, dir);
