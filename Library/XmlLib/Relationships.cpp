@@ -1,5 +1,5 @@
-#include <Library/XmlBaseLib.hpp>
 #include <Library/XmlFileLib.hpp>
+#include <Library/XmlRootElementLib.hpp>
 
 using namespace xmlElm;
 

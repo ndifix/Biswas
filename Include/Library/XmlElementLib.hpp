@@ -7,7 +7,6 @@
 
 namespace xmlElm {
 
-
 class Default : public XmlElement {
 private:
 public:
@@ -35,45 +34,6 @@ public:
 
     inline Relationship() : XmlElement("Relationship", xmlns::relation) {};
     virtual void Write (std::ofstream &ofs) final override;
-};
-
-class Types : public XmlRootElement {
-private:
-public:
-    inline Types() : XmlRootElement("Types", xmlns::content_) {};
-    Status AddContentType(Default *);
-    Status AddContentType(Override *);
-};
-
-class Relationships : public XmlRootElement {
-private:
-public:
-    inline Relationships() : XmlRootElement("Relationships", xmlns::relation) {};
-    Status AddRelation(Relationship *);
-};
-
-class Presentation : public XmlRootElement {
-private:
-public:
-    inline Presentation() : XmlRootElement("presentation", xmlns::presenta) {};
-};
-
-class PresentationProperties : public XmlRootElement {
-private:
-public:
-    inline PresentationProperties() : XmlRootElement("presentationPr", xmlns::presenta) {};
-};
-
-class Theme : public XmlRootElement {
-private:
-public:
-    inline Theme() : XmlRootElement("theme", xmlns::drawingm) {};
-};
-
-class SlideMaster : public XmlRootElement {
-private:
-public:
-    inline SlideMaster() : XmlRootElement("sldMaster", xmlns::presenta) {};
 };
 
 }

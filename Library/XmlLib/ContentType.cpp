@@ -1,4 +1,6 @@
 #include <Library/XmlFileLib.hpp>
+#include <Library/XmlElementLib.hpp>
+#include <Library/XmlRootElementLib.hpp>
 
 using namespace xmlElm;
 
