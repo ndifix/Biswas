@@ -17,6 +17,9 @@ GetSignature (
     if (xmlns == xmlns::content_) {
         return xmlns::content_Sign;
     }
+    if (xmlns == xmlns::drawingm) {
+        return xmlns::drawingmSign;
+    }
 
     return xmlns::emptystrSign;
 }

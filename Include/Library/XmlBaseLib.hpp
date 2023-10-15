@@ -18,12 +18,15 @@ bool operator<(const XmlNameSpace &lhs, const XmlNameSpace &rhs);
 
 extern const char emptystrSign;
 extern const char content_Sign;
+extern const char drawingmSign;
 extern const char relationSign;
 extern const char presentaSign;
 extern const char *content_NS;
+extern const char *drawingmNS;
 extern const char *relationNS;
 extern const char *presentaNS;
 extern XmlNameSpace content_;
+extern XmlNameSpace drawingm;
 extern XmlNameSpace relation;
 extern XmlNameSpace presenta;
 

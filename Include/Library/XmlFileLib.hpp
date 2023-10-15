@@ -24,6 +24,12 @@ public:
     Presentation(std::string path);
 };
 
+class Theme : public XmlFile {
+private:
+public:
+    Theme(std::string path);
+};
+
 }
 
 #endif

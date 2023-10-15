@@ -3,11 +3,13 @@
 
 #include <string>
 #include <Biswas.hpp>
+#include <Library/ThemeLib.hpp>
 #include <Library/XmlFileLib.hpp>
 
 class Presentation {
 private:
     xmlFile::Presentation presentation;
+    Theme theme;
 public:
     const std::string presDir;
 

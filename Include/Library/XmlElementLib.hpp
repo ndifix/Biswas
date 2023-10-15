@@ -58,6 +58,12 @@ public:
     inline Presentation() : XmlRootElement("presentation", xmlns::presenta) {};
 };
 
+class Theme : public XmlRootElement {
+private:
+public:
+    inline Theme() : XmlRootElement("theme", xmlns::drawingm) {};
+};
+
 }
 
 #endif
