@@ -6,6 +6,12 @@
 
 namespace xmlFile {
 
+class ContentTypes : public XmlFile {
+private:
+public:
+    ContentTypes(std::string path);
+};
+
 class Relationships : public XmlFile {
 private:
 public:

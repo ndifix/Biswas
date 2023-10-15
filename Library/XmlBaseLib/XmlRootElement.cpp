@@ -14,6 +14,9 @@ GetSignature (
     if (xmlns == xmlns::presenta) {
         return xmlns::presentaSign;
     }
+    if (xmlns == xmlns::content_) {
+        return xmlns::content_Sign;
+    }
 
     return xmlns::emptystrSign;
 }

@@ -11,10 +11,15 @@ private:
     const std::string tmp = "tmp/";
     const std::string relsDir;
     xmlFile::Relationships rels;
+    xmlFile::ContentTypes contentType;
     Presentation presentation;
 
     Status
     SetRelation (
+        );
+
+    Status
+    SetContentTypes (
         );
 public:
     Document ();
