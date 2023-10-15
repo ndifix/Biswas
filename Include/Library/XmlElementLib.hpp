@@ -70,6 +70,12 @@ public:
     inline Theme() : XmlRootElement("theme", xmlns::drawingm) {};
 };
 
+class SlideMaster : public XmlRootElement {
+private:
+public:
+    inline SlideMaster() : XmlRootElement("sldMaster", xmlns::presenta) {};
+};
+
 }
 
 #endif

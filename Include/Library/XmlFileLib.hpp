@@ -36,6 +36,12 @@ public:
     Theme(std::string path);
 };
 
+class SlideMaster : public XmlFile {
+private:
+public:
+    SlideMaster(std::string path);
+};
+
 }
 
 #endif
