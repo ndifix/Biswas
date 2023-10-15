@@ -42,8 +42,9 @@ public:
 
 class Presentation {
 private:
-    PresentationPart *part = nullptr;
 public:
+    PresentationPart *part = nullptr;
+
     Presentation (
         const std::string &root
         );
