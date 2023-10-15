@@ -18,8 +18,21 @@ PresentationPart::PresentationPart (
     this->xmlfile = new xmlFile::Presentation(root + dir + "presentation.xml");
     this->presPropPart = new PresentationPropertiesPart(root, dir);
     this->themePart = new ThemePart(root, dir + "theme/");
+
     this->AddChildPart(this->presPropPart);
     this->AddChildPart(this->themePart);
+    this->AddSlideMaster();
+}
+
+SlideMasterPart *
+PresentationPart::AddSlideMaster (
+    )
+{
+    SlideMasterPart *part = new SlideMasterPart(this->rootDir, this->partDir + "slideMasters/");
+    this->slideMasterParts.push_back(part);
+    this->AddChildPart(part);
+
+    return part;
 }
 
 Status
@@ -48,6 +61,19 @@ PresentationPart::Write (
         Status = this->themePart->Write();
         if (Status != Status::Success) {
             return Status;
+        }
+    }
+
+    for (auto &part:this->slideMasterParts) {
+        if (part != nullptr) {
+            Status = MakeDir(part->rootDir + part->partDir);
+            if (Status != Status::Success) {
+                return Status;
+            }
+            Status = part->Write();
+            if (Status != Status::Success) {
+                return Status;
+            }
         }
     }
     return Status::Success;

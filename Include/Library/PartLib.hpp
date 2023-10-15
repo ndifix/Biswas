@@ -41,6 +41,7 @@ public:
 class PresentationPropertiesPart;
 class PresentationPart;
 class ThemePart;
+class SlideMasterPart;
 
 class PresentationPropertiesPart : public IPart {
 private:
@@ -59,6 +60,11 @@ class PresentationPart : public IPart {
 private:
     PresentationPropertiesPart *presPropPart = nullptr;
     ThemePart *themePart = nullptr;
+    std::vector<SlideMasterPart*> slideMasterParts;
+
+    SlideMasterPart *
+    AddSlideMaster (
+        );
 public:
     PresentationPart (
         const std::string &root,
@@ -74,6 +80,19 @@ class ThemePart : public IPart {
 private:
 public:
     ThemePart (
+        const std::string &root,
+        std::string dir
+        );
+
+    Status
+    Write (
+        ) final override;
+};
+
+class SlideMasterPart : public IPart {
+private:
+public:
+    SlideMasterPart (
         const std::string &root,
         std::string dir
         );
