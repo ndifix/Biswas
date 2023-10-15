@@ -1,4 +1,4 @@
-LibName=libXml.a
+LibName=libXmlFile.a
 
 Source =Relationships.cpp
 Source+=Presentation.cpp
