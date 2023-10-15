@@ -2,7 +2,7 @@
 #include <Biswas.hpp>
 #include <Library/DocumentLib.hpp>
 #include <Library/UtilLib.hpp>
-#include <Library/XmlElementLib.hpp>
+#include <Library/XmlRootElementLib.hpp>
 
 Document::Document (
     ) : relsDir(this->tmp + "_rels/"),
