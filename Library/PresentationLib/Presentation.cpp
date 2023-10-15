@@ -2,27 +2,41 @@
 #include <string>
 #include <Biswas.hpp>
 #include <Library/DocumentLib.hpp>
+#include <Library/PresentationLib.hpp>
 #include <Library/UtilLib.hpp>
 
 Presentation::Presentation (
-    std::string dir
-    ) : presDir(dir),
-        presentation(dir + "presentation.xml"),
-        theme(dir + "theme/")
+    const std::string &root
+    )
 {
+    this->part = new PresentationPart(root, "ppt/");
+}
+
+Presentation::~Presentation (
+    )
+{
+    if (this->part != nullptr) {
+        delete this->part;
+        this->part = nullptr;
+    }
 }
 
 Status
 Presentation::Write (
-    ) const
+    )
 {
     Status Status;
-    this->presentation.Write();
 
-    Status = MakeDir(this->theme.themeDir);
-    if (Status != Status::Success) {
-        return Status;
+    if (this->part != nullptr) {
+        Status = MakeDir(this->part->rootDir + this->part->partDir);
+        if (Status != Status::Success) {
+            return Status;
+        }
+
+        Status = this->part->Write();
+        if (Status != Status::Success) {
+            return Status;
+        }
     }
-    this->theme.Write();
     return Status::Success;
 }

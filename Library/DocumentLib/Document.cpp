@@ -8,7 +8,7 @@ Document::Document (
     ) : relsDir(this->tmp + "_rels/"),
         rels(this->relsDir + ".rels"),
         contentType(this->tmp + "[Content_Types].xml"),
-        presentation(this->tmp + "ppt/")
+        presentation(this->tmp)
 {
     // tmp ディレクトリがなければ作成し、あれば中を空にする。
     MakeDir(this->tmp);
@@ -101,10 +101,6 @@ Document::Write (
     this->SetRelation();
     this->rels.Write();
 
-    Status = MakeDir(this->presentation.presDir);
-    if (Status != Status::Success) {
-        return Status;
-    }
     this->presentation.Write();
 
     Status = Zip(this->tmp, path);
