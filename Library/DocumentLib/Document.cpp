@@ -7,6 +7,7 @@
 Document::Document (
     ) : relsDir(this->tmp + "_rels/"),
         rels(this->relsDir + ".rels"),
+        contentType(this->tmp + "[Content_Types].xml"),
         presentation(this->tmp + "ppt/")
 {
     // tmp ディレクトリがなければ作成し、あれば中を空にする。
@@ -40,11 +41,58 @@ Document::SetRelation (
 }
 
 Status
+Document::SetContentTypes (
+    )
+{
+    Status Status;
+    xmlElm::Default *defRels, *defExt;
+
+    try {
+        defRels = new xmlElm::Default();
+        defExt = new xmlElm::Default();
+    } catch (...) {
+        return Status::Error;
+    }
+    defRels->Extension = "rels";
+    defRels->ContentType = "application/vnd.openxmlformats-package.relationships+xml";
+    defExt->Extension = "xml";
+    defExt->ContentType = "application/xml";
+
+    xmlElm::Types *types = static_cast<xmlElm::Types*>(this->contentType.RootElement);
+    Status = types->AddContentType(defRels);
+    if (Status != Status::Success) {
+        return Status;
+    }
+    Status = types->AddContentType(defExt);
+    if (Status != Status::Success) {
+        return Status;
+    }
+
+    xmlElm::Override *presPart;
+    try {
+        presPart = new xmlElm::Override();
+    } catch (...) {
+        return Status::Error;
+    }
+    presPart->PartName = "/ppt/presentation.xml";
+    presPart->ContentType = "application/vnd.openxmlformats-officedocument.presentationml.presentation.main+xml";
+    Status = types->AddContentType(presPart);
+    if (Status != Status::Success) {
+        return Status;
+    }
+
+    return Status::Success;
+}
+
+Status
 Document::Write (
     std::string path
     )
 {
     Status Status;
+
+    this->SetContentTypes();
+    this->contentType.Write();
 
     Status = MakeDir(this->relsDir);
     if (Status != Status::Success) {

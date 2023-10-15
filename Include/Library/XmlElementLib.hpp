@@ -7,6 +7,25 @@
 
 namespace xmlElm {
 
+
+class Default : public XmlElement {
+private:
+public:
+    std::string Extension;
+    std::string ContentType;
+    inline Default() : XmlElement("Default", xmlns::content_) {};
+    virtual void Write (std::ofstream &ofs) final override;
+};
+
+class Override : public XmlElement {
+private:
+public:
+    std::string PartName;
+    std::string ContentType;
+    inline Override() : XmlElement("Override", xmlns::content_) {};
+    virtual void Write (std::ofstream &ofs) final override;
+};
+
 class Relationship : public XmlElement {
 private:
 public:
@@ -16,6 +35,14 @@ public:
 
     inline Relationship() : XmlElement("Relationship", xmlns::relation) {};
     virtual void Write (std::ofstream &ofs) final override;
+};
+
+class Types : public XmlRootElement {
+private:
+public:
+    inline Types() : XmlRootElement("Types", xmlns::content_) {};
+    Status AddContentType(Default *);
+    Status AddContentType(Override *);
 };
 
 class Relationships : public XmlRootElement {
