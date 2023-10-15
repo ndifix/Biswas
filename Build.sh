@@ -6,6 +6,7 @@ Library=(
     'UtilLib'
     'XmlBaseLib'
     'XmlLib'
+    'PartLib'
     'DocumentLib'
     'PresentationLib'
     'ThemeLib'
