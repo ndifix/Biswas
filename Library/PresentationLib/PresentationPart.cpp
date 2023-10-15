@@ -3,6 +3,7 @@
 #include <Biswas.hpp>
 #include <Library/PresentationLib.hpp>
 #include <Library/UtilLib.hpp>
+#include <Library/XmlFileLib.hpp>
 
 namespace {
 const char *relType = "http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument";
@@ -12,9 +13,9 @@ const char *conType = "application/vnd.openxmlformats-officedocument.presentatio
 PresentationPart::PresentationPart (
     const std::string &root,
     std::string dir
-    ) : IPart(root, dir, relType, conType),
-        presentation(root + dir + "presentation.xml")
+    ) : IPart(root, dir, relType, conType)
 {
+    this->xmlfile = new xmlFile::Presentation(root + dir + "presentation.xml");
     this->presPropPart = new PresentationPropertiesPart(root, dir);
     this->themePart = new ThemePart(root, dir + "theme/");
 }
@@ -39,7 +40,10 @@ PresentationPart::Write (
 {
     Status Status;
 
-    this->presentation.Write();
+    if (this->xmlfile == nullptr) {
+        return Status::NotReady;
+    }
+    this->xmlfile->Write();
 
     if (this->presPropPart != nullptr) {
         Status = this->presPropPart->Write();

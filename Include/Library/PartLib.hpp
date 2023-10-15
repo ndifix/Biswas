@@ -3,9 +3,11 @@
 
 #include <string>
 #include <Biswas.hpp>
+#include <Library/XmlBaseLib.hpp>
 
 class IPart {
 protected:
+    XmlFile *xmlfile = nullptr;
 public:
     const std::string rootDir;
     const std::string partDir;
@@ -17,6 +19,10 @@ public:
         std::string dir,
         const char *relType,
         const char *conType
+        );
+
+    virtual
+    ~IPart(
         );
 
     virtual

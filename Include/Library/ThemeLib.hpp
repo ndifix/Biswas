@@ -4,11 +4,9 @@
 #include <string>
 #include <Biswas.hpp>
 #include <Library/PartLib.hpp>
-#include <Library/XmlFileLib.hpp>
 
 class ThemePart : public IPart {
 private:
-    xmlFile::Theme theme;
 public:
     ThemePart (
         const std::string &root,
