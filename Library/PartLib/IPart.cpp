@@ -11,3 +11,12 @@ IPart::IPart (
         contentType(conType)
 {
 }
+
+IPart::~IPart (
+    )
+{
+    if (this->xmlfile != nullptr) {
+        delete this->xmlfile;
+        this->xmlfile = nullptr;
+    }
+}
