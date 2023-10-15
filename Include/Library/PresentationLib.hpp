@@ -6,20 +6,41 @@
 #include <Library/ThemeLib.hpp>
 #include <Library/XmlFileLib.hpp>
 
-class Presentation {
+class PresentationPart {
 private:
     xmlFile::Presentation presentation;
-    Theme theme;
+    ThemePart *themePart = nullptr;
 public:
-    const std::string presDir;
+    const std::string rootDir;
+    const std::string partDir;
 
-    Presentation (
+    PresentationPart (
+        const std::string &root,
         std::string dir
+        );
+
+    ~PresentationPart (
         );
 
     Status
     Write (
-        ) const;
+        );
+};
+
+class Presentation {
+private:
+    PresentationPart *part = nullptr;
+public:
+    Presentation (
+        const std::string &root
+        );
+
+    ~Presentation (
+        );
+
+    Status
+    Write (
+        );
 };
 
 #endif

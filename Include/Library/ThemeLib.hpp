@@ -5,13 +5,15 @@
 #include <Biswas.hpp>
 #include <Library/XmlFileLib.hpp>
 
-class Theme {
+class ThemePart {
 private:
     xmlFile::Theme theme;
 public:
-    const std::string themeDir;
+    const std::string rootDir;
+    const std::string partDir;
 
-    Theme (
+    ThemePart (
+        const std::string &root,
         std::string dir
         );
 

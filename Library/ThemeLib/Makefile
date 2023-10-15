@@ -1,5 +1,5 @@
 LibName=libTheme.a
 
-Source =Theme.cpp
+Source =ThemePart.cpp
 
 include ../lib.mk
