@@ -72,6 +72,10 @@ public:
         );
 
     Status
+    MakeDir (
+        ) const;
+
+    Status
     Write (
         ) final override;
 };

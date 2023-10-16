@@ -1,4 +1,3 @@
-#include <cstdlib>
 #include <string>
 #include <Biswas.hpp>
 #include <Library/PartLib.hpp>
@@ -36,6 +35,34 @@ PresentationPart::AddSlideMaster (
 }
 
 Status
+PresentationPart::MakeDir (
+    ) const
+{
+    Status Status;
+
+    Status = ::MakeDir(this->rootDir + this->partDir);
+    if (Status != Status::Success) {
+        return Status;
+    }
+
+    if (this->themePart != nullptr) {
+        Status = ::MakeDir(this->themePart->rootDir + this->themePart->partDir);
+        if (Status != Status::Success) {
+            return Status;
+        }
+    }
+
+    if (!this->slideMasterParts.empty()) {
+        Status = ::MakeDir(this->slideMasterParts[0]->rootDir + this->slideMasterParts[0]->partDir);
+        if (Status != Status::Success) {
+            return Status;
+        }
+    }
+
+    return Status::Success;
+}
+
+Status
 PresentationPart::Write (
     )
 {
@@ -54,10 +81,6 @@ PresentationPart::Write (
     }
 
     if (this->themePart != nullptr) {
-        Status = MakeDir(this->themePart->rootDir + this->themePart->partDir);
-        if (Status != Status::Success) {
-            return Status;
-        }
         Status = this->themePart->Write();
         if (Status != Status::Success) {
             return Status;
@@ -66,10 +89,6 @@ PresentationPart::Write (
 
     for (auto &part:this->slideMasterParts) {
         if (part != nullptr) {
-            Status = MakeDir(part->rootDir + part->partDir);
-            if (Status != Status::Success) {
-                return Status;
-            }
             Status = part->Write();
             if (Status != Status::Success) {
                 return Status;

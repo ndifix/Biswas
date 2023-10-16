@@ -1,10 +1,8 @@
-#include <cstdlib>
 #include <string>
 #include <Biswas.hpp>
 #include <Library/DocumentLib.hpp>
 #include <Library/PartLib.hpp>
 #include <Library/PresentationLib.hpp>
-#include <Library/UtilLib.hpp>
 
 Presentation::Presentation (
     const std::string &root
@@ -29,7 +27,7 @@ Presentation::Write (
     Status Status;
 
     if (this->part != nullptr) {
-        Status = MakeDir(this->part->rootDir + this->part->partDir);
+        Status = this->part->MakeDir();
         if (Status != Status::Success) {
             return Status;
         }
