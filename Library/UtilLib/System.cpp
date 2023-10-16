@@ -54,22 +54,23 @@ BuildPptxFile (
 {
     Status Status;
 
-    std::filesystem::path outStem = outPath.stem();
-    std::string cmd = "python3 Library/UtilLib/Zip.py ";
-    cmd += dir + " ";
-    cmd += outStem;
-    std::filesystem::path tmpZip = outStem += ".zip";
+    const std::filesystem::path current = std::filesystem::current_path();
+    const std::filesystem::path absOut = std::filesystem::absolute(outPath);
+    const std::filesystem::path targetDir = std::filesystem::absolute(dir);
+    std::filesystem::current_path(targetDir);
 
-    Status = Execute(cmd);
-    if (Status != Status::Success) {
-        return Status;
+    std::string cmd;
+    for (auto &iter:std::filesystem::directory_iterator(targetDir)) {
+        cmd = "zip -r "
+            + absOut.string()
+            + " "
+            + std::filesystem::relative(iter.path(), targetDir).string();
+        Status = Execute(cmd);
+        if (Status != Status::Success) {
+            return Status;
+        }
     }
 
-    if (!std::filesystem::exists(tmpZip)) {
-        return Status::NotFound;
-    }
-
-    std::filesystem::rename (tmpZip, outPath);
-
+    std::filesystem::current_path(current);
     return Status::Success;
 }
