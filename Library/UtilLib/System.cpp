@@ -16,22 +16,34 @@ Execute (
 
 Status
 MakeDir (
-    std::string path
+    const std::filesystem::path &path
     )
 {
-    std::string cmd = "mkdir -p " + path;
+    if (std::filesystem::exists(path)) {
+        return Status::Success;
+    }
 
-    return Execute(cmd);
+    if (std::filesystem::create_directory(path)) {
+        return Status::Success;
+    } else {
+        return Status::Error;
+    }
 }
 
 Status
 RemoveAll (
-    std::string path
+    const std::filesystem::path &path
     )
 {
-    std::string cmd = "rm -rf " + path + "*";
+    if (!std::filesystem::exists(path)) {
+        return Status::Success;
+    }
 
-    return Execute(cmd);
+    if (std::filesystem::remove_all(path) > 0) {
+        return Status::Success;
+    } else {
+        return Status::Error;
+    }
 }
 
 Status

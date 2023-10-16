@@ -2,17 +2,16 @@
 #define UTIL_LIB_HPP
 
 #include <filesystem>
-#include <string>
 #include <Biswas.hpp>
 
 Status
 MakeDir (
-    std::string path
+    const std::filesystem::path &path
     );
 
 Status
 RemoveAll (
-    std::string path
+    const std::filesystem::path &path
     );
 
 Status
