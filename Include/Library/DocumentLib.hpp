@@ -1,15 +1,15 @@
 #ifndef DOCUMENT_LIB_HPP
 #define DOCUMENT_LIB_HPP
 
-#include <string>
+#include <filesystem>
 #include <Biswas.hpp>
 #include <Library/PresentationLib.hpp>
 #include <Library/XmlFileLib.hpp>
 
 class Document {
 private:
-    const std::string tmp = "tmp/";
-    const std::string relsDir;
+    const std::filesystem::path tmp = "tmp/";
+    const std::filesystem::path relsDir;
     xmlFile::Relationships rels;
     xmlFile::ContentTypes contentType;
     Presentation presentation;
@@ -26,7 +26,7 @@ public:
 
     Status
     Write (
-        std::string path
+        const std::filesystem::path path
         );
 };
 

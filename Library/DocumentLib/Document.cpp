@@ -1,13 +1,12 @@
-#include <string>
 #include <Biswas.hpp>
 #include <Library/DocumentLib.hpp>
 #include <Library/UtilLib.hpp>
 #include <Library/XmlRootElementLib.hpp>
 
 Document::Document (
-    ) : relsDir(this->tmp + "_rels/"),
-        rels(this->relsDir + ".rels"),
-        contentType(this->tmp + "[Content_Types].xml"),
+    ) : relsDir(std::filesystem::path(this->tmp) /= "_rels"),
+        rels(std::filesystem::path(this->relsDir) /= ".rels"),
+        contentType(std::filesystem::path(this->tmp) /= "[Content_Types].xml"),
         presentation(this->tmp)
 {
     // tmp ディレクトリがなければ作成し、あれば中を空にする。
@@ -86,7 +85,7 @@ Document::SetContentTypes (
 
 Status
 Document::Write (
-    std::string path
+    const std::filesystem::path path
     )
 {
     Status Status;
