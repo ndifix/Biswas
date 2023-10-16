@@ -27,11 +27,6 @@ Presentation::Write (
     Status Status;
 
     if (this->part != nullptr) {
-        Status = this->part->MakeDir();
-        if (Status != Status::Success) {
-            return Status;
-        }
-
         Status = this->part->Write();
         if (Status != Status::Success) {
             return Status;
