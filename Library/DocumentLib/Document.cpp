@@ -91,6 +91,11 @@ Document::Write (
 {
     Status Status;
 
+    Status = MakeDir(this->tmp);
+    if (Status != Status::Success) {
+        return Status;
+    }
+
     this->SetContentTypes();
     this->contentType.Write();
 
