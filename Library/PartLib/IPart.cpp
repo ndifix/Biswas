@@ -35,3 +35,24 @@ IPart::AddChildPart (
 {
     this->childParts.push_back(newPart);
 }
+
+Status
+IPart::Write (
+    ) const
+{
+    Status Status;
+
+    if (this->xmlfile == nullptr) {
+        return Status::NotReady;
+    }
+    this->xmlfile->Write();
+
+    for (auto part:this->childParts) {
+        Status = part->Write();
+        if (Status != Status::Success) {
+            return Status;
+        }
+    }
+
+    return Status::Success;
+}

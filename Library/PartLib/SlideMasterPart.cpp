@@ -13,15 +13,3 @@ SlideMasterPart::SlideMasterPart (
 {
     this->xmlfile = new xmlFile::SlideMaster(root + dir + "slideMaster1.xml");
 }
-
-Status
-SlideMasterPart::Write (
-    )
-{
-    if (this->xmlfile == nullptr) {
-        return Status::NotReady;
-    }
-
-    this->xmlfile->Write();
-    return Status::Success;
-}

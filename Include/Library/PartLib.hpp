@@ -35,7 +35,7 @@ public:
     virtual
     Status
     Write (
-        ) = 0;
+        ) const;
 };
 
 class PresentationPropertiesPart;
@@ -50,10 +50,6 @@ public:
         const std::string &root,
         std::string dir
         );
-
-    Status
-    Write (
-        ) final override;
 };
 
 class PresentationPart : public IPart {
@@ -65,6 +61,10 @@ private:
     SlideMasterPart *
     AddSlideMaster (
         );
+
+    Status
+    MakeDir (
+        ) const;
 public:
     PresentationPart (
         const std::string &root,
@@ -72,12 +72,8 @@ public:
         );
 
     Status
-    MakeDir (
-        ) const;
-
-    Status
     Write (
-        ) final override;
+        ) const final override;
 };
 
 class ThemePart : public IPart {
@@ -87,10 +83,6 @@ public:
         const std::string &root,
         std::string dir
         );
-
-    Status
-    Write (
-        ) final override;
 };
 
 class SlideMasterPart : public IPart {
@@ -100,10 +92,6 @@ public:
         const std::string &root,
         std::string dir
         );
-
-    Status
-    Write (
-        ) final override;
 };
 
 #endif

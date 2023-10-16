@@ -13,15 +13,3 @@ ThemePart::ThemePart (
 {
     this->xmlfile = new xmlFile::Theme(root + dir + "theme1.xml");
 }
-
-Status
-ThemePart::Write (
-    )
-{
-    if (this->xmlfile == nullptr) {
-        return Status::NotReady;
-    }
-
-    this->xmlfile->Write();
-    return Status::Success;
-}

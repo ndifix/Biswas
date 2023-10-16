@@ -13,15 +13,3 @@ PresentationPropertiesPart::PresentationPropertiesPart (
 {
     this->xmlfile = new xmlFile::PresentationProperties(root + dir + "presProps.xml");
 }
-
-Status
-PresentationPropertiesPart::Write(
-    )
-{
-    if (this->xmlfile == nullptr) {
-        return Status::NotReady;
-    }
-
-    this->xmlfile->Write();
-    return Status::Success;
-}

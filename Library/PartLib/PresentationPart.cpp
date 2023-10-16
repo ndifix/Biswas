@@ -64,36 +64,14 @@ PresentationPart::MakeDir (
 
 Status
 PresentationPart::Write (
-    )
+    ) const
 {
     Status Status;
 
-    if (this->xmlfile == nullptr) {
-        return Status::NotReady;
-    }
-    this->xmlfile->Write();
-
-    if (this->presPropPart != nullptr) {
-        Status = this->presPropPart->Write();
-        if (Status != Status::Success) {
-            return Status;
-        }
+    Status = this->MakeDir();
+    if (Status != Status::Success) {
+        return Status;
     }
 
-    if (this->themePart != nullptr) {
-        Status = this->themePart->Write();
-        if (Status != Status::Success) {
-            return Status;
-        }
-    }
-
-    for (auto &part:this->slideMasterParts) {
-        if (part != nullptr) {
-            Status = part->Write();
-            if (Status != Status::Success) {
-                return Status;
-            }
-        }
-    }
-    return Status::Success;
+    return IPart::Write();
 }
