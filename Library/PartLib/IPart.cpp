@@ -28,6 +28,17 @@ IPart::~IPart (
     }
 }
 
+std::string
+IPart::GetXmlFilePath (
+    ) const
+{
+    if (this->xmlfile == nullptr) {
+        return "";
+    }
+
+    return this->xmlfile->filePath;
+}
+
 void
 IPart::AddChildPart (
     IPart *newPart
