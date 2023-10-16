@@ -5,6 +5,7 @@ enum Status {
     Success,
     Error,
     NotReady,
+    NotFound,
 };
 
 #endif
