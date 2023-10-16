@@ -103,13 +103,8 @@ Document::Write (
 
     this->presentation.Write();
 
-    Status = Zip(this->tmp, path);
-    if (Status != Status::Success) {
-        return Status;
-    }
-
-    Status = RenameZipToPptx(path);
-    if (Status != Status::Success) {
+    Status = BuildPptxFile(this->tmp, path);
+        if (Status != Status::Success) {
         return Status;
     }
 

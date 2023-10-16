@@ -15,19 +15,6 @@ Execute (
 }
 
 Status
-Zip (
-    std::string srcDir,
-    std::string outFile
-    )
-{
-    std::string cmd = "python3 Library/UtilLib/Zip.py ";
-    cmd += srcDir + " ";
-    cmd += outFile;
-
-    return Execute(cmd);
-}
-
-Status
 MakeDir (
     std::string path
     )
@@ -48,11 +35,29 @@ RemoveAll (
 }
 
 Status
-RenameZipToPptx (
-    std::string path
+BuildPptxFile (
+    const std::string &dir,
+    const std::filesystem::path &outPath
     )
 {
-    std::string cmd = "mv " + path + ".zip " + path;
+    Status Status;
 
-    return Execute(cmd);
+    std::filesystem::path outStem = outPath.stem();
+    std::string cmd = "python3 Library/UtilLib/Zip.py ";
+    cmd += dir + " ";
+    cmd += outStem;
+    std::filesystem::path tmpZip = outStem += ".zip";
+
+    Status = Execute(cmd);
+    if (Status != Status::Success) {
+        return Status;
+    }
+
+    if (!std::filesystem::exists(tmpZip)) {
+        return Status::NotFound;
+    }
+
+    std::filesystem::rename (tmpZip, outPath);
+
+    return Status::Success;
 }
