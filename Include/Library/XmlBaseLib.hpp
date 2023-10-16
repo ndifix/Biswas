@@ -125,12 +125,11 @@ public:
 
 class XmlFile {
 private:
-    const std::string filePath;
-
     std::string
     Declare (
         ) const;
 public:
+    const std::string filePath;
     XmlRootElement *RootElement = nullptr;
 
     XmlFile (

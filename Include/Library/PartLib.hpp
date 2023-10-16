@@ -32,6 +32,10 @@ public:
     ~IPart(
         );
 
+    std::string
+    GetXmlFilePath (
+        ) const;
+
     virtual
     Status
     Write (
