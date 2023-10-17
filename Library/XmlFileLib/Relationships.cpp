@@ -7,5 +7,5 @@ Relationships::Relationships (
     const std::filesystem::path &path
     ) : XmlFile(path)
 {
-    this->RootElement = new xmlElm::Relationships();
+    this->RootElement.reset(new xmlElm::Relationships());
 }

@@ -30,7 +30,7 @@ Document::SetRelation (
     relation->Type = this->presentation.part->relationType;
     relation->Target = std::filesystem::relative(this->presentation.part->GetXmlFilePath(), this->tmp);
 
-    xmlElm::Relationships *rels = static_cast<xmlElm::Relationships*>(this->rels.RootElement);
+    xmlElm::Relationships *rels = static_cast<xmlElm::Relationships*>(this->rels.RootElement.get());
     Status = rels->AddRelation(relation);
     if (Status != Status::Success) {
         return Status;
@@ -57,7 +57,7 @@ Document::SetContentTypes (
     defExt->Extension = "xml";
     defExt->ContentType = "application/xml";
 
-    xmlElm::Types *types = static_cast<xmlElm::Types*>(this->contentType.RootElement);
+    xmlElm::Types *types = static_cast<xmlElm::Types*>(this->contentType.RootElement.get());
     Status = types->AddContentType(defRels);
     if (Status != Status::Success) {
         return Status;
