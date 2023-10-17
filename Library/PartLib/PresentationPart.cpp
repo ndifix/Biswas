@@ -52,7 +52,7 @@ PresentationPart::MakeDir (
     }
 
     if (!this->slideMasterParts.empty()) {
-        Status = ::MakeDir(this->slideMasterParts[0]->partDir);
+        Status = ::MakeDir(this->slideMasterParts.front()->partDir);
         if (Status != Status::Success) {
             return Status;
         }
