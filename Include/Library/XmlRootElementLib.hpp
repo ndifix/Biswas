@@ -1,6 +1,7 @@
 #ifndef XML_ROOT_ELEMENT_LIB_HPP
 #define XML_ROOT_ELEMENT_LIB_HPP
 
+#include <memory>
 #include <Biswas.hpp>
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib.hpp>
@@ -11,15 +12,15 @@ class Types : public XmlRootElement {
 private:
 public:
     inline Types() : XmlRootElement("Types", xmlns::content_) {};
-    Status AddContentType(Default *);
-    Status AddContentType(Override *);
+    Status AddContentType(std::unique_ptr<Default>);
+    Status AddContentType(std::unique_ptr<Override>);
 };
 
 class Relationships : public XmlRootElement {
 private:
 public:
     inline Relationships() : XmlRootElement("Relationships", xmlns::relation) {};
-    Status AddRelation(Relationship *);
+    Status AddRelation(std::unique_ptr<Relationship>);
 };
 
 class Presentation : public XmlRootElement {

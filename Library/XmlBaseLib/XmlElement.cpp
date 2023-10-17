@@ -10,17 +10,6 @@ XmlElement::XmlElement (
 {
 }
 
-XmlElement::~XmlElement (
-    )
-{
-    for (auto &child:this->childs) {
-        if (child != nullptr) {
-            delete child;
-            child = nullptr;
-        }
-    }
-}
-
 void
 XmlElement::NotifyAddChildElement (
     const xmlns::XmlNameSpace &xmlns
@@ -64,12 +53,12 @@ XmlElement::AddAttribute (
 
 void
 XmlElement::AddChildElement (
-    XmlElement *child
+    std::unique_ptr<XmlElement> child
     )
 {
-    this->childs.push_back(child);
     child->parent = this;
     this->NotifyAddChildElement(child->xmlnsSelf);
+    this->childs.push_back(std::move(child));
 }
 
 void
