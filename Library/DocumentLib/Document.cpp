@@ -27,8 +27,8 @@ Document::SetRelation (
         return Status::Error;
     }
     relation->Id = "rId1";
-    relation->Type = "http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument";
-    relation->Target = "ppt/presentation.xml";
+    relation->Type = this->presentation.part->relationType;
+    relation->Target = std::filesystem::relative(this->presentation.part->GetXmlFilePath(), this->tmp);
 
     xmlElm::Relationships *rels = static_cast<xmlElm::Relationships*>(this->rels.RootElement);
     Status = rels->AddRelation(relation);
@@ -73,7 +73,7 @@ Document::SetContentTypes (
     } catch (...) {
         return Status::Error;
     }
-    presPart->PartName = "/ppt/presentation.xml";
+    presPart->PartName = "/" + std::filesystem::relative(this->presentation.part->GetXmlFilePath(), this->tmp).string();
     presPart->ContentType = this->presentation.part->contentType;
     Status = types->AddContentType(presPart);
     if (Status != Status::Success) {
