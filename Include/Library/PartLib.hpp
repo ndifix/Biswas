@@ -2,14 +2,14 @@
 #define PART_LIB_HPP
 
 #include <filesystem>
-#include <vector>
+#include <list>
 #include <Biswas.hpp>
 #include <Library/XmlBaseLib.hpp>
 
 class IPart {
 protected:
     XmlFile *xmlfile = nullptr;
-    std::vector<IPart*> childParts;
+    std::list<IPart*> childParts;
 
     void
     AddChildPart (
@@ -57,7 +57,7 @@ class PresentationPart : public IPart {
 private:
     PresentationPropertiesPart *presPropPart = nullptr;
     ThemePart *themePart = nullptr;
-    std::vector<SlideMasterPart*> slideMasterParts;
+    std::list<SlideMasterPart*> slideMasterParts;
 
     SlideMasterPart *
     AddSlideMaster (

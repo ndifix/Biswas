@@ -3,9 +3,9 @@
 
 #include <filesystem>
 #include <fstream>
+#include <list>
 #include <set>
 #include <string>
-#include <vector>
 #include <utility>
 
 namespace xmlns {
@@ -37,10 +37,10 @@ class XmlElement {
 protected:
     const std::string tagName;
     xmlns::XmlNameSpace xmlnsSelf;
-    std::vector<std::pair<std::string, std::string>> attributes;
+    std::list<std::pair<std::string, std::string>> attributes;
 
     XmlElement *parent;
-    std::vector<XmlElement*> childs;
+    std::list<XmlElement*> childs;
     std::set<xmlns::XmlNameSpace> childNameSpace;
 
     /**
