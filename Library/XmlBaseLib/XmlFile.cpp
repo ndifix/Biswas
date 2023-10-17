@@ -9,15 +9,6 @@ XmlFile::XmlFile (
 {
 }
 
-XmlFile::~XmlFile (
-    )
-{
-    if (this->RootElement != nullptr) {
-        delete this->RootElement;
-        this->RootElement = nullptr;
-    }
-}
-
 std::string
 XmlFile::Declare (
     ) const

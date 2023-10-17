@@ -4,6 +4,7 @@
 #include <filesystem>
 #include <fstream>
 #include <list>
+#include <memory>
 #include <set>
 #include <string>
 #include <utility>
@@ -131,12 +132,11 @@ private:
         ) const;
 public:
     const std::filesystem::path filePath;
-    XmlRootElement *RootElement = nullptr;
+    std::unique_ptr<XmlRootElement> RootElement;
 
     XmlFile (
         const std::filesystem::path &filePath
         );
-    ~XmlFile();
 
     void
     Write (

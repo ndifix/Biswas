@@ -7,5 +7,5 @@ xmlFile::SlideMaster::SlideMaster (
     const std::filesystem::path &path
     ) : XmlFile(path)
 {
-    this->RootElement = new xmlElm::SlideMaster();
+    this->RootElement.reset(new xmlElm::SlideMaster());
 }
