@@ -1,6 +1,7 @@
 #ifndef XML_BASE_LIB_HPP
 #define XML_BASE_LIB_HPP
 
+#include <filesystem>
 #include <fstream>
 #include <set>
 #include <string>
@@ -129,11 +130,11 @@ private:
     Declare (
         ) const;
 public:
-    const std::string filePath;
+    const std::filesystem::path filePath;
     XmlRootElement *RootElement = nullptr;
 
     XmlFile (
-        std::string &path
+        const std::filesystem::path &filePath
         );
     ~XmlFile();
 

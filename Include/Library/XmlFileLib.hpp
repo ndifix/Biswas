@@ -1,7 +1,6 @@
 #ifndef XML_FILE_LIB_HPP
 #define XML_FILE_LIB_HPP
 
-#include <string>
 #include <Library/XmlBaseLib.hpp>
 
 namespace xmlFile {
@@ -9,37 +8,37 @@ namespace xmlFile {
 class ContentTypes : public XmlFile {
 private:
 public:
-    ContentTypes(std::string path);
+    ContentTypes(const std::filesystem::path &path);
 };
 
 class Relationships : public XmlFile {
 private:
 public:
-    Relationships(std::string path);
+    Relationships(const std::filesystem::path &path);
 };
 
 class Presentation : public XmlFile {
 private:
 public:
-    Presentation(std::string path);
+    Presentation(const std::filesystem::path &path);
 };
 
 class PresentationProperties : public XmlFile {
 private:
 public:
-    PresentationProperties(std::string path);
+    PresentationProperties(const std::filesystem::path &path);
 };
 
 class Theme : public XmlFile {
 private:
 public:
-    Theme(std::string path);
+    Theme(const std::filesystem::path &path);
 };
 
 class SlideMaster : public XmlFile {
 private:
 public:
-    SlideMaster(std::string path);
+    SlideMaster(const std::filesystem::path &path);
 };
 
 }

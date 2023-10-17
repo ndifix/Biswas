@@ -4,7 +4,7 @@
 using namespace xmlFile;
 
 Relationships::Relationships (
-    std::string path
+    const std::filesystem::path &path
     ) : XmlFile(path)
 {
     this->RootElement = new xmlElm::Relationships();

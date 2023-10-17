@@ -10,13 +10,12 @@ const char *conType = "application/vnd.openxmlformats-officedocument.presentatio
 }
 
 PresentationPart::PresentationPart (
-    const std::string &root,
-    std::string dir
-    ) : IPart(root, dir, relType, conType)
+    const std::filesystem::path &dir
+    ) : IPart(dir, relType, conType)
 {
-    this->xmlfile = new xmlFile::Presentation(root + dir + "presentation.xml");
-    this->presPropPart = new PresentationPropertiesPart(root, dir);
-    this->themePart = new ThemePart(root, dir + "theme/");
+    this->xmlfile = new xmlFile::Presentation(std::filesystem::path(dir) /= "presentation.xml");
+    this->presPropPart = new PresentationPropertiesPart(dir);
+    this->themePart = new ThemePart(std::filesystem::path(dir) /= "theme/");
 
     this->AddChildPart(this->presPropPart);
     this->AddChildPart(this->themePart);
@@ -27,7 +26,7 @@ SlideMasterPart *
 PresentationPart::AddSlideMaster (
     )
 {
-    SlideMasterPart *part = new SlideMasterPart(this->rootDir, this->partDir + "slideMasters/");
+    SlideMasterPart *part = new SlideMasterPart(std::filesystem::path(this->partDir) /= "slideMasters/");
     this->slideMasterParts.push_back(part);
     this->AddChildPart(part);
 
@@ -40,20 +39,20 @@ PresentationPart::MakeDir (
 {
     Status Status;
 
-    Status = ::MakeDir(this->rootDir + this->partDir);
+    Status = ::MakeDir(this->partDir);
     if (Status != Status::Success) {
         return Status;
     }
 
     if (this->themePart != nullptr) {
-        Status = ::MakeDir(this->themePart->rootDir + this->themePart->partDir);
+        Status = ::MakeDir(this->themePart->partDir);
         if (Status != Status::Success) {
             return Status;
         }
     }
 
     if (!this->slideMasterParts.empty()) {
-        Status = ::MakeDir(this->slideMasterParts[0]->rootDir + this->slideMasterParts[0]->partDir);
+        Status = ::MakeDir(this->slideMasterParts[0]->partDir);
         if (Status != Status::Success) {
             return Status;
         }

@@ -4,7 +4,7 @@
 using namespace xmlElm;
 
 xmlFile::PresentationProperties::PresentationProperties (
-    std::string path
+    const std::filesystem::path &path
     ) : XmlFile(path)
 {
     this->RootElement = new xmlElm::PresentationProperties();

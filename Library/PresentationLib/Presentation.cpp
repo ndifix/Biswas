@@ -1,14 +1,13 @@
-#include <string>
 #include <Biswas.hpp>
 #include <Library/DocumentLib.hpp>
 #include <Library/PartLib.hpp>
 #include <Library/PresentationLib.hpp>
 
 Presentation::Presentation (
-    const std::string &root
+    const std::filesystem::path &tmp
     )
 {
-    this->part = new PresentationPart(root, "ppt/");
+    this->part = new PresentationPart(std::filesystem::path(tmp) /= "ppt/");
 }
 
 Presentation::~Presentation (

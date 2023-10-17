@@ -2,7 +2,7 @@
 #include <Library/XmlRootElementLib.hpp>
 
 xmlFile::ContentTypes::ContentTypes (
-    std::string path
+    const std::filesystem::path &path
     ) : XmlFile(path)
 {
     this->RootElement = new xmlElm::Types();
