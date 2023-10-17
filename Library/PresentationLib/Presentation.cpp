@@ -7,16 +7,7 @@ Presentation::Presentation (
     const std::filesystem::path &tmp
     )
 {
-    this->part = new PresentationPart(std::filesystem::path(tmp) /= "ppt/");
-}
-
-Presentation::~Presentation (
-    )
-{
-    if (this->part != nullptr) {
-        delete this->part;
-        this->part = nullptr;
-    }
+    this->part.reset(new PresentationPart(std::filesystem::path(tmp) /= "ppt/"));
 }
 
 Status
