@@ -3,12 +3,13 @@
 
 #include <filesystem>
 #include <list>
+#include <memory>
 #include <Biswas.hpp>
 #include <Library/XmlBaseLib.hpp>
 
 class IPart {
 protected:
-    XmlFile *xmlfile = nullptr;
+    std::unique_ptr<XmlFile> xmlfile;
     std::list<IPart*> childParts;
 
     void

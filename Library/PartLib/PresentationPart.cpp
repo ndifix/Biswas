@@ -13,7 +13,7 @@ PresentationPart::PresentationPart (
     const std::filesystem::path &dir
     ) : IPart(dir, relType, conType)
 {
-    this->xmlfile = new xmlFile::Presentation(std::filesystem::path(dir) /= "presentation.xml");
+    this->xmlfile.reset(new xmlFile::Presentation(std::filesystem::path(dir) /= "presentation.xml"));
     this->presPropPart = new PresentationPropertiesPart(dir);
     this->themePart = new ThemePart(std::filesystem::path(dir) /= "theme/");
 

@@ -13,11 +13,6 @@ IPart::IPart (
 IPart::~IPart (
     )
 {
-    if (this->xmlfile != nullptr) {
-        delete this->xmlfile;
-        this->xmlfile = nullptr;
-    }
-
     while (!this->childParts.empty()) {
         if (this->childParts.back() != nullptr) {
             delete this->childParts.back();
