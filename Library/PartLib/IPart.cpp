@@ -10,17 +10,6 @@ IPart::IPart (
 {
 }
 
-IPart::~IPart (
-    )
-{
-    while (!this->childParts.empty()) {
-        if (this->childParts.back() != nullptr) {
-            delete this->childParts.back();
-        }
-        this->childParts.pop_back();
-    }
-}
-
 std::string
 IPart::GetXmlFilePath (
     ) const
@@ -34,7 +23,7 @@ IPart::GetXmlFilePath (
 
 void
 IPart::AddChildPart (
-    IPart *newPart
+    std::shared_ptr<IPart> newPart
     )
 {
     this->childParts.push_back(newPart);
