@@ -10,5 +10,5 @@ ThemePart::ThemePart (
     const std::filesystem::path &dir
     ) : IPart(dir, relType, conType)
 {
-    this->xmlfile = new xmlFile::Theme(std::filesystem::path(dir) /= "theme1.xml");
+    this->xmlfile.reset(new xmlFile::Theme(std::filesystem::path(dir) /= "theme1.xml"));
 }

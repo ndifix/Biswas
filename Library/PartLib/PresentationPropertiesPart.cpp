@@ -10,5 +10,5 @@ PresentationPropertiesPart::PresentationPropertiesPart (
     const std::filesystem::path &dir
     ) : IPart(dir, relType, conType)
 {
-    this->xmlfile = new xmlFile::PresentationProperties(std::filesystem::path(dir) /= "presProps.xml");
+    this->xmlfile.reset(new xmlFile::PresentationProperties(std::filesystem::path(dir) /= "presProps.xml"));
 }
