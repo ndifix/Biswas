@@ -6,18 +6,22 @@ using namespace xmlElm;
 
 Status
 Types::AddContentType (
-    Default *def
+    std::unique_ptr<Default> def
     )
 {
-    this->AddChildElement(def);
+    this->AddChildElement(
+        std::unique_ptr<XmlElement>(static_cast<XmlElement*>(def.release()))
+        );
     return Status::Success;
 }
 
 Status
 Types::AddContentType (
-    Override *ovr
+    std::unique_ptr<Override> ovr
     )
 {
-    this->AddChildElement(ovr);
+    this->AddChildElement(
+        std::unique_ptr<XmlElement>(static_cast<XmlElement*>(ovr.release()))
+        );
     return Status::Success;
 }
