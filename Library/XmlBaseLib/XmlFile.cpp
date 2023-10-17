@@ -4,7 +4,7 @@
 #include <string>
 
 XmlFile::XmlFile (
-    std::string &path
+    const std::filesystem::path &path
     ) : filePath(path)
 {
 }

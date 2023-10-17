@@ -7,9 +7,8 @@ const char *conType = "application/vnd.openxmlformats-officedocument.presentatio
 }
 
 SlideMasterPart::SlideMasterPart (
-    const std::string &root,
-    std::string dir
-    ) : IPart(root, dir, relType, conType)
+    const std::filesystem::path &dir
+    ) : IPart(dir, relType, conType)
 {
-    this->xmlfile = new xmlFile::SlideMaster(root + dir + "slideMaster1.xml");
+    this->xmlfile = new xmlFile::SlideMaster(std::filesystem::path(dir) /= "slideMaster1.xml");
 }

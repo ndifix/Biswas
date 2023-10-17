@@ -4,7 +4,7 @@
 using namespace xmlElm;
 
 xmlFile::Theme::Theme (
-    std::string path
+    const std::filesystem::path &path
     ) : XmlFile(path)
 {
     this->RootElement = new xmlElm::Theme();

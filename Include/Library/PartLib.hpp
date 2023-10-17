@@ -1,7 +1,7 @@
 #ifndef PART_LIB_HPP
 #define PART_LIB_HPP
 
-#include <string>
+#include <filesystem>
 #include <vector>
 #include <Biswas.hpp>
 #include <Library/XmlBaseLib.hpp>
@@ -16,14 +16,12 @@ protected:
         IPart *newPart
         );
 public:
-    const std::string rootDir;
     const std::string partDir;
     const char *relationType;
     const char *contentType;
 
     IPart (
-        const std::string &root,
-        std::string dir,
+        const std::filesystem::path &dir,
         const char *relType,
         const char *conType
         );
@@ -51,8 +49,7 @@ class PresentationPropertiesPart : public IPart {
 private:
 public:
     PresentationPropertiesPart (
-        const std::string &root,
-        std::string dir
+        const std::filesystem::path &dir
         );
 };
 
@@ -71,8 +68,7 @@ private:
         ) const;
 public:
     PresentationPart (
-        const std::string &root,
-        std::string dir
+        const std::filesystem::path &dir
         );
 
     Status
@@ -84,8 +80,7 @@ class ThemePart : public IPart {
 private:
 public:
     ThemePart (
-        const std::string &root,
-        std::string dir
+        const std::filesystem::path &dir
         );
 };
 
@@ -93,8 +88,7 @@ class SlideMasterPart : public IPart {
 private:
 public:
     SlideMasterPart (
-        const std::string &root,
-        std::string dir
+        const std::filesystem::path &dir
         );
 };
 

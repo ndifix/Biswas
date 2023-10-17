@@ -8,7 +8,7 @@
 
 class Document {
 private:
-    const std::filesystem::path tmp = "tmp/";
+    const std::filesystem::path tmp = std::filesystem::absolute("tmp/");
     const std::filesystem::path relsDir;
     xmlFile::Relationships rels;
     xmlFile::ContentTypes contentType;

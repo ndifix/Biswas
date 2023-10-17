@@ -7,9 +7,8 @@ const char *conType = "application/vnd.openxmlformats-officedocument.theme+xml";
 }
 
 ThemePart::ThemePart (
-    const std::string &root,
-    std::string dir
-    ) : IPart(root, dir, relType, conType)
+    const std::filesystem::path &dir
+    ) : IPart(dir, relType, conType)
 {
-    this->xmlfile = new xmlFile::Theme(root + dir + "theme1.xml");
+    this->xmlfile = new xmlFile::Theme(std::filesystem::path(dir) /= "theme1.xml");
 }

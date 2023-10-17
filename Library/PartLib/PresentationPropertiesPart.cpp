@@ -7,9 +7,8 @@ const char *conType = "application/vnd.openxmlformats-officedocument.presentatio
 }
 
 PresentationPropertiesPart::PresentationPropertiesPart (
-    const std::string &root,
-    std::string dir
-    ) : IPart(root, dir, relType, conType)
+    const std::filesystem::path &dir
+    ) : IPart(dir, relType, conType)
 {
-    this->xmlfile = new xmlFile::PresentationProperties(root + dir + "presProps.xml");
+    this->xmlfile = new xmlFile::PresentationProperties(std::filesystem::path(dir) /= "presProps.xml");
 }
