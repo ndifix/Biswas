@@ -3,17 +3,18 @@
 
 #include <filesystem>
 #include <list>
+#include <memory>
 #include <Biswas.hpp>
 #include <Library/XmlBaseLib.hpp>
 
 class IPart {
 protected:
-    XmlFile *xmlfile = nullptr;
-    std::list<IPart*> childParts;
+    std::unique_ptr<XmlFile> xmlfile;
+    std::list<std::shared_ptr<IPart>> childParts;
 
     void
     AddChildPart (
-        IPart *newPart
+        std::shared_ptr<IPart> newPart
         );
 public:
     const std::string partDir;
@@ -24,10 +25,6 @@ public:
         const std::filesystem::path &dir,
         const char *relType,
         const char *conType
-        );
-
-    virtual
-    ~IPart(
         );
 
     std::string
@@ -55,11 +52,11 @@ public:
 
 class PresentationPart : public IPart {
 private:
-    PresentationPropertiesPart *presPropPart = nullptr;
-    ThemePart *themePart = nullptr;
-    std::list<SlideMasterPart*> slideMasterParts;
+    std::shared_ptr<PresentationPropertiesPart> presPropPart;
+    std::shared_ptr<ThemePart> themePart;
+    std::list<std::shared_ptr<SlideMasterPart>> slideMasterParts;
 
-    SlideMasterPart *
+    std::shared_ptr<SlideMasterPart>
     AddSlideMaster (
         );
 

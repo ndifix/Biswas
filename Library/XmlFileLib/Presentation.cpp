@@ -7,5 +7,5 @@ xmlFile::Presentation::Presentation (
     const std::filesystem::path &path
     ) : XmlFile(path)
 {
-    this->RootElement = new xmlElm::Presentation();
+    this->RootElement.reset(new xmlElm::Presentation());
 }

@@ -7,5 +7,5 @@ xmlFile::Theme::Theme (
     const std::filesystem::path &path
     ) : XmlFile(path)
 {
-    this->RootElement = new xmlElm::Theme();
+    this->RootElement.reset(new xmlElm::Theme());
 }

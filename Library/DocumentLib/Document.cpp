@@ -19,19 +19,14 @@ Document::SetRelation (
     )
 {
     Status Status;
-    xmlElm::Relationship *relation;
 
-    try {
-        relation = new xmlElm::Relationship();
-    } catch (...){
-        return Status::Error;
-    }
+    std::unique_ptr<xmlElm::Relationship> relation(new xmlElm::Relationship());
     relation->Id = "rId1";
     relation->Type = this->presentation.part->relationType;
     relation->Target = std::filesystem::relative(this->presentation.part->GetXmlFilePath(), this->tmp);
 
-    xmlElm::Relationships *rels = static_cast<xmlElm::Relationships*>(this->rels.RootElement);
-    Status = rels->AddRelation(relation);
+    xmlElm::Relationships *rels = static_cast<xmlElm::Relationships*>(this->rels.RootElement.get());
+    Status = rels->AddRelation(std::move(relation));
     if (Status != Status::Success) {
         return Status;
     }
@@ -44,38 +39,27 @@ Document::SetContentTypes (
     )
 {
     Status Status;
-    xmlElm::Default *defRels, *defExt;
 
-    try {
-        defRels = new xmlElm::Default();
-        defExt = new xmlElm::Default();
-    } catch (...) {
-        return Status::Error;
-    }
+    std::unique_ptr<xmlElm::Default> defRels(new xmlElm::Default()), defExt(new xmlElm::Default());
     defRels->Extension = "rels";
     defRels->ContentType = "application/vnd.openxmlformats-package.relationships+xml";
     defExt->Extension = "xml";
     defExt->ContentType = "application/xml";
 
-    xmlElm::Types *types = static_cast<xmlElm::Types*>(this->contentType.RootElement);
-    Status = types->AddContentType(defRels);
+    xmlElm::Types *types = static_cast<xmlElm::Types*>(this->contentType.RootElement.get());
+    Status = types->AddContentType(std::move(defRels));
     if (Status != Status::Success) {
         return Status;
     }
-    Status = types->AddContentType(defExt);
+    Status = types->AddContentType(std::move(defExt));
     if (Status != Status::Success) {
         return Status;
     }
+    std::unique_ptr<xmlElm::Override> presPart(new xmlElm::Override());
 
-    xmlElm::Override *presPart;
-    try {
-        presPart = new xmlElm::Override();
-    } catch (...) {
-        return Status::Error;
-    }
     presPart->PartName = "/" + std::filesystem::relative(this->presentation.part->GetXmlFilePath(), this->tmp).string();
     presPart->ContentType = this->presentation.part->contentType;
-    Status = types->AddContentType(presPart);
+    Status = types->AddContentType(std::move(presPart));
     if (Status != Status::Success) {
         return Status;
     }
