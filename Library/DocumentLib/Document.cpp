@@ -45,6 +45,27 @@ Document::WriteRelation (
 }
 
 Status
+AddOverride (
+    xmlElm::Types *types,
+    std::unique_ptr<xmlElm::Override> over,
+    std::shared_ptr<IPart> part,
+    const std::filesystem::path root
+    )
+{
+    Status Status;
+
+    over.reset(new xmlElm::Override());
+    over->PartName = "/" + std::filesystem::relative(part->GetXmlFilePath(), root).string();
+    over->ContentType = part->contentType;
+    Status = types->AddContentType(std::move(over));
+    if (Status != Status::Success) {
+        return Status;
+    }
+
+    return Status::Success;
+}
+
+Status
 Document::WriteContentTypes (
     ) const
 {
@@ -67,11 +88,28 @@ Document::WriteContentTypes (
     if (Status != Status::Success) {
         return Status;
     }
-    std::unique_ptr<xmlElm::Override> presPart(new xmlElm::Override());
 
-    presPart->PartName = "/" + std::filesystem::relative(this->presentation.part->GetXmlFilePath(), this->tmp).string();
-    presPart->ContentType = this->presentation.part->contentType;
-    Status = types->AddContentType(std::move(presPart));
+    std::unique_ptr<xmlElm::Override> over(new xmlElm::Override());
+    over->PartName = "/" + std::filesystem::relative(this->presentation.part->GetXmlFilePath(), this->tmp).string();
+    over->ContentType = this->presentation.part->contentType;
+    Status = types->AddContentType(std::move(over));
+    if (Status != Status::Success) {
+        return Status;
+    }
+
+    for (auto &sldMasterPart:this->presentation.part->slideMasterParts) {
+        Status = AddOverride(types, std::move(over), sldMasterPart, this->tmp);
+        if (Status != Status::Success) {
+            return Status;
+        }
+    }
+
+    Status = AddOverride(types, std::move(over), this->presentation.part->presPropPart, this->tmp);
+    if (Status != Status::Success) {
+        return Status;
+    }
+
+    Status = AddOverride(types, std::move(over), this->presentation.part->themePart, this->tmp);
     if (Status != Status::Success) {
         return Status;
     }
