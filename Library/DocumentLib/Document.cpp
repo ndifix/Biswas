@@ -4,8 +4,7 @@
 #include <Library/XmlRootElementLib.hpp>
 
 Document::Document (
-    ) : contentType(std::filesystem::path(this->tmp) /= "[Content_Types].xml"),
-        presentation(this->tmp)
+    ) : presentation(this->tmp)
 {
     // tmp ディレクトリがなければ作成し、あれば中を空にする。
     MakeDir(this->tmp);
@@ -46,10 +45,12 @@ Document::WriteRelation (
 }
 
 Status
-Document::SetContentTypes (
-    )
+Document::WriteContentTypes (
+    ) const
 {
     Status Status;
+
+    xmlFile::ContentTypes contentType(std::filesystem::path(this->tmp) /= "[Content_Types].xml");
 
     std::unique_ptr<xmlElm::Default> defRels(new xmlElm::Default()), defExt(new xmlElm::Default());
     defRels->Extension = "rels";
@@ -57,7 +58,7 @@ Document::SetContentTypes (
     defExt->Extension = "xml";
     defExt->ContentType = "application/xml";
 
-    xmlElm::Types *types = static_cast<xmlElm::Types*>(this->contentType.RootElement.get());
+    xmlElm::Types *types = static_cast<xmlElm::Types*>(contentType.RootElement.get());
     Status = types->AddContentType(std::move(defRels));
     if (Status != Status::Success) {
         return Status;
@@ -75,6 +76,8 @@ Document::SetContentTypes (
         return Status;
     }
 
+    contentType.Write();
+
     return Status::Success;
 }
 
@@ -90,8 +93,10 @@ Document::Write (
         return Status;
     }
 
-    this->SetContentTypes();
-    this->contentType.Write();
+    Status = this->WriteContentTypes();
+    if (Status != Status::Success) {
+        return Status;
+    }
 
     Status = this->WriteRelation();
     if (Status != Status::Success) {

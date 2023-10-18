@@ -9,7 +9,6 @@
 class Document {
 private:
     const std::filesystem::path tmp = std::filesystem::absolute("tmp/");
-    xmlFile::ContentTypes contentType;
     Presentation presentation;
 
     Status
@@ -17,8 +16,8 @@ private:
         ) const;
 
     Status
-    SetContentTypes (
-        );
+    WriteContentTypes (
+        ) const;
 public:
     Document ();
 
