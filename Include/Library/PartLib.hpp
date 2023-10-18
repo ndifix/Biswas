@@ -63,10 +63,6 @@ public:
 
 class PresentationPart : public IPart {
 private:
-    std::shared_ptr<PresentationPropertiesPart> presPropPart;
-    std::shared_ptr<ThemePart> themePart;
-    std::list<std::shared_ptr<SlideMasterPart>> slideMasterParts;
-
     std::shared_ptr<SlideMasterPart>
     AddSlideMaster (
         std::shared_ptr<ThemePart> part
@@ -76,6 +72,10 @@ private:
     MakeDir (
         ) const;
 public:
+    std::shared_ptr<PresentationPropertiesPart> presPropPart;
+    std::shared_ptr<ThemePart> themePart;
+    std::list<std::shared_ptr<SlideMasterPart>> slideMasterParts;
+
     PresentationPart (
         const std::filesystem::path &dir
         );
