@@ -16,7 +16,7 @@ public:
 
     Status
     Write (
-        );
+        ) const;
 };
 
 #endif
