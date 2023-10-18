@@ -41,7 +41,7 @@ protected:
     std::list<std::pair<std::string, std::string>> attributes;
 
     XmlElement *parent;
-    std::list<std::unique_ptr<XmlElement>> childs;
+    std::list<std::shared_ptr<XmlElement>> childs;
     std::set<xmlns::XmlNameSpace> childNameSpace;
 
     /**
@@ -76,7 +76,7 @@ public:
 
     void
     AddChildElement (
-        std::unique_ptr<XmlElement> child
+        std::shared_ptr<XmlElement> child
         );
 
     virtual

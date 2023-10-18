@@ -6,18 +6,25 @@
 #include <memory>
 #include <Biswas.hpp>
 #include <Library/XmlBaseLib.hpp>
+#include <Library/XmlElementLib.hpp>
 
 class IPart {
 protected:
     std::unique_ptr<XmlFile> xmlfile;
     std::list<std::shared_ptr<IPart>> childParts;
+    std::list<std::shared_ptr<xmlElm::Relationship>> relations;
 
     void
     AddChildPart (
         std::shared_ptr<IPart> newPart
         );
+
+    void
+    AddRelationship (
+        std::shared_ptr<IPart> newPart
+        );
 public:
-    const std::string partDir;
+    const std::filesystem::path partDir;
     const char *relationType;
     const char *contentType;
 
@@ -29,6 +36,10 @@ public:
 
     std::string
     GetXmlFilePath (
+        ) const;
+
+    Status
+    WriteRelationship (
         ) const;
 
     virtual
