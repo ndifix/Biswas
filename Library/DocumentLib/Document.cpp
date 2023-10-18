@@ -4,9 +4,7 @@
 #include <Library/XmlRootElementLib.hpp>
 
 Document::Document (
-    ) : relsDir(std::filesystem::path(this->tmp) /= "_rels"),
-        rels(std::filesystem::path(this->relsDir) /= ".rels"),
-        contentType(std::filesystem::path(this->tmp) /= "[Content_Types].xml"),
+    ) : contentType(std::filesystem::path(this->tmp) /= "[Content_Types].xml"),
         presentation(this->tmp)
 {
     // tmp ディレクトリがなければ作成し、あれば中を空にする。
@@ -15,21 +13,34 @@ Document::Document (
 }
 
 Status
-Document::SetRelation (
-    )
+Document::WriteRelation (
+    ) const
 {
     Status Status;
+
+    if (!this->presentation.part) {
+        return Status::Success;
+    }
+
+    std::filesystem::path relsDir = std::filesystem::path(this->tmp) /= "_rels";
+    Status = MakeDir(relsDir);
+    if (Status != Status::Success) {
+        return Status;
+    }
+    xmlFile::Relationships relsFile(relsDir /= ".rels");
 
     std::unique_ptr<xmlElm::Relationship> relation(new xmlElm::Relationship());
     relation->Id = "rId1";
     relation->Type = this->presentation.part->relationType;
     relation->Target = std::filesystem::relative(this->presentation.part->GetXmlFilePath(), this->tmp);
 
-    xmlElm::Relationships *rels = static_cast<xmlElm::Relationships*>(this->rels.RootElement.get());
+    xmlElm::Relationships *rels = static_cast<xmlElm::Relationships*>(relsFile.RootElement.get());
     Status = rels->AddRelation(std::move(relation));
     if (Status != Status::Success) {
         return Status;
     }
+
+    relsFile.Write();
 
     return Status::Success;
 }
@@ -82,12 +93,10 @@ Document::Write (
     this->SetContentTypes();
     this->contentType.Write();
 
-    Status = MakeDir(this->relsDir);
+    Status = this->WriteRelation();
     if (Status != Status::Success) {
         return Status;
     }
-    this->SetRelation();
-    this->rels.Write();
 
     this->presentation.Write();
 
