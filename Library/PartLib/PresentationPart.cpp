@@ -18,7 +18,9 @@ PresentationPart::PresentationPart (
     this->themePart = std::shared_ptr<ThemePart>(new ThemePart(std::filesystem::path(dir) /= "theme/"));
 
     this->AddChildPart(this->presPropPart);
+    this->AddRelationship(this->presPropPart);
     this->AddChildPart(this->themePart);
+    this->AddRelationship(this->themePart);
     this->AddSlideMaster();
 }
 
@@ -29,6 +31,7 @@ PresentationPart::AddSlideMaster (
     std::shared_ptr<SlideMasterPart> part(new SlideMasterPart(std::filesystem::path(this->partDir) /= "slideMasters/"));
     this->slideMasterParts.push_back(part);
     this->AddChildPart(part);
+    this->AddRelationship(part);
 
     return part;
 }

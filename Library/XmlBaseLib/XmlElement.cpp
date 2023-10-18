@@ -53,12 +53,12 @@ XmlElement::AddAttribute (
 
 void
 XmlElement::AddChildElement (
-    std::unique_ptr<XmlElement> child
+    std::shared_ptr<XmlElement> child
     )
 {
     child->parent = this;
     this->NotifyAddChildElement(child->xmlnsSelf);
-    this->childs.push_back(std::move(child));
+    this->childs.push_back(child);
 }
 
 void
