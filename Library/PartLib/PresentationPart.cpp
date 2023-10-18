@@ -22,6 +22,9 @@ PresentationPart::PresentationPart (
     this->AddChildPart(this->themePart);
     this->AddRelationship(this->themePart);
     this->AddSlideMaster(this->themePart);
+
+    this->slideMasterList.reset(new xmlElm::SlideMasterList());
+    this->xmlfile->RootElement->AddChildElement(this->slideMasterList);
 }
 
 std::shared_ptr<SlideMasterPart>
