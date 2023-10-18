@@ -18,11 +18,6 @@ protected:
     AddChildPart (
         std::shared_ptr<IPart> newPart
         );
-
-    void
-    AddRelationship (
-        std::shared_ptr<IPart> newPart
-        );
 public:
     const std::filesystem::path partDir;
     const char *relationType;
@@ -41,6 +36,11 @@ public:
     Status
     WriteRelationship (
         ) const;
+
+    void
+    AddRelationship (
+        std::shared_ptr<IPart> newPart
+        );
 
     virtual
     Status
@@ -69,6 +69,7 @@ private:
 
     std::shared_ptr<SlideMasterPart>
     AddSlideMaster (
+        std::shared_ptr<ThemePart> part
         );
 
     Status
