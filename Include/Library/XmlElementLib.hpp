@@ -3,6 +3,7 @@
 
 #include <Biswas.hpp>
 #include <Library/XmlBaseLib.hpp>
+#include <list>
 #include <string>
 
 namespace xmlElm {
@@ -34,6 +35,12 @@ public:
 
     inline Relationship() : XmlElement("Relationship", xmlns::relation) {};
     virtual void Write (std::ofstream &ofs) final override;
+};
+
+class SlideMasterList : public XmlElement {
+private:
+public:
+    inline SlideMasterList() : XmlElement("sldMasterIdLst", xmlns::presenta) {};
 };
 
 }
