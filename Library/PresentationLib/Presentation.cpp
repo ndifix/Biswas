@@ -12,7 +12,7 @@ Presentation::Presentation (
 
 Status
 Presentation::Write (
-    )
+    ) const
 {
     Status Status;
 
