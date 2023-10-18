@@ -84,7 +84,7 @@ Document::WriteContentTypes (
 Status
 Document::Write (
     const std::filesystem::path path
-    )
+    ) const
 {
     Status Status;
 

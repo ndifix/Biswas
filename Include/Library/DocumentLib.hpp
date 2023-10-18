@@ -24,7 +24,7 @@ public:
     Status
     Write (
         const std::filesystem::path path
-        );
+        ) const;
 };
 
 #endif
