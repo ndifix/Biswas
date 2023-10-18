@@ -63,6 +63,8 @@ public:
 
 class PresentationPart : public IPart {
 private:
+    std::shared_ptr<xmlElm::SlideMasterList> slideMasterList;
+
     std::shared_ptr<SlideMasterPart>
     AddSlideMaster (
         std::shared_ptr<ThemePart> part
