@@ -74,6 +74,12 @@ XmlElement::Write (
     for (auto &attr:this->attributes) {
         ofs << ' ' << attr.first << "=\"" << attr.second << '\"';
     }
+
+    if (this->childs.empty()) {
+        ofs << "/>";
+        return;
+    }
+
     ofs << '>';
 
     for (auto& child:this->childs) {
