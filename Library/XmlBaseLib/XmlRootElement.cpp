@@ -1,31 +1,5 @@
 #include <Library/XmlBaseLib.hpp>
 
-namespace {
-
-const
-char
-GetSignature (
-    const xmlns::XmlNameSpace &xmlns
-    )
-{
-    if (xmlns == xmlns::relation) {
-        return xmlns::relationSign;
-    }
-    if (xmlns == xmlns::presenta) {
-        return xmlns::presentaSign;
-    }
-    if (xmlns == xmlns::content_) {
-        return xmlns::content_Sign;
-    }
-    if (xmlns == xmlns::drawingm) {
-        return xmlns::drawingmSign;
-    }
-
-    return xmlns::emptystrSign;
-}
-
-}
-
 XmlRootElement::XmlRootElement (
     const char *tag,
     xmlns::XmlNameSpace &xmlns
