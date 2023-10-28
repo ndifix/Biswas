@@ -31,6 +31,7 @@ extern XmlNameSpace content_;
 extern XmlNameSpace drawingm;
 extern XmlNameSpace relation;
 extern XmlNameSpace presenta;
+extern const XmlNameSpace pereleme;
 
 const
 char
@@ -41,10 +42,12 @@ GetSignature (
 
 class Attribute {
 private:
+    const xmlns::XmlNameSpace xmlns;
     const char *key;
 public:
     std::string val;
-    inline Attribute (const char *key) { this->key = key; };
+    Attribute (const char *key);
+    Attribute (const char *key, xmlns::XmlNameSpace &xmlns);
     void Write (std::ofstream &ofs);
 };
 
