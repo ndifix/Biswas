@@ -32,6 +32,11 @@ extern XmlNameSpace drawingm;
 extern XmlNameSpace relation;
 extern XmlNameSpace presenta;
 
+const
+char
+GetSignature (
+    const xmlns::XmlNameSpace &xmlns
+    );
 }
 
 class Attribute {
