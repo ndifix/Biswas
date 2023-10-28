@@ -29,9 +29,9 @@ Document::WriteRelation (
     xmlFile::Relationships relsFile(relsDir /= ".rels");
 
     std::unique_ptr<xmlElm::Relationship> relation(new xmlElm::Relationship());
-    relation->Id = "rId1";
-    relation->Type = this->presentation.part->relationType;
-    relation->Target = std::filesystem::relative(this->presentation.part->GetXmlFilePath(), this->tmp);
+    relation->Id->val = "rId1";
+    relation->Type->val = this->presentation.part->relationType;
+    relation->Target->val = std::filesystem::relative(this->presentation.part->GetXmlFilePath(), this->tmp);
 
     xmlElm::Relationships *rels = static_cast<xmlElm::Relationships*>(relsFile.RootElement.get());
     Status = rels->AddRelation(std::move(relation));
@@ -55,8 +55,8 @@ AddOverride (
     Status Status;
 
     over.reset(new xmlElm::Override());
-    over->PartName = "/" + std::filesystem::relative(part->GetXmlFilePath(), root).string();
-    over->ContentType = part->contentType;
+    over->PartName->val = "/" + std::filesystem::relative(part->GetXmlFilePath(), root).string();
+    over->ContentType->val = part->contentType;
     Status = types->AddContentType(std::move(over));
     if (Status != Status::Success) {
         return Status;
@@ -74,10 +74,10 @@ Document::WriteContentTypes (
     xmlFile::ContentTypes contentType(std::filesystem::path(this->tmp) /= "[Content_Types].xml");
 
     std::unique_ptr<xmlElm::Default> defRels(new xmlElm::Default()), defExt(new xmlElm::Default());
-    defRels->Extension = "rels";
-    defRels->ContentType = "application/vnd.openxmlformats-package.relationships+xml";
-    defExt->Extension = "xml";
-    defExt->ContentType = "application/xml";
+    defRels->Extension->val = "rels";
+    defRels->ContentType->val = "application/vnd.openxmlformats-package.relationships+xml";
+    defExt->Extension->val = "xml";
+    defExt->ContentType->val = "application/xml";
 
     xmlElm::Types *types = static_cast<xmlElm::Types*>(contentType.RootElement.get());
     Status = types->AddContentType(std::move(defRels));
@@ -90,8 +90,8 @@ Document::WriteContentTypes (
     }
 
     std::unique_ptr<xmlElm::Override> over(new xmlElm::Override());
-    over->PartName = "/" + std::filesystem::relative(this->presentation.part->GetXmlFilePath(), this->tmp).string();
-    over->ContentType = this->presentation.part->contentType;
+    over->PartName->val = "/" + std::filesystem::relative(this->presentation.part->GetXmlFilePath(), this->tmp).string();
+    over->ContentType->val = this->presentation.part->contentType;
     Status = types->AddContentType(std::move(over));
     if (Status != Status::Success) {
         return Status;
