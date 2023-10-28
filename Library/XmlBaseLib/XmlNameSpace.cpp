@@ -18,6 +18,7 @@ XmlNameSpace content_ = {emptystrSign, content_NS};
 XmlNameSpace drawingm = {emptystrSign, drawingmNS};
 XmlNameSpace relation = {emptystrSign, relationNS};
 XmlNameSpace presenta = {emptystrSign, presentaNS};
+const XmlNameSpace pereleme = {emptystrSign, ""};
 
 const
 char
