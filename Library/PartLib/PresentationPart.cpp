@@ -29,6 +29,12 @@ PresentationPart::PresentationPart (
     this->xmlfile->RootElement->AddChildElement(this->slideSize);
     this->slideSize->Cx = 12192000u;
     this->slideSize->Cy = 6858000u;
+    this->notesSize.reset(new xmlElm::NotesSize());
+    this->xmlfile->RootElement->AddChildElement(this->notesSize);
+    this->notesSize->Cx = 6858000u;
+    this->notesSize->Cy = 9144000u;
+    this->defaultTextStyle.reset(new xmlElm::DefaultTextStyle());
+    this->xmlfile->RootElement->AddChildElement(this->defaultTextStyle);
 }
 
 std::shared_ptr<SlideMasterPart>
