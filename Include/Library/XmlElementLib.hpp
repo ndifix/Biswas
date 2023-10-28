@@ -52,6 +52,21 @@ public:
     virtual void Write (std::ofstream &ofs) final override;
 };
 
+class NotesSize : public XmlElement {
+private:
+public:
+    uint32_t Cx = 0;
+    uint32_t Cy = 0;
+    inline NotesSize() : XmlElement("notesSz", xmlns::presenta) {};
+    virtual void Write (std::ofstream &ofs) final override;
+};
+
+class DefaultTextStyle : public XmlElement {
+private:
+public:
+    inline DefaultTextStyle() : XmlElement("defaultTextStyle", xmlns::presenta) {};
+};
+
 }
 
 #endif
