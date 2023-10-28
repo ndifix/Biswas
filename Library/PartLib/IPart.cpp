@@ -32,15 +32,22 @@ IPart::AddChildPart (
     this->childParts.push_back(newPart);
 }
 
+std::string
+IPart::NextPartId (
+    ) const
+{
+    std::stringstream newId;
+    newId << "rId" << this->relations.size() + 1;
+    return newId.str();
+}
+
 void
 IPart::AddRelationship (
     std::shared_ptr<IPart> newPart
     )
 {
     std::shared_ptr<xmlElm::Relationship> relation(new xmlElm::Relationship());
-    std::stringstream newId;
-    newId << "rId" << this->relations.size() + 1;
-    relation->Id = newId.str();
+    relation->Id = this->NextPartId();
     relation->Type = newPart->relationType;
     relation->Target = std::filesystem::relative(newPart->xmlfile->filePath, this->partDir);
 
