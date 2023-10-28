@@ -43,6 +43,15 @@ public:
     inline SlideMasterList() : XmlElement("sldMasterIdLst", xmlns::presenta) {};
 };
 
+class SlideSize : public XmlElement {
+private:
+public:
+    uint32_t Cx = 0;
+    uint32_t Cy = 0;
+    inline SlideSize() : XmlElement("sldSz", xmlns::presenta) {};
+    virtual void Write (std::ofstream &ofs) final override;
+};
+
 }
 
 #endif

@@ -25,6 +25,10 @@ PresentationPart::PresentationPart (
 
     this->slideMasterList.reset(new xmlElm::SlideMasterList());
     this->xmlfile->RootElement->AddChildElement(this->slideMasterList);
+    this->slideSize.reset(new xmlElm::SlideSize());
+    this->xmlfile->RootElement->AddChildElement(this->slideSize);
+    this->slideSize->Cx = 12192000u;
+    this->slideSize->Cy = 6858000u;
 }
 
 std::shared_ptr<SlideMasterPart>
