@@ -4,6 +4,7 @@
 #include <filesystem>
 #include <list>
 #include <memory>
+#include <string>
 #include <Biswas.hpp>
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib.hpp>
@@ -18,6 +19,10 @@ protected:
     AddChildPart (
         std::shared_ptr<IPart> newPart
         );
+
+    std::string
+    NextPartId (
+        ) const;
 public:
     const std::filesystem::path partDir;
     const char *relationType;
