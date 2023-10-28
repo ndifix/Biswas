@@ -71,7 +71,7 @@ public:
     void
     AddAttribute (
         std::string key,
-        std::string &val
+        std::string val
         );
 
     void
