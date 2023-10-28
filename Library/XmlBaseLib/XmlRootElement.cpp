@@ -99,7 +99,7 @@ XmlRootElement::Write (
     }
 
     for (auto &attr:this->attributes) {
-        ofs << ' ' << attr.first << "=\"" << attr.second << '\"';
+        attr->Write(ofs);
     }
     ofs << '>';
 

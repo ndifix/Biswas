@@ -11,30 +11,26 @@ namespace xmlElm {
 class Default : public XmlElement {
 private:
 public:
-    std::string Extension;
-    std::string ContentType;
-    inline Default() : XmlElement("Default", xmlns::content_) {};
-    virtual void Write (std::ofstream &ofs) final override;
+    std::shared_ptr<Attribute> Extension;
+    std::shared_ptr<Attribute> ContentType;
+    Default();
 };
 
 class Override : public XmlElement {
 private:
 public:
-    std::string PartName;
-    std::string ContentType;
-    inline Override() : XmlElement("Override", xmlns::content_) {};
-    virtual void Write (std::ofstream &ofs) final override;
+    std::shared_ptr<Attribute> PartName;
+    std::shared_ptr<Attribute> ContentType;
+    Override();
 };
 
 class Relationship : public XmlElement {
 private:
 public:
-    std::string Id;
-    std::string Type;
-    std::string Target;
-
-    inline Relationship() : XmlElement("Relationship", xmlns::relation) {};
-    virtual void Write (std::ofstream &ofs) final override;
+    std::shared_ptr<Attribute> Id;
+    std::shared_ptr<Attribute> Type;
+    std::shared_ptr<Attribute> Target;
+    Relationship();
 };
 
 class SlideMasterList : public XmlElement {
@@ -45,19 +41,23 @@ public:
 
 class SlideSize : public XmlElement {
 private:
+    std::shared_ptr<Attribute> CxAttr;
+    std::shared_ptr<Attribute> CyAttr;
 public:
     uint32_t Cx = 0;
     uint32_t Cy = 0;
-    inline SlideSize() : XmlElement("sldSz", xmlns::presenta) {};
+    SlideSize();
     virtual void Write (std::ofstream &ofs) final override;
 };
 
 class NotesSize : public XmlElement {
 private:
+    std::shared_ptr<Attribute> CxAttr;
+    std::shared_ptr<Attribute> CyAttr;
 public:
     uint32_t Cx = 0;
     uint32_t Cy = 0;
-    inline NotesSize() : XmlElement("notesSz", xmlns::presenta) {};
+    NotesSize();
     virtual void Write (std::ofstream &ofs) final override;
 };
 

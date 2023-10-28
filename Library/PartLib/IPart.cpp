@@ -47,9 +47,9 @@ IPart::AddRelationship (
     )
 {
     std::shared_ptr<xmlElm::Relationship> relation(new xmlElm::Relationship());
-    relation->Id = this->NextPartId();
-    relation->Type = newPart->relationType;
-    relation->Target = std::filesystem::relative(newPart->xmlfile->filePath, this->partDir);
+    relation->Id->val = this->NextPartId();
+    relation->Type->val = newPart->relationType;
+    relation->Target->val = std::filesystem::relative(newPart->xmlfile->filePath, this->partDir);
 
     this->relations.push_back(relation);
 }

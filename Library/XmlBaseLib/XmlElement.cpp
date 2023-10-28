@@ -42,13 +42,10 @@ XmlElement::NotifyNameSpaceSignature (
 
 void
 XmlElement::AddAttribute (
-    std::string key,
-    std::string val
+    std::shared_ptr<Attribute> &attr
     )
 {
-    this->attributes.push_back(
-        std::make_pair(key, val)
-        );
+    this->attributes.push_back(attr);
 }
 
 void
@@ -72,7 +69,7 @@ XmlElement::Write (
     }
     ofs << this->tagName;
     for (auto &attr:this->attributes) {
-        ofs << ' ' << attr.first << "=\"" << attr.second << '\"';
+        attr->Write(ofs);
     }
 
     if (this->childs.empty()) {

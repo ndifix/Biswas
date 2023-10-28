@@ -2,16 +2,11 @@
 
 using namespace xmlElm;
 
-void
-Default::Write (
-    std::ofstream &ofs
-    )
+Default::Default (
+    ) : XmlElement("Default", xmlns::content_)
 {
-    if (!this->Extension.empty()) {
-        this->AddAttribute("Extension", this->Extension);
-    }
-    if (!this->ContentType.empty()) {
-        this->AddAttribute("ContentType", this->ContentType);
-    }
-    XmlElement::Write(ofs);
+    this->Extension.reset(new Attribute("Extension"));
+    this->ContentType.reset(new Attribute("ContentType"));
+    this->AddAttribute(this->Extension);
+    this->AddAttribute(this->ContentType);
 }

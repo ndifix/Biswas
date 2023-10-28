@@ -34,11 +34,20 @@ extern XmlNameSpace presenta;
 
 }
 
+class Attribute {
+private:
+    const char *key;
+public:
+    std::string val;
+    inline Attribute (const char *key) { this->key = key; };
+    void Write (std::ofstream &ofs);
+};
+
 class XmlElement {
 protected:
     const std::string tagName;
     xmlns::XmlNameSpace xmlnsSelf;
-    std::list<std::pair<std::string, std::string>> attributes;
+    std::list<std::shared_ptr<Attribute>> attributes;
 
     XmlElement *parent;
     std::list<std::shared_ptr<XmlElement>> childs;
@@ -70,8 +79,7 @@ public:
 
     void
     AddAttribute (
-        std::string key,
-        std::string val
+        std::shared_ptr<Attribute> &attr
         );
 
     void

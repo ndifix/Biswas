@@ -2,16 +2,11 @@
 
 using namespace xmlElm;
 
-void
-Override::Write (
-    std::ofstream &ofs
-    )
+Override::Override (
+    ) : XmlElement("Override", xmlns::content_)
 {
-    if (!this->PartName.empty()) {
-        this->AddAttribute("PartName", this->PartName);
-    }
-    if (!this->ContentType.empty()) {
-        this->AddAttribute("ContentType", this->ContentType);
-    }
-    XmlElement::Write(ofs);
+    this->PartName.reset(new Attribute("PartName"));
+    this->ContentType.reset(new Attribute("ContentType"));
+    this->AddAttribute(this->PartName);
+    this->AddAttribute(this->ContentType);
 }
