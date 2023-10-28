@@ -43,7 +43,7 @@ XmlElement::NotifyNameSpaceSignature (
 void
 XmlElement::AddAttribute (
     std::string key,
-    std::string &val
+    std::string val
     )
 {
     this->attributes.push_back(
