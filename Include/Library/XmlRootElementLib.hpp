@@ -5,6 +5,7 @@
 #include <Biswas.hpp>
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib.hpp>
+#include <Library/XmlElementLib/Default.hpp>
 
 namespace xmlElm {
 
