@@ -1,43 +1,14 @@
 #include <Library/XmlBaseLib.hpp>
 
 #include <fstream>
+#include <iostream>
 
 XmlElement::XmlElement (
     const char *tag,
-    xmlns::XmlNameSpace &xmlns
+    const xmlns::XmlNameSpace &xmlns
     ) : tagName(tag),
         xmlnsSelf(xmlns)
 {
-}
-
-void
-XmlElement::NotifyAddChildElement (
-    const xmlns::XmlNameSpace &xmlns
-    )
-{
-    this->childNameSpace.insert(xmlns);
-    if (this->parent->childNameSpace.count(xmlns) != 0) {
-        return;
-    }
-
-    this->parent->NotifyAddChildElement(xmlns);
-}
-
-void
-XmlElement::NotifyNameSpaceSignature (
-    const xmlns::XmlNameSpace &xmlns,
-    const char signature
-    )
-{
-    for (auto &child:this->childs) {
-        if (child->xmlnsSelf == xmlns) {
-            child->xmlnsSelf.signature = signature;
-        }
-
-        if (child->childNameSpace.count(xmlns) != 0) {
-            child->NotifyNameSpaceSignature(xmlns, signature);
-        }
-    }
 }
 
 void
@@ -53,8 +24,6 @@ XmlElement::AddChildElement (
     std::shared_ptr<XmlElement> child
     )
 {
-    child->parent = this;
-    this->NotifyAddChildElement(child->xmlnsSelf);
     this->childs.push_back(child);
 }
 
@@ -63,11 +32,7 @@ XmlElement::Write (
     std::ofstream &ofs
     )
 {
-    ofs << '<';
-    if (this->xmlnsSelf.signature != xmlns::emptystrSign) {
-        ofs << this->xmlnsSelf.signature << ':';
-    }
-    ofs << this->tagName;
+    ofs << '<' << this->xmlnsSelf.signature << ':' << this->tagName;
     for (auto &attr:this->attributes) {
         attr->Write(ofs);
     }
@@ -83,9 +48,5 @@ XmlElement::Write (
         child->Write(ofs);
     }
 
-    ofs << "</";
-    if (this->xmlnsSelf.signature != xmlns::emptystrSign) {
-        ofs << this->xmlnsSelf.signature << ':';
-    }
-    ofs << this->tagName << ">";
+    ofs << "</" << this->xmlnsSelf.signature << ':' << this->tagName << ">";
 }
