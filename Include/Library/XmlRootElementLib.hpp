@@ -43,8 +43,9 @@ public:
 
 class SlideMaster : public XmlRootElement {
 private:
+    std::shared_ptr<CommonSlideData> commonSlideData;
 public:
-    inline SlideMaster() : XmlRootElement("sldMaster", xmlns::presenta) {};
+    SlideMaster();
 };
 
 }
