@@ -9,7 +9,7 @@ Attribute::Attribute (
 
 Attribute::Attribute (
     const char *key,
-    xmlns::XmlNameSpace &xmlns
+    const xmlns::XmlNameSpace &xmlns
     ) : xmlns(xmlns)
 {
     this->key = key;
@@ -26,7 +26,7 @@ Attribute::Write (
 
     ofs << ' ';
     if (!(this->xmlns == xmlns::pereleme)) {
-        ofs << xmlns::GetSignature(this->xmlns) << ':';
+        ofs << this->xmlns.signature << ':';
     }
     ofs << this->key << "=\"" << this->val << '\"';
 }
