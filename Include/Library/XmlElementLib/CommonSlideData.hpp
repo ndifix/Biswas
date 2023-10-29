@@ -2,13 +2,15 @@
 #define XML_ELEMENT_LIB_COMMONSLIDEDATA
 
 #include <Library/XmlBaseLib.hpp>
+#include <Library/XmlElementLib/ShapeTree.hpp>
 
 namespace xmlElm {
 
 class CommonSlideData : public XmlElement {
 private:
 public:
-    inline CommonSlideData() : XmlElement("cSld", xmlns::presenta) {};
+    std::shared_ptr<ShapeTree> shapeTree;
+    CommonSlideData();
 };
 
 }
