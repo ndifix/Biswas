@@ -1,6 +1,7 @@
 LibName=libXmlElement.a
 
-Source =Default.cpp
+Source =CommonSlideData.cpp
+Source+=Default.cpp
 Source+=NotesSize.cpp
 Source+=Override.cpp
 Source+=Relationship.cpp
