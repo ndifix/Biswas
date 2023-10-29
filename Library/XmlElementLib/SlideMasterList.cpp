@@ -13,5 +13,4 @@ SlideMasterList::AddId (
         new SlideMasterId(id, rid)
         ));
     this->AddChildElement(this->ids.back());
-    this->NotifyAddChildElement(this->ids.back()->RelationshipId->xmlns);
 }
