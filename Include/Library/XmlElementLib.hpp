@@ -77,6 +77,12 @@ public:
     inline DefaultTextStyle() : XmlElement("defaultTextStyle", xmlns::presenta) {};
 };
 
+class CommonSlideData : public XmlElement {
+private:
+public:
+    inline CommonSlideData() : XmlElement("cSld", xmlns::presenta) {};
+};
+
 }
 
 #endif
