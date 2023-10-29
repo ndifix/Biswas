@@ -83,5 +83,9 @@ XmlElement::Write (
         child->Write(ofs);
     }
 
-    ofs << "</" << this->tagName << ">";
+    ofs << "</";
+    if (this->xmlnsSelf.signature != xmlns::emptystrSign) {
+        ofs << this->xmlnsSelf.signature << ':';
+    }
+    ofs << this->tagName << ">";
 }

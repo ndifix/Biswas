@@ -16,6 +16,7 @@ XmlRootElement::NotifyAddChildElement (
     if (this->xmlnsSelf == xmlns || this->childNameSpace.count(xmlns) != 0) {
         return;
     }
+    this->childNameSpace.insert(xmlns);
 
     this->NotifyNameSpaceSignature(
         this->xmlnsSelf,
@@ -38,6 +39,9 @@ XmlRootElement::NotifyNameSpaceSignature (
     }
 
     for (auto &child:this->childs) {
+        if (child->xmlnsSelf == xmlns) {
+            child->xmlnsSelf.signature = signature;
+        }
         child->NotifyNameSpaceSignature(
             xmlns,
             signature
@@ -67,7 +71,7 @@ XmlRootElement::Write (
         ofs << " xmlns:" << this->xmlnsSelf.signature << '='
             << '"' << this->xmlnsSelf.nameSpace << '"';
         for (auto &cns:this->childNameSpace) {
-            ofs << " xmlns:" << cns.signature << '='
+            ofs << " xmlns:" << xmlns::GetSignature(cns) << '='
             << '"' << cns.nameSpace << '"';
         }
     }
@@ -81,5 +85,9 @@ XmlRootElement::Write (
         child->Write(ofs);
     }
 
-    ofs << "</" << this->tagName << ">";
+    ofs << "</";
+    if (this->xmlnsSelf.signature != xmlns::emptystrSign) {
+        ofs << this->xmlnsSelf.signature << ':';
+    }
+    ofs << this->tagName << ">";
 }
