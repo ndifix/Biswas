@@ -8,7 +8,7 @@ namespace xmlElm {
 class ShapeTree : public XmlElement {
 private:
 public:
-    inline ShapeTree() : XmlElement("ShapeTree", xmlns::presenta) {};
+    inline ShapeTree() : XmlElement("spTree", xmlns::presenta) {};
 };
 
 }
