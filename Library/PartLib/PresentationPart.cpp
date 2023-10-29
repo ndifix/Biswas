@@ -17,12 +17,6 @@ PresentationPart::PresentationPart (
     this->presPropPart = std::shared_ptr<PresentationPropertiesPart>(new PresentationPropertiesPart(dir));
     this->themePart = std::shared_ptr<ThemePart>(new ThemePart(std::filesystem::path(dir) /= "theme/"));
 
-    this->AddChildPart(this->presPropPart);
-    this->AddRelationship(this->presPropPart);
-    this->AddChildPart(this->themePart);
-    this->AddRelationship(this->themePart);
-    this->AddSlideMaster(this->themePart);
-
     this->slideMasterList.reset(new xmlElm::SlideMasterList());
     this->xmlfile->RootElement->AddChildElement(this->slideMasterList);
     this->slideSize.reset(new xmlElm::SlideSize());
@@ -35,6 +29,12 @@ PresentationPart::PresentationPart (
     this->notesSize->Cy = 9144000u;
     this->defaultTextStyle.reset(new xmlElm::DefaultTextStyle());
     this->xmlfile->RootElement->AddChildElement(this->defaultTextStyle);
+
+    this->AddChildPart(this->presPropPart);
+    this->AddRelationship(this->presPropPart);
+    this->AddChildPart(this->themePart);
+    this->AddRelationship(this->themePart);
+    this->AddSlideMaster(this->themePart);
 }
 
 std::shared_ptr<SlideMasterPart>
@@ -42,6 +42,11 @@ PresentationPart::AddSlideMaster (
     std::shared_ptr<ThemePart> themePart
     )
 {
+    this->slideMasterList->AddId(
+        2147483648 + this->slideMasterParts.size(),
+        this->NextPartId()
+        );
+
     std::shared_ptr<SlideMasterPart> part(new SlideMasterPart(std::filesystem::path(this->partDir) /= "slideMasters/"));
     part->AddRelationship(themePart);
 

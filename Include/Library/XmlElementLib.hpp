@@ -33,10 +33,20 @@ public:
     Relationship();
 };
 
+class SlideMasterId : public XmlElement {
+private:
+    std::shared_ptr<Attribute> Id;
+public:
+    std::shared_ptr<Attribute> RelationshipId;
+    SlideMasterId(uint32_t id, std::string rid);
+};
+
 class SlideMasterList : public XmlElement {
 private:
+    std::list<std::shared_ptr<SlideMasterId>> ids;
 public:
     inline SlideMasterList() : XmlElement("sldMasterIdLst", xmlns::presenta) {};
+    void AddId (uint32_t id, std::string rid);
 };
 
 class SlideSize : public XmlElement {

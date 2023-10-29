@@ -42,9 +42,9 @@ GetSignature (
 
 class Attribute {
 private:
-    const xmlns::XmlNameSpace xmlns;
     const char *key;
 public:
+    const xmlns::XmlNameSpace xmlns;
     std::string val;
     Attribute (const char *key);
     Attribute (const char *key, xmlns::XmlNameSpace &xmlns);
