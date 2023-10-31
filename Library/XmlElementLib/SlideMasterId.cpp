@@ -7,8 +7,8 @@ SlideMasterId::SlideMasterId (
     std::string rid
     ) : XmlElement("sldMasterId", xmlns::presenta)
 {
-    this->Id.reset(new Attribute("id"));
-    this->RelationshipId.reset(new Attribute("id", xmlns::relation));
+    this->Id = new Attribute("id");
+    this->RelationshipId = new Attribute("id", xmlns::relation);
     this->Id->val = std::to_string(id);
     this->RelationshipId->val = rid;
     this->AddAttribute(this->Id);

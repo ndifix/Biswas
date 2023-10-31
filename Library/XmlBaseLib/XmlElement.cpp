@@ -13,10 +13,10 @@ XmlElement::XmlElement (
 
 void
 XmlElement::AddAttribute (
-    std::shared_ptr<Attribute> &attr
+    Attribute *attr
     )
 {
-    this->attributes.push_back(attr);
+    this->attributes.push_back(std::unique_ptr<Attribute>(attr));
 }
 
 void

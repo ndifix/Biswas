@@ -8,8 +8,8 @@ namespace xmlElm {
 class Default : public XmlElement {
 private:
 public:
-    std::shared_ptr<Attribute> Extension;
-    std::shared_ptr<Attribute> ContentType;
+    Attribute *Extension;
+    Attribute *ContentType;
     Default();
 };
 

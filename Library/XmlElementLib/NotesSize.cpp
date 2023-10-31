@@ -6,8 +6,8 @@ using namespace xmlElm;
 NotesSize::NotesSize (
     ) : XmlElement("notesSz", xmlns::presenta)
 {
-    this->CxAttr.reset(new Attribute("cx"));
-    this->CyAttr.reset(new Attribute("cy"));
+    this->CxAttr = new Attribute("cx");
+    this->CyAttr = new Attribute("cy");
     this->AddAttribute(this->CxAttr);
     this->AddAttribute(this->CyAttr);
 }
