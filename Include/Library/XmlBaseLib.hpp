@@ -41,7 +41,7 @@ class XmlElement {
 protected:
     const std::string tagName;
     const xmlns::XmlNameSpace xmlnsSelf;
-    std::list<std::shared_ptr<Attribute>> attributes;
+    std::list<std::unique_ptr<Attribute>> attributes;
 
     std::list<std::shared_ptr<XmlElement>> childs;
 
@@ -53,7 +53,7 @@ public:
 
     void
     AddAttribute (
-        std::shared_ptr<Attribute> &attr
+        Attribute *attr
         );
 
     void

@@ -8,9 +8,9 @@ namespace xmlElm {
 class Relationship : public XmlElement {
 private:
 public:
-    std::shared_ptr<Attribute> Id;
-    std::shared_ptr<Attribute> Type;
-    std::shared_ptr<Attribute> Target;
+    Attribute *Id;
+    Attribute *Type;
+    Attribute *Target;
     Relationship();
 };
 
