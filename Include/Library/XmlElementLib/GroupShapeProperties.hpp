@@ -2,13 +2,15 @@
 #define XML_ELEMENT_LIB_GroupShapeProperties
 
 #include <Library/XmlBaseLib.hpp>
+#include <Library/XmlElementLib/Transform2D.hpp>
 
 namespace xmlElm {
 
 class GroupShapeProperties : public XmlElement {
 private:
 public:
-    inline GroupShapeProperties() : XmlElement("grpSpPr", xmlns::presenta) {};
+    std::shared_ptr<Transform2D> transformGroup;
+    GroupShapeProperties();
 };
 
 }
