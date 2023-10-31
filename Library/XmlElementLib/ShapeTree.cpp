@@ -7,4 +7,6 @@ ShapeTree::ShapeTree (
 {
     this->nonVisualGroupShapeProperties.reset(new NonVisualGroupShapeProperties());
     this->AddChildElement(this->nonVisualGroupShapeProperties);
+    this->groupShapeProperties.reset(new GroupShapeProperties());
+    this->AddChildElement(this->groupShapeProperties);
 }
