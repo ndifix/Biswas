@@ -20,25 +20,25 @@ public:
 class Presentation : public XmlFile {
 private:
 public:
-    Presentation(const std::filesystem::path &path);
+    inline Presentation(const std::filesystem::path &path, std::shared_ptr<XmlRootElement> root) : XmlFile(path, root) {};
 };
 
 class PresentationProperties : public XmlFile {
 private:
 public:
-    PresentationProperties(const std::filesystem::path &path);
+    inline PresentationProperties(const std::filesystem::path &path, std::shared_ptr<XmlRootElement> root) : XmlFile(path, root) {};
 };
 
 class Theme : public XmlFile {
 private:
 public:
-    Theme(const std::filesystem::path &path);
+    inline Theme(const std::filesystem::path &path, std::shared_ptr<XmlRootElement> root) : XmlFile(path, root) {};
 };
 
 class SlideMaster : public XmlFile {
 private:
 public:
-    SlideMaster(const std::filesystem::path &path);
+    inline SlideMaster(const std::filesystem::path &path, std::shared_ptr<XmlRootElement> root) : XmlFile(path, root) {};
 };
 
 }
