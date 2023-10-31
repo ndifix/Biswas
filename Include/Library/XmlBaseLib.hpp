@@ -43,7 +43,7 @@ protected:
     const xmlns::XmlNameSpace xmlnsSelf;
     std::list<std::unique_ptr<Attribute>> attributes;
 
-    std::list<std::shared_ptr<XmlElement>> childs;
+    std::list<std::unique_ptr<XmlElement>> childs;
 
 public:
     XmlElement (
@@ -58,7 +58,11 @@ public:
 
     void
     AddChildElement (
-        std::shared_ptr<XmlElement> child
+        XmlElement *child
+        );
+    void
+    AddChildElement (
+        std::unique_ptr<XmlElement> child
         );
 
     virtual

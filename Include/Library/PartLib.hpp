@@ -14,7 +14,7 @@ class IPart {
 protected:
     std::unique_ptr<XmlFile> xmlfile;
     std::list<std::shared_ptr<IPart>> childParts;
-    std::list<std::shared_ptr<xmlElm::Relationship>> relations;
+    std::list<xmlElm::Relationship*> relations;
 
     void
     AddChildPart (

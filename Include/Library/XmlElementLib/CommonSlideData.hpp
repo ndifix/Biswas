@@ -9,7 +9,7 @@ namespace xmlElm {
 class CommonSlideData : public XmlElement {
 private:
 public:
-    std::shared_ptr<ShapeTree> shapeTree;
+    ShapeTree *shapeTree;
     CommonSlideData();
 };
 

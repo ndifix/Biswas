@@ -9,9 +9,7 @@ Relationships::AddRelation (
     std::unique_ptr<Relationship> relation
     )
 {
-    this->AddChildElement(
-        std::unique_ptr<XmlElement>(static_cast<XmlElement*>(relation.release()))
-        );
+    this->AddChildElement(relation.release());
 
     return Status::Success;
 }
