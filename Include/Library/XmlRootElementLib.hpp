@@ -27,7 +27,11 @@ public:
 class Presentation : public XmlRootElement {
 private:
 public:
-    inline Presentation() : XmlRootElement("presentation", xmlns::presenta) {};
+    std::shared_ptr<xmlElm::SlideMasterList> slideMasterList;
+    std::shared_ptr<xmlElm::SlideSize> slideSize;
+    std::shared_ptr<xmlElm::NotesSize> notesSize;
+    std::shared_ptr<xmlElm::DefaultTextStyle> defaultTextStyle;
+    Presentation();
 };
 
 class PresentationProperties : public XmlRootElement {

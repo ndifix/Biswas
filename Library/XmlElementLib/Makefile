@@ -5,6 +5,7 @@ Source+=Default.cpp
 Source+=GroupShapeProperties.cpp
 Source+=NotesSize.cpp
 Source+=Override.cpp
+Source+=Presentation.cpp
 Source+=Relationship.cpp
 Source+=Relationships.cpp
 Source+=ShapeTree.cpp
