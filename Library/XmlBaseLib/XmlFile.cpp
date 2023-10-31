@@ -4,9 +4,11 @@
 #include <string>
 
 XmlFile::XmlFile (
-    const std::filesystem::path &path
+    const std::filesystem::path &path,
+    std::shared_ptr<XmlRootElement> root
     ) : filePath(path)
 {
+    this->RootElement = root;
 }
 
 std::string

@@ -8,6 +8,7 @@
 #include <Biswas.hpp>
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib.hpp>
+#include <Library/XmlRootElementLib.hpp>
 
 class IPart {
 protected:
@@ -60,6 +61,7 @@ class SlideMasterPart;
 
 class PresentationPropertiesPart : public IPart {
 private:
+    std::shared_ptr<xmlElm::PresentationProperties> RootElement;
 public:
     PresentationPropertiesPart (
         const std::filesystem::path &dir
@@ -68,6 +70,7 @@ public:
 
 class PresentationPart : public IPart {
 private:
+    std::shared_ptr<xmlElm::Presentation> RootElement;
     std::shared_ptr<xmlElm::SlideMasterList> slideMasterList;
     std::shared_ptr<xmlElm::SlideSize> slideSize;
     std::shared_ptr<xmlElm::NotesSize> notesSize;
@@ -97,6 +100,7 @@ public:
 
 class ThemePart : public IPart {
 private:
+    std::shared_ptr<xmlElm::Theme> RootElement;
 public:
     ThemePart (
         const std::filesystem::path &dir
@@ -105,6 +109,7 @@ public:
 
 class SlideMasterPart : public IPart {
 private:
+    std::shared_ptr<xmlElm::SlideMaster> RootElement;
 public:
     SlideMasterPart (
         const std::filesystem::path &dir

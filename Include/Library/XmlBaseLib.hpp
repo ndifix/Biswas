@@ -92,10 +92,11 @@ private:
         ) const;
 public:
     const std::filesystem::path filePath;
-    std::unique_ptr<XmlRootElement> RootElement;
+    std::shared_ptr<XmlRootElement> RootElement;
 
     XmlFile (
-        const std::filesystem::path &filePath
+        const std::filesystem::path &filePath,
+        std::shared_ptr<XmlRootElement> root
         );
 
     void

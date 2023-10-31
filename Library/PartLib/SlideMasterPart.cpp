@@ -10,5 +10,10 @@ SlideMasterPart::SlideMasterPart (
     const std::filesystem::path &dir
     ) : IPart(dir, relType, conType)
 {
-    this->xmlfile.reset(new xmlFile::SlideMaster(std::filesystem::path(dir) /= "slideMaster1.xml"));
+    this->RootElement.reset(new xmlElm::SlideMaster());
+    this->xmlfile.reset(
+        new xmlFile::SlideMaster(
+            std::filesystem::path(dir) /= "slideMaster1.xml",
+            this->RootElement
+        ));
 }
