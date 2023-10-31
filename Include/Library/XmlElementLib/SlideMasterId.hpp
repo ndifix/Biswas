@@ -7,9 +7,9 @@ namespace xmlElm {
 
 class SlideMasterId : public XmlElement {
 private:
-    std::shared_ptr<Attribute> Id;
+    Attribute *Id;
 public:
-    std::shared_ptr<Attribute> RelationshipId;
+    Attribute *RelationshipId;
     SlideMasterId(uint32_t id, std::string rid);
 };
 

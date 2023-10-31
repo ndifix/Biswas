@@ -7,8 +7,8 @@ namespace xmlElm {
 
 class SlideSize : public XmlElement {
 private:
-    std::shared_ptr<Attribute> CxAttr;
-    std::shared_ptr<Attribute> CyAttr;
+    Attribute *CxAttr;
+    Attribute *CyAttr;
 public:
     uint32_t Cx = 0;
     uint32_t Cy = 0;
