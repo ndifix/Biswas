@@ -9,7 +9,7 @@ namespace xmlElm {
 class GroupShapeProperties : public XmlElement {
 private:
 public:
-    std::shared_ptr<Transform2D> transformGroup;
+    Transform2D *transformGroup;
     GroupShapeProperties();
 };
 

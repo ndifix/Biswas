@@ -8,7 +8,7 @@ namespace xmlElm {
 
 class SlideMasterList : public XmlElement {
 private:
-    std::list<std::shared_ptr<SlideMasterId>> ids;
+    std::list<SlideMasterId*> ids;
 public:
     inline SlideMasterList() : XmlElement("sldMasterIdLst", xmlns::presenta) {};
     void AddId (uint32_t id, std::string rid);
