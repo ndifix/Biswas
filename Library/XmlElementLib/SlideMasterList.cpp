@@ -8,9 +8,6 @@ SlideMasterList::AddId (
     std::string rid
     )
 {
-    this->ids.push_back(
-        std::shared_ptr<SlideMasterId>(
-        new SlideMasterId(id, rid)
-        ));
+    this->ids.push_back(new SlideMasterId(id, rid));
     this->AddChildElement(this->ids.back());
 }

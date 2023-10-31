@@ -10,8 +10,8 @@ namespace xmlElm {
 class ShapeTree : public XmlElement {
 private:
 public:
-    std::shared_ptr<NonVisualGroupShapeProperties> nonVisualGroupShapeProperties;
-    std::shared_ptr<GroupShapeProperties> groupShapeProperties;
+    NonVisualGroupShapeProperties *nonVisualGroupShapeProperties;
+    GroupShapeProperties *groupShapeProperties;
     ShapeTree();
 };
 

@@ -27,10 +27,10 @@ public:
 class Presentation : public XmlRootElement {
 private:
 public:
-    std::shared_ptr<xmlElm::SlideMasterList> slideMasterList;
-    std::shared_ptr<xmlElm::SlideSize> slideSize;
-    std::shared_ptr<xmlElm::NotesSize> notesSize;
-    std::shared_ptr<xmlElm::DefaultTextStyle> defaultTextStyle;
+    xmlElm::SlideMasterList *slideMasterList;
+    xmlElm::SlideSize *slideSize;
+    xmlElm::NotesSize *notesSize;
+    xmlElm::DefaultTextStyle *defaultTextStyle;
     Presentation();
 };
 
@@ -48,7 +48,7 @@ public:
 
 class SlideMaster : public XmlRootElement {
 private:
-    std::shared_ptr<CommonSlideData> commonSlideData;
+    CommonSlideData *commonSlideData;
 public:
     SlideMaster();
 };

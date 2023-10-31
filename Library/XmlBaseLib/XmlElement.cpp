@@ -21,10 +21,18 @@ XmlElement::AddAttribute (
 
 void
 XmlElement::AddChildElement (
-    std::shared_ptr<XmlElement> child
+    XmlElement *child
     )
 {
-    this->childs.push_back(child);
+    this->childs.push_back(std::unique_ptr<XmlElement>(child));
+}
+
+void
+XmlElement::AddChildElement (
+    std::unique_ptr<XmlElement> child
+    )
+{
+    this->childs.push_back(std::move(child));
 }
 
 void
