@@ -6,5 +6,7 @@ NonVisualGroupShapeProperties::NonVisualGroupShapeProperties (
     ) : XmlElement("nvGrpSpPr", xmlns::presenta)
 {
     this->nonVisualDrawingProperties = new NonVisualDrawingProperties();
+    this->nonVisualGroupShapeDrawingProperties = new NonVisualGroupShapeDrawingProperties();
     this->AddChildElement(this->nonVisualDrawingProperties);
+    this->AddChildElement(this->nonVisualGroupShapeDrawingProperties);
 }

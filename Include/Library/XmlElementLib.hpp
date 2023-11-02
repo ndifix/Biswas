@@ -6,6 +6,7 @@
 #include <Library/XmlElementLib/DefaultTextStyle.hpp>
 #include <Library/XmlElementLib/GroupShapeProperties.hpp>
 #include <Library/XmlElementLib/NonVisualDrawingProperties.hpp>
+#include <Library/XmlElementLib/NonVisualGroupShapeDrawingProperties.hpp>
 #include <Library/XmlElementLib/NonVisualGroupShapeProperties.hpp>
 #include <Library/XmlElementLib/NotesSize.hpp>
 #include <Library/XmlElementLib/Override.hpp>
