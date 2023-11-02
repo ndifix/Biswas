@@ -1,6 +1,7 @@
 #ifndef XML_ELEMENT_LIB_HPP
 #define XML_ELEMENT_LIB_HPP
 
+#include <Library/XmlElementLib/ApplicationNonVisualDrawingProperties.hpp>
 #include <Library/XmlElementLib/CommonSlideData.hpp>
 #include <Library/XmlElementLib/Default.hpp>
 #include <Library/XmlElementLib/DefaultTextStyle.hpp>
