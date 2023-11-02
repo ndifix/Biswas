@@ -2,6 +2,7 @@ LibName=libXmlElement.a
 
 Source =CommonSlideData.cpp
 Source+=Default.cpp
+Source+=Extents.cpp
 Source+=GroupShapeProperties.cpp
 Source+=NonVisualDrawingProperties.cpp
 Source+=NonVisualGroupShapeProperties.cpp
@@ -15,6 +16,7 @@ Source+=SlideMaster.cpp
 Source+=SlideMasterId.cpp
 Source+=SlideMasterList.cpp
 Source+=SlideSize.cpp
+Source+=Transform2D.cpp
 Source+=Types.cpp
 
 include ../lib.mk
