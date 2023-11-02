@@ -2,13 +2,15 @@
 #define XML_ELEMENT_LIB_NonVisualGroupShapeProperties
 
 #include <Library/XmlBaseLib.hpp>
+#include <Library/XmlElementLib/NonVisualDrawingProperties.hpp>
 
 namespace xmlElm {
 
 class NonVisualGroupShapeProperties : public XmlElement {
 private:
 public:
-    inline NonVisualGroupShapeProperties() : XmlElement("nvGrpSpPr", xmlns::presenta) {};
+    NonVisualDrawingProperties *nonVisualDrawingProperties;
+    NonVisualGroupShapeProperties();
 };
 
 }
