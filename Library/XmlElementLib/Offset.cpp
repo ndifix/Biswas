@@ -5,10 +5,8 @@ using namespace xmlElm;
 Offset::Offset (
     ) : XmlElement("off", xmlns::drawingm)
 {
-    this->X = new Attribute("x");
-    this->Y = new Attribute("y");
-    this->X->val = "0";
-    this->Y->val = "0";
+    this->X = new Attribute("x", "0");
+    this->Y = new Attribute("y", "0");
     this->AddAttribute(this->X);
     this->AddAttribute(this->Y);
 }
