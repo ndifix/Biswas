@@ -10,6 +10,7 @@ namespace xmlElm {
 class Transform2D : public XmlElement {
 private:
 public:
+    ChildOffset *childOffset;
     Extents *extents;
     Offset *offset;
     Transform2D();
