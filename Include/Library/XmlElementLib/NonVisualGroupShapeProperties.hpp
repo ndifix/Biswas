@@ -3,6 +3,7 @@
 
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/NonVisualDrawingProperties.hpp>
+#include <Library/XmlElementLib/NonVisualGroupShapeDrawingProperties.hpp>
 
 namespace xmlElm {
 
@@ -10,6 +11,7 @@ class NonVisualGroupShapeProperties : public XmlElement {
 private:
 public:
     NonVisualDrawingProperties *nonVisualDrawingProperties;
+    NonVisualGroupShapeDrawingProperties *nonVisualGroupShapeDrawingProperties;
     NonVisualGroupShapeProperties();
 };
 
