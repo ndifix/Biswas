@@ -5,6 +5,7 @@ XmlRootElement::XmlRootElement (
     const xmlns::XmlNameSpace &xmlns
     ) : XmlElement(tag, xmlns)
 {
+    this->childNameSpace.insert(xmlns);
 }
 
 void
@@ -12,10 +13,13 @@ XmlRootElement::Write (
     std::ofstream &ofs
     )
 {
+    this->UpdateChildNameSpace();
+
     ofs << '<' << this->xmlnsSelf.signature << ':' << this->tagName;
 
-    ofs << " xmlns:" << this->xmlnsSelf.signature << '='
-        << '"' << this->xmlnsSelf.nameSpace << '"';
+    for (auto &cns:this->childNameSpace) {
+        ofs << " xmlns:" << cns.signature << '=' << '"' << cns.nameSpace << '"';
+    }
 
     for (auto &attr:this->attributes) {
         attr->Write(ofs);
