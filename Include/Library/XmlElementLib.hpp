@@ -5,6 +5,7 @@
 #include <Library/XmlElementLib/CommonSlideData.hpp>
 #include <Library/XmlElementLib/Default.hpp>
 #include <Library/XmlElementLib/DefaultTextStyle.hpp>
+#include <Library/XmlElementLib/Extents.hpp>
 #include <Library/XmlElementLib/GroupShapeProperties.hpp>
 #include <Library/XmlElementLib/NonVisualDrawingProperties.hpp>
 #include <Library/XmlElementLib/NonVisualGroupShapeDrawingProperties.hpp>

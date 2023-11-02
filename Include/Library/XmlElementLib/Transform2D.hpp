@@ -2,13 +2,15 @@
 #define XML_ELEMENT_LIB_Transform2D
 
 #include <Library/XmlBaseLib.hpp>
+#include <Library/XmlElementLib/Extents.hpp>
 
 namespace xmlElm {
 
 class Transform2D : public XmlElement {
 private:
 public:
-    inline Transform2D() : XmlElement("xfrm", xmlns::drawingm) {};
+    Extents *extents;
+    Transform2D();
 };
 
 }
