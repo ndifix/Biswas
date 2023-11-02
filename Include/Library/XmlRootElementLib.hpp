@@ -48,6 +48,7 @@ public:
 
 class SlideMaster : public XmlRootElement {
 private:
+    ColorMap *colorMap;
     CommonSlideData *commonSlideData;
 public:
     SlideMaster();
