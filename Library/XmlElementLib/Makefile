@@ -1,6 +1,7 @@
 LibName=libXmlElement.a
 
-Source =CommonSlideData.cpp
+Source =ColorMap.cpp
+Source+=CommonSlideData.cpp
 Source+=Default.cpp
 Source+=Extents.cpp
 Source+=GroupShapeProperties.cpp
