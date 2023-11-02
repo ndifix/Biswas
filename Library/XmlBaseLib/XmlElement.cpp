@@ -9,6 +9,25 @@ XmlElement::XmlElement (
     ) : tagName(tag),
         xmlnsSelf(xmlns)
 {
+    this->childNameSpace.insert(xmlns);
+}
+
+void
+XmlElement::UpdateChildNameSpace (
+    )
+{
+    for (auto &child:this->childs) {
+        child->UpdateChildNameSpace();
+        for (auto xmlns:child->childNameSpace) {
+            this->childNameSpace.insert(xmlns);
+        }
+    }
+
+    for (auto &attr:this->attributes) {
+        if (!(attr->xmlns == xmlns::pereleme)) {
+            this->childNameSpace.insert(attr->xmlns);
+        }
+    }
 }
 
 void
