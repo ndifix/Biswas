@@ -7,6 +7,7 @@ Source+=GroupShapeProperties.cpp
 Source+=NonVisualDrawingProperties.cpp
 Source+=NonVisualGroupShapeProperties.cpp
 Source+=NotesSize.cpp
+Source+=Offset.cpp
 Source+=Override.cpp
 Source+=Presentation.cpp
 Source+=Relationship.cpp
