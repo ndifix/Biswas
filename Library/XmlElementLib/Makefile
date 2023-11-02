@@ -1,6 +1,7 @@
 LibName=libXmlElement.a
 
-Source =ChildOffset.cpp
+Source =ChildExtents.cpp
+Source+=ChildOffset.cpp
 Source+=ColorMap.cpp
 Source+=CommonSlideData.cpp
 Source+=Default.cpp

@@ -2,6 +2,7 @@
 #define XML_ELEMENT_LIB_HPP
 
 #include <Library/XmlElementLib/ApplicationNonVisualDrawingProperties.hpp>
+#include <Library/XmlElementLib/ChildExtents.hpp>
 #include <Library/XmlElementLib/ChildOffset.hpp>
 #include <Library/XmlElementLib/ColorMap.hpp>
 #include <Library/XmlElementLib/CommonSlideData.hpp>
