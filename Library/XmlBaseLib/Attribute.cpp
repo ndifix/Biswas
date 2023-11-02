@@ -20,10 +20,6 @@ Attribute::Write (
     std::ofstream &ofs
     )
 {
-    if (this->val.empty()) {
-        return;
-    }
-
     ofs << ' ';
     if (!(this->xmlns == xmlns::pereleme)) {
         ofs << this->xmlns.signature << ':';
