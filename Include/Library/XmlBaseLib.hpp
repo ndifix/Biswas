@@ -44,7 +44,15 @@ protected:
     std::list<std::unique_ptr<Attribute>> attributes;
 
     std::list<std::unique_ptr<XmlElement>> childs;
+    // 自身と全子孫に含まれる名前空間の一覧
+    std::set<xmlns::XmlNameSpace> childNameSpace;
 
+    /**
+     * 自身と全子孫に含まれる名前空間情報を更新する
+     */
+    void
+    UpdateChildNameSpace (
+        );
 public:
     XmlElement (
         const char *tag,
