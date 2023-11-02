@@ -9,6 +9,15 @@ Attribute::Attribute (
 
 Attribute::Attribute (
     const char *key,
+    const char *val
+    ) : xmlns(xmlns::pereleme)
+{
+    this->key = key;
+    this->val = val;
+}
+
+Attribute::Attribute (
+    const char *key,
     const xmlns::XmlNameSpace &xmlns
     ) : xmlns(xmlns)
 {
