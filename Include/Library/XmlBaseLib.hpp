@@ -33,6 +33,7 @@ public:
     const xmlns::XmlNameSpace xmlns;
     std::string val;
     Attribute (const char *key);
+    Attribute (const char *key, const char *val);
     Attribute (const char *key, const xmlns::XmlNameSpace &xmlns);
     void Write (std::ofstream &ofs);
 };
