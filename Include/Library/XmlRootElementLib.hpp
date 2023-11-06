@@ -44,6 +44,7 @@ class Theme : public XmlRootElement {
 private:
     ThemeElements *themeElements;
 public:
+    Attribute *Name;
     Theme();
 };
 
