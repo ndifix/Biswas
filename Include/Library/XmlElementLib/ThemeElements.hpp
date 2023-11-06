@@ -9,6 +9,7 @@ class ThemeElements : public XmlElement {
 private:
 public:
     ColorScheme *colorScheme;
+    FontScheme *fontScheme;
     ThemeElements();
 };
 
