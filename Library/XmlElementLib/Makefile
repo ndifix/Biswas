@@ -7,6 +7,7 @@ Source+=ColorScheme.cpp
 Source+=CommonSlideData.cpp
 Source+=Default.cpp
 Source+=Extents.cpp
+Source+=FontScheme.cpp
 Source+=GroupShapeProperties.cpp
 Source+=NonVisualDrawingProperties.cpp
 Source+=NonVisualGroupShapeProperties.cpp
