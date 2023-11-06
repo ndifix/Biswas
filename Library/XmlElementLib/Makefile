@@ -19,6 +19,7 @@ Source+=Override.cpp
 Source+=Presentation.cpp
 Source+=Relationship.cpp
 Source+=Relationships.cpp
+Source+=RgbColorModelHex.cpp
 Source+=ShapeTree.cpp
 Source+=SlideMaster.cpp
 Source+=SlideMasterId.cpp

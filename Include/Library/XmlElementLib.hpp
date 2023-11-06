@@ -21,6 +21,7 @@
 #include <Library/XmlElementLib/Offset.hpp>
 #include <Library/XmlElementLib/Override.hpp>
 #include <Library/XmlElementLib/Relationship.hpp>
+#include <Library/XmlElementLib/RgbColorModelHex.hpp>
 #include <Library/XmlElementLib/ShapeTree.hpp>
 #include <Library/XmlElementLib/SlideMasterId.hpp>
 #include <Library/XmlElementLib/SlideMasterList.hpp>
