@@ -42,8 +42,9 @@ public:
 
 class Theme : public XmlRootElement {
 private:
+    ThemeElements *themeElements;
 public:
-    inline Theme() : XmlRootElement("theme", xmlns::drawingm) {};
+    Theme();
 };
 
 class SlideMaster : public XmlRootElement {
