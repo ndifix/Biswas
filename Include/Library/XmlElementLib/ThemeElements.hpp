@@ -8,6 +8,7 @@ namespace xmlElm {
 class ThemeElements : public XmlElement {
 private:
 public:
+    ColorScheme *colorScheme;
     ThemeElements();
 };
 
