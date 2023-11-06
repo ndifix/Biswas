@@ -2,11 +2,13 @@
 #define XML_ELEMENT_LIB_Accent1Color
 
 #include <Library/XmlBaseLib.hpp>
+#include <Library/XmlElementLib/RgbColorModelHex.hpp>
 
 namespace xmlElm {
 
 class Accent1Color : public XmlElement {
 private:
+    RgbColorModelHex *rgbColorModelHex;
 public:
     Accent1Color();
 };
