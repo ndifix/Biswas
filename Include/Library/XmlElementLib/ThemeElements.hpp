@@ -10,6 +10,7 @@ private:
 public:
     ColorScheme *colorScheme;
     FontScheme *fontScheme;
+    FormatScheme *formatScheme;
     ThemeElements();
 };
 
