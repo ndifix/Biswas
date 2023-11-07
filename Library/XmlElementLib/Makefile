@@ -18,6 +18,7 @@ Source+=Extents.cpp
 Source+=FontScheme.cpp
 Source+=FormatScheme.cpp
 Source+=GroupShapeProperties.cpp
+Source+=Hyperlink.cpp
 Source+=Light1Color.cpp
 Source+=Light2Color.cpp
 Source+=NonVisualDrawingProperties.cpp
