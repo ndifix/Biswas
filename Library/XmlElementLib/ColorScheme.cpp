@@ -15,6 +15,7 @@ ColorScheme::ColorScheme (
     this->accent6Color = new Accent6Color();
     this->dark1Color = new Dark1Color();
     this->dark2Color = new Dark2Color();
+    this->followedHyperlinkColor = new FollowedHyperlinkColor();
     this->hyperlink = new Hyperlink();
     this->light1Color = new Light1Color();
     this->light2Color = new Light2Color();
@@ -29,4 +30,5 @@ ColorScheme::ColorScheme (
     this->AddChildElement(this->accent5Color);
     this->AddChildElement(this->accent6Color);
     this->AddChildElement(this->hyperlink);
+    this->AddChildElement(this->followedHyperlinkColor);
 }

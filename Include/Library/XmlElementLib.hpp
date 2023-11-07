@@ -18,6 +18,7 @@
 #include <Library/XmlElementLib/Default.hpp>
 #include <Library/XmlElementLib/DefaultTextStyle.hpp>
 #include <Library/XmlElementLib/Extents.hpp>
+#include <Library/XmlElementLib/FollowedHyperlinkColor.hpp>
 #include <Library/XmlElementLib/FontScheme.hpp>
 #include <Library/XmlElementLib/FormatScheme.hpp>
 #include <Library/XmlElementLib/GroupShapeProperties.hpp>
