@@ -9,6 +9,7 @@
 #include <Library/XmlElementLib/Accent5Color.hpp>
 #include <Library/XmlElementLib/Accent6Color.hpp>
 #include <Library/XmlElementLib/Dark1Color.hpp>
+#include <Library/XmlElementLib/Dark2Color.hpp>
 
 namespace xmlElm {
 
@@ -21,6 +22,7 @@ private:
     Accent5Color *accent5Color;
     Accent6Color *accent6Color;
     Dark1Color *dark1Color;
+    Dark2Color *dark2Color;
 public:
     Attribute *Name;
     ColorScheme();
