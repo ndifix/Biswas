@@ -3,6 +3,10 @@
 
 #include <Library/XmlElementLib/Accent1Color.hpp>
 #include <Library/XmlElementLib/Accent2Color.hpp>
+#include <Library/XmlElementLib/Accent3Color.hpp>
+#include <Library/XmlElementLib/Accent4Color.hpp>
+#include <Library/XmlElementLib/Accent5Color.hpp>
+#include <Library/XmlElementLib/Accent6Color.hpp>
 #include <Library/XmlElementLib/ApplicationNonVisualDrawingProperties.hpp>
 #include <Library/XmlElementLib/ChildExtents.hpp>
 #include <Library/XmlElementLib/ChildOffset.hpp>
