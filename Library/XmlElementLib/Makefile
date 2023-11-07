@@ -31,6 +31,7 @@ Source+=SlideMaster.cpp
 Source+=SlideMasterId.cpp
 Source+=SlideMasterList.cpp
 Source+=SlideSize.cpp
+Source+=SystemColor.cpp
 Source+=Theme.cpp
 Source+=ThemeElements.cpp
 Source+=Transform2D.cpp
