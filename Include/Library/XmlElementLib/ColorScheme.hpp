@@ -10,6 +10,7 @@
 #include <Library/XmlElementLib/Accent6Color.hpp>
 #include <Library/XmlElementLib/Dark1Color.hpp>
 #include <Library/XmlElementLib/Dark2Color.hpp>
+#include <Library/XmlElementLib/Hyperlink.hpp>
 #include <Library/XmlElementLib/Light1Color.hpp>
 #include <Library/XmlElementLib/Light2Color.hpp>
 
@@ -25,6 +26,7 @@ private:
     Accent6Color *accent6Color;
     Dark1Color *dark1Color;
     Dark2Color *dark2Color;
+    Hyperlink *hyperlink;
     Light1Color*light1Color;
     Light2Color*light2Color;
 public:
