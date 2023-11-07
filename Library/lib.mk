@@ -5,13 +5,12 @@ IncDir=../../Include/
 Object=$(patsubst %.cpp,%.o,$(Source))
 
 all: $(Target)
-	@rm $(Object)
 
 $(Target): $(Object)
 	ar rcs $(Target) $(Object)
 
-$(Object):
-	g++ -I$(IncDir) -c $(Source)
+%.o: %.cpp
+	g++ -I$(IncDir) -c $<
 
 clean:
 	rm $(Target) $(Object)
