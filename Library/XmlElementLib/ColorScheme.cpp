@@ -13,6 +13,8 @@ ColorScheme::ColorScheme (
     this->accent4Color = new Accent4Color();
     this->accent5Color = new Accent5Color();
     this->accent6Color = new Accent6Color();
+    this->dark1Color = new Dark1Color();
+    this->AddChildElement(this->dark1Color);
     this->AddChildElement(this->accent1Color);
     this->AddChildElement(this->accent2Color);
     this->AddChildElement(this->accent3Color);
