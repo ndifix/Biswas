@@ -2,6 +2,10 @@ LibName=libXmlElement.a
 
 Source =Accent1Color.cpp
 Source+=Accent2Color.cpp
+Source+=Accent3Color.cpp
+Source+=Accent4Color.cpp
+Source+=Accent5Color.cpp
+Source+=Accent6Color.cpp
 Source+=ChildExtents.cpp
 Source+=ChildOffset.cpp
 Source+=ColorMap.cpp
