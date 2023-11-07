@@ -2,6 +2,7 @@
 #define XML_ELEMENT_LIB_HPP
 
 #include <Library/XmlElementLib/Accent1Color.hpp>
+#include <Library/XmlElementLib/Accent2Color.hpp>
 #include <Library/XmlElementLib/ApplicationNonVisualDrawingProperties.hpp>
 #include <Library/XmlElementLib/ChildExtents.hpp>
 #include <Library/XmlElementLib/ChildOffset.hpp>
