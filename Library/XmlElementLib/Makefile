@@ -11,6 +11,7 @@ Source+=ChildOffset.cpp
 Source+=ColorMap.cpp
 Source+=ColorScheme.cpp
 Source+=CommonSlideData.cpp
+Source+=Dark1Color.cpp
 Source+=Default.cpp
 Source+=Extents.cpp
 Source+=FontScheme.cpp
