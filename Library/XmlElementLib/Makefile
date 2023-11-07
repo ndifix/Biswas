@@ -15,6 +15,7 @@ Source+=Dark1Color.cpp
 Source+=Dark2Color.cpp
 Source+=Default.cpp
 Source+=Extents.cpp
+Source+=FollowedHyperlinkColor.cpp
 Source+=FontScheme.cpp
 Source+=FormatScheme.cpp
 Source+=GroupShapeProperties.cpp
