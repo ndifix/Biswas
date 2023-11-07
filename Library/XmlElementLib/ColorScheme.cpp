@@ -16,9 +16,11 @@ ColorScheme::ColorScheme (
     this->dark1Color = new Dark1Color();
     this->dark2Color = new Dark2Color();
     this->light1Color = new Light1Color();
+    this->light2Color = new Light2Color();
     this->AddChildElement(this->dark1Color);
     this->AddChildElement(this->light1Color);
     this->AddChildElement(this->dark2Color);
+    this->AddChildElement(this->light2Color);
     this->AddChildElement(this->accent1Color);
     this->AddChildElement(this->accent2Color);
     this->AddChildElement(this->accent3Color);
