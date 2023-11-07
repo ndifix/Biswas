@@ -21,6 +21,7 @@
 #include <Library/XmlElementLib/FontScheme.hpp>
 #include <Library/XmlElementLib/FormatScheme.hpp>
 #include <Library/XmlElementLib/GroupShapeProperties.hpp>
+#include <Library/XmlElementLib/Light1Color.hpp>
 #include <Library/XmlElementLib/NonVisualDrawingProperties.hpp>
 #include <Library/XmlElementLib/NonVisualGroupShapeDrawingProperties.hpp>
 #include <Library/XmlElementLib/NonVisualGroupShapeProperties.hpp>
