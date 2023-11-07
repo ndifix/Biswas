@@ -32,6 +32,7 @@
 #include <Library/XmlElementLib/SlideMasterId.hpp>
 #include <Library/XmlElementLib/SlideMasterList.hpp>
 #include <Library/XmlElementLib/SlideSize.hpp>
+#include <Library/XmlElementLib/SystemColor.hpp>
 #include <Library/XmlElementLib/ThemeElements.hpp>
 #include <Library/XmlElementLib/Transform2D.hpp>
 
