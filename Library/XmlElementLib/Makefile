@@ -12,6 +12,7 @@ Source+=ColorMap.cpp
 Source+=ColorScheme.cpp
 Source+=CommonSlideData.cpp
 Source+=Dark1Color.cpp
+Source+=Dark2Color.cpp
 Source+=Default.cpp
 Source+=Extents.cpp
 Source+=FontScheme.cpp
