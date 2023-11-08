@@ -7,6 +7,7 @@ namespace OpenXml::Drawing {
 
 class FormatScheme : public XmlElement {
 private:
+    FillStyleList *fillStyleList;
 public:
     Attribute *Name;
     FormatScheme();
