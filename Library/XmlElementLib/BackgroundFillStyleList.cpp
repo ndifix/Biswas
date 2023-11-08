@@ -7,4 +7,5 @@ BackgroundFillStyleList::BackgroundFillStyleList (
 {
     this->AddChildElement(new SolidFill());
     this->AddChildElement(new SolidFill());
+    this->AddChildElement(new GradientFill());
 }
