@@ -7,4 +7,6 @@ FontScheme::FontScheme (
 {
     this->Name = new Attribute("name", "");
     this->AddAttribute(this->Name);
+    this->majorFont = new MajorFont();
+    this->AddChildElement(this->majorFont);
 }
