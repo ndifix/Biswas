@@ -9,6 +9,7 @@ namespace OpenXml::Drawing {
 
 class MajorFont : public XmlElement {
 private:
+    ComplexScriptFont *complexScriptFont;
     EastAsianFont *eastAsianFont;
     LatinFont *latinFont;
 public:
