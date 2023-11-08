@@ -17,6 +17,7 @@
 #include <Library/XmlElementLib/Dark2Color.hpp>
 #include <Library/XmlElementLib/Default.hpp>
 #include <Library/XmlElementLib/DefaultTextStyle.hpp>
+#include <Library/XmlElementLib/EastAsianFont.hpp>
 #include <Library/XmlElementLib/Extents.hpp>
 #include <Library/XmlElementLib/FollowedHyperlinkColor.hpp>
 #include <Library/XmlElementLib/FontScheme.hpp>
