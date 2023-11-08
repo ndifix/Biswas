@@ -8,6 +8,7 @@ namespace OpenXml::Drawing {
 
 class FormatScheme : public XmlElement {
 private:
+    EffectStyleList *effectStyleList;
     FillStyleList *fillStyleList;
     LineStyleList *lineStyleList;
 public:
