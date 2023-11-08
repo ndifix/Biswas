@@ -24,9 +24,7 @@ PresentationPart::PresentationPart (
     this->themePart = std::shared_ptr<ThemePart>(new ThemePart(std::filesystem::path(dir) /= "theme/"));
 
     this->AddChildPart(this->presPropPart);
-    this->AddRelationship(this->presPropPart);
     this->AddChildPart(this->themePart);
-    this->AddRelationship(this->themePart);
     this->AddSlideMaster(this->themePart);
 }
 
@@ -45,7 +43,6 @@ PresentationPart::AddSlideMaster (
 
     this->slideMasterParts.push_back(part);
     this->AddChildPart(part);
-    this->AddRelationship(part);
 
     return part;
 }
@@ -80,9 +77,15 @@ PresentationPart::MakeDir (
 
 Status
 PresentationPart::Write (
-    ) const
+    )
 {
     Status Status;
+
+    for (auto &slideMaster:this->slideMasterParts) {
+        this->AddRelationship(slideMaster);
+    }
+    this->AddRelationship(this->presPropPart);
+    this->AddRelationship(this->themePart);
 
     Status = this->MakeDir();
     if (Status != Status::Success) {
