@@ -16,6 +16,7 @@ Source+=Dark1Color.cpp
 Source+=Dark2Color.cpp
 Source+=Default.cpp
 Source+=EastAsianFont.cpp
+Source+=EffectStyleList.cpp
 Source+=Extents.cpp
 Source+=FillStyleList.cpp
 Source+=FollowedHyperlinkColor.cpp
