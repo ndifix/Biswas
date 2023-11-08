@@ -32,19 +32,26 @@ IPart::AddChildPart (
     this->childParts.push_back(newPart);
 }
 
+std::string
+IPart::NextPartId (
+    ) const
+{
+    std::stringstream newId;
+    newId << "rId" << this->relations.size() + 1;
+    return newId.str();
+}
+
 void
 IPart::AddRelationship (
     std::shared_ptr<IPart> newPart
     )
 {
-    std::shared_ptr<xmlElm::Relationship> relation(new xmlElm::Relationship());
-    std::stringstream newId;
-    newId << "rId" << this->relations.size() + 1;
-    relation->Id = newId.str();
-    relation->Type = newPart->relationType;
-    relation->Target = std::filesystem::relative(newPart->xmlfile->filePath, this->partDir);
+    OpenXml::Relationship *relation = new OpenXml::Relationship();
+    relation->Id->val = this->NextPartId();
+    relation->Type->val = newPart->relationType;
+    relation->Target->val = std::filesystem::relative(newPart->xmlfile->filePath, this->partDir);
 
-    this->relations.push_back(relation);
+    this->relations.push_back(std::move(relation));
 }
 
 Status
@@ -68,7 +75,7 @@ IPart::WriteRelationship (
 
     std::filesystem::path filename = this->xmlfile->filePath.filename() += ".rels";
     xmlFile::Relationships relationXml(relDir /= filename);
-    for (auto &rels:this->relations) {
+    for (auto rels:this->relations) {
         relationXml.RootElement->AddChildElement(rels);
     }
     relationXml.Write();

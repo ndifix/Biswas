@@ -1,64 +1,57 @@
 #include <Library/XmlBaseLib.hpp>
 
 #include <fstream>
+#include <iostream>
 
 XmlElement::XmlElement (
     const char *tag,
-    xmlns::XmlNameSpace &xmlns
+    const xmlns::XmlNameSpace &xmlns
     ) : tagName(tag),
         xmlnsSelf(xmlns)
 {
-}
-
-void
-XmlElement::NotifyAddChildElement (
-    const xmlns::XmlNameSpace &xmlns
-    )
-{
     this->childNameSpace.insert(xmlns);
-    if (this->parent->childNameSpace.count(xmlns) != 0) {
-        return;
-    }
-
-    this->parent->NotifyAddChildElement(xmlns);
 }
 
 void
-XmlElement::NotifyNameSpaceSignature (
-    const xmlns::XmlNameSpace &xmlns,
-    const char signature
+XmlElement::UpdateChildNameSpace (
     )
 {
     for (auto &child:this->childs) {
-        if (child->xmlnsSelf == xmlns) {
-            child->xmlnsSelf.signature = signature;
+        child->UpdateChildNameSpace();
+        for (auto xmlns:child->childNameSpace) {
+            this->childNameSpace.insert(xmlns);
         }
+    }
 
-        if (child->childNameSpace.count(xmlns) != 0) {
-            child->NotifyNameSpaceSignature(xmlns, signature);
+    for (auto &attr:this->attributes) {
+        if (!(attr->xmlns == xmlns::pereleme)) {
+            this->childNameSpace.insert(attr->xmlns);
         }
     }
 }
 
 void
 XmlElement::AddAttribute (
-    std::string key,
-    std::string &val
+    Attribute *attr
     )
 {
-    this->attributes.push_back(
-        std::make_pair(key, val)
-        );
+    this->attributes.push_back(std::unique_ptr<Attribute>(attr));
 }
 
 void
 XmlElement::AddChildElement (
-    std::shared_ptr<XmlElement> child
+    XmlElement *child
     )
 {
-    child->parent = this;
-    this->NotifyAddChildElement(child->xmlnsSelf);
-    this->childs.push_back(child);
+    this->childs.push_back(std::unique_ptr<XmlElement>(child));
+}
+
+void
+XmlElement::AddChildElement (
+    std::unique_ptr<XmlElement> child
+    )
+{
+    this->childs.push_back(std::move(child));
 }
 
 void
@@ -66,19 +59,21 @@ XmlElement::Write (
     std::ofstream &ofs
     )
 {
-    ofs << '<';
-    if (this->xmlnsSelf.signature != xmlns::emptystrSign) {
-        ofs << this->xmlnsSelf.signature << ':';
-    }
-    ofs << this->tagName;
+    ofs << '<' << this->xmlnsSelf.signature << ':' << this->tagName;
     for (auto &attr:this->attributes) {
-        ofs << ' ' << attr.first << "=\"" << attr.second << '\"';
+        attr->Write(ofs);
     }
+
+    if (this->childs.empty()) {
+        ofs << "/>";
+        return;
+    }
+
     ofs << '>';
 
     for (auto& child:this->childs) {
         child->Write(ofs);
     }
 
-    ofs << "</" << this->tagName << ">";
+    ofs << "</" << this->xmlnsSelf.signature << ':' << this->tagName << ">";
 }

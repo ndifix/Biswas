@@ -18,65 +18,60 @@ struct XmlNameSpace {
 bool operator==(const XmlNameSpace &lhs, const XmlNameSpace &rhs);
 bool operator<(const XmlNameSpace &lhs, const XmlNameSpace &rhs);
 
-extern const char emptystrSign;
-extern const char content_Sign;
-extern const char drawingmSign;
-extern const char relationSign;
-extern const char presentaSign;
-extern const char *content_NS;
-extern const char *drawingmNS;
-extern const char *relationNS;
-extern const char *presentaNS;
-extern XmlNameSpace content_;
-extern XmlNameSpace drawingm;
-extern XmlNameSpace relation;
-extern XmlNameSpace presenta;
+extern const XmlNameSpace content_;
+extern const XmlNameSpace drawingm;
+extern const XmlNameSpace relation;
+extern const XmlNameSpace presenta;
+extern const XmlNameSpace pereleme;
 
 }
+
+class Attribute {
+private:
+    const char *key;
+public:
+    const xmlns::XmlNameSpace xmlns;
+    std::string val;
+    Attribute (const char *key);
+    Attribute (const char *key, const char *val);
+    Attribute (const char *key, const xmlns::XmlNameSpace &xmlns);
+    void Write (std::ofstream &ofs);
+};
 
 class XmlElement {
 protected:
     const std::string tagName;
-    xmlns::XmlNameSpace xmlnsSelf;
-    std::list<std::pair<std::string, std::string>> attributes;
+    const xmlns::XmlNameSpace xmlnsSelf;
+    std::list<std::unique_ptr<Attribute>> attributes;
 
-    XmlElement *parent;
-    std::list<std::shared_ptr<XmlElement>> childs;
+    std::list<std::unique_ptr<XmlElement>> childs;
+    // 自身と全子孫に含まれる名前空間の一覧
     std::set<xmlns::XmlNameSpace> childNameSpace;
 
     /**
-     * 子や子孫の要素に含まれる名前空間情報を更新する
-    */
-    virtual
+     * 自身と全子孫に含まれる名前空間情報を更新する
+     */
     void
-    NotifyAddChildElement (
-        const xmlns::XmlNameSpace &xmlns
-        );
-
-    /**
-     * 子や子孫の要素の名前空間の記号情報を更新する
-    */
-    virtual
-    void
-    NotifyNameSpaceSignature (
-        const xmlns::XmlNameSpace &xmlns,
-        const char signature
+    UpdateChildNameSpace (
         );
 public:
     XmlElement (
         const char *tag,
-        xmlns::XmlNameSpace &xmlns
+        const xmlns::XmlNameSpace &xmlns
         );
 
     void
     AddAttribute (
-        std::string key,
-        std::string &val
+        Attribute *attr
         );
 
     void
     AddChildElement (
-        std::shared_ptr<XmlElement> child
+        XmlElement *child
+        );
+    void
+    AddChildElement (
+        std::unique_ptr<XmlElement> child
         );
 
     virtual
@@ -90,28 +85,10 @@ friend class XmlRootElement;
 
 class XmlRootElement : public XmlElement {
 private:
-    /**
-     * 子や子孫の要素に含まれる名前空間情報を更新する
-    */
-    virtual
-    void
-    NotifyAddChildElement (
-        const xmlns::XmlNameSpace &xmlns
-        ) override;
-
-    /**
-     * 子や子孫の要素の名前空間の記号情報を更新する
-    */
-    virtual
-    void
-    NotifyNameSpaceSignature (
-        const xmlns::XmlNameSpace &xmlns,
-        const char signature
-        ) override;
 public:
     XmlRootElement(
         const char *tag,
-        xmlns::XmlNameSpace &xmlns
+        const xmlns::XmlNameSpace &xmlns
         );
 
 
@@ -128,10 +105,11 @@ private:
         ) const;
 public:
     const std::filesystem::path filePath;
-    std::unique_ptr<XmlRootElement> RootElement;
+    std::shared_ptr<XmlRootElement> RootElement;
 
     XmlFile (
-        const std::filesystem::path &filePath
+        const std::filesystem::path &filePath,
+        std::shared_ptr<XmlRootElement> root
         );
 
     void

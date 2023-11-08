@@ -5,8 +5,9 @@
 #include <Biswas.hpp>
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib.hpp>
+#include <Library/XmlElementLib/Default.hpp>
 
-namespace xmlElm {
+namespace OpenXml {
 
 class Types : public XmlRootElement {
 private:
@@ -23,10 +24,16 @@ public:
     Status AddRelation(std::unique_ptr<Relationship>);
 };
 
+namespace Presentation {
+
 class Presentation : public XmlRootElement {
 private:
 public:
-    inline Presentation() : XmlRootElement("presentation", xmlns::presenta) {};
+    SlideMasterList *slideMasterList;
+    SlideSize *slideSize;
+    NotesSize *notesSize;
+    DefaultTextStyle *defaultTextStyle;
+    Presentation();
 };
 
 class PresentationProperties : public XmlRootElement {
@@ -35,17 +42,31 @@ public:
     inline PresentationProperties() : XmlRootElement("presentationPr", xmlns::presenta) {};
 };
 
+}
+
+namespace Drawing {
+
 class Theme : public XmlRootElement {
 private:
+    ThemeElements *themeElements;
 public:
-    inline Theme() : XmlRootElement("theme", xmlns::drawingm) {};
+    Attribute *Name;
+    Theme();
 };
+
+}
+
+namespace Presentation {
 
 class SlideMaster : public XmlRootElement {
 private:
+    ColorMap *colorMap;
+    CommonSlideData *commonSlideData;
 public:
-    inline SlideMaster() : XmlRootElement("sldMaster", xmlns::presenta) {};
+    SlideMaster();
 };
+
+}
 
 }
 

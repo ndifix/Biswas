@@ -13,7 +13,13 @@ PresentationPart::PresentationPart (
     const std::filesystem::path &dir
     ) : IPart(dir, relType, conType)
 {
-    this->xmlfile.reset(new xmlFile::Presentation(std::filesystem::path(dir) /= "presentation.xml"));
+    this->RootElement.reset(new OpenXml::Presentation::Presentation());
+    this->xmlfile.reset(
+        new xmlFile::Presentation(
+            std::filesystem::path(dir) /= "presentation.xml",
+            this->RootElement
+        ));
+
     this->presPropPart = std::shared_ptr<PresentationPropertiesPart>(new PresentationPropertiesPart(dir));
     this->themePart = std::shared_ptr<ThemePart>(new ThemePart(std::filesystem::path(dir) /= "theme/"));
 
@@ -22,9 +28,6 @@ PresentationPart::PresentationPart (
     this->AddChildPart(this->themePart);
     this->AddRelationship(this->themePart);
     this->AddSlideMaster(this->themePart);
-
-    this->slideMasterList.reset(new xmlElm::SlideMasterList());
-    this->xmlfile->RootElement->AddChildElement(this->slideMasterList);
 }
 
 std::shared_ptr<SlideMasterPart>
@@ -32,6 +35,11 @@ PresentationPart::AddSlideMaster (
     std::shared_ptr<ThemePart> themePart
     )
 {
+    this->RootElement->slideMasterList->AddId(
+        2147483648 + this->slideMasterParts.size(),
+        this->NextPartId()
+        );
+
     std::shared_ptr<SlideMasterPart> part(new SlideMasterPart(std::filesystem::path(this->partDir) /= "slideMasters/"));
     part->AddRelationship(themePart);
 

@@ -2,16 +2,14 @@
 #include <Library/XmlElementLib.hpp>
 #include <Library/XmlRootElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml;
 
 Status
 Types::AddContentType (
     std::unique_ptr<Default> def
     )
 {
-    this->AddChildElement(
-        std::unique_ptr<XmlElement>(static_cast<XmlElement*>(def.release()))
-        );
+    this->AddChildElement(def.release());
     return Status::Success;
 }
 
@@ -20,8 +18,6 @@ Types::AddContentType (
     std::unique_ptr<Override> ovr
     )
 {
-    this->AddChildElement(
-        std::unique_ptr<XmlElement>(static_cast<XmlElement*>(ovr.release()))
-        );
+    this->AddChildElement(ovr.release());
     return Status::Success;
 }

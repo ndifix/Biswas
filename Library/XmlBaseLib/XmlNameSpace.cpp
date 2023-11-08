@@ -14,10 +14,12 @@ const char *drawingmNS = "http://schemas.openxmlformats.org/drawingml/2006/main"
 const char *relationNS = "http://schemas.openxmlformats.org/officeDocument/2006/relationships";
 const char *presentaNS = "http://schemas.openxmlformats.org/presentationml/2006/main";
 
-XmlNameSpace content_ = {emptystrSign, content_NS};
-XmlNameSpace drawingm = {emptystrSign, drawingmNS};
-XmlNameSpace relation = {emptystrSign, relationNS};
-XmlNameSpace presenta = {emptystrSign, presentaNS};
+const XmlNameSpace content_ = {content_Sign, content_NS};
+const XmlNameSpace drawingm = {drawingmSign, drawingmNS};
+const XmlNameSpace relation = {relationSign, relationNS};
+const XmlNameSpace presenta = {presentaSign, presentaNS};
+const XmlNameSpace pereleme = {emptystrSign, ""};
+
 }
 
 bool

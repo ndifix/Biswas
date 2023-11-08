@@ -4,20 +4,26 @@
 #include <filesystem>
 #include <list>
 #include <memory>
+#include <string>
 #include <Biswas.hpp>
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib.hpp>
+#include <Library/XmlRootElementLib.hpp>
 
 class IPart {
 protected:
     std::unique_ptr<XmlFile> xmlfile;
     std::list<std::shared_ptr<IPart>> childParts;
-    std::list<std::shared_ptr<xmlElm::Relationship>> relations;
+    std::list<OpenXml::Relationship*> relations;
 
     void
     AddChildPart (
         std::shared_ptr<IPart> newPart
         );
+
+    std::string
+    NextPartId (
+        ) const;
 public:
     const std::filesystem::path partDir;
     const char *relationType;
@@ -55,6 +61,7 @@ class SlideMasterPart;
 
 class PresentationPropertiesPart : public IPart {
 private:
+    std::shared_ptr<OpenXml::Presentation::PresentationProperties> RootElement;
 public:
     PresentationPropertiesPart (
         const std::filesystem::path &dir
@@ -63,7 +70,7 @@ public:
 
 class PresentationPart : public IPart {
 private:
-    std::shared_ptr<xmlElm::SlideMasterList> slideMasterList;
+    std::shared_ptr<OpenXml::Presentation::Presentation> RootElement;
 
     std::shared_ptr<SlideMasterPart>
     AddSlideMaster (
@@ -89,6 +96,7 @@ public:
 
 class ThemePart : public IPart {
 private:
+    std::shared_ptr<OpenXml::Drawing::Theme> RootElement;
 public:
     ThemePart (
         const std::filesystem::path &dir
@@ -97,6 +105,7 @@ public:
 
 class SlideMasterPart : public IPart {
 private:
+    std::shared_ptr<OpenXml::Presentation::SlideMaster> RootElement;
 public:
     SlideMasterPart (
         const std::filesystem::path &dir

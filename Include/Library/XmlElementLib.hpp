@@ -1,48 +1,58 @@
 #ifndef XML_ELEMENT_LIB_HPP
 #define XML_ELEMENT_LIB_HPP
 
-#include <Biswas.hpp>
-#include <Library/XmlBaseLib.hpp>
-#include <list>
-#include <string>
-
-namespace xmlElm {
-
-class Default : public XmlElement {
-private:
-public:
-    std::string Extension;
-    std::string ContentType;
-    inline Default() : XmlElement("Default", xmlns::content_) {};
-    virtual void Write (std::ofstream &ofs) final override;
-};
-
-class Override : public XmlElement {
-private:
-public:
-    std::string PartName;
-    std::string ContentType;
-    inline Override() : XmlElement("Override", xmlns::content_) {};
-    virtual void Write (std::ofstream &ofs) final override;
-};
-
-class Relationship : public XmlElement {
-private:
-public:
-    std::string Id;
-    std::string Type;
-    std::string Target;
-
-    inline Relationship() : XmlElement("Relationship", xmlns::relation) {};
-    virtual void Write (std::ofstream &ofs) final override;
-};
-
-class SlideMasterList : public XmlElement {
-private:
-public:
-    inline SlideMasterList() : XmlElement("sldMasterIdLst", xmlns::presenta) {};
-};
-
-}
+#include <Library/XmlElementLib/Accent1Color.hpp>
+#include <Library/XmlElementLib/Accent2Color.hpp>
+#include <Library/XmlElementLib/Accent3Color.hpp>
+#include <Library/XmlElementLib/Accent4Color.hpp>
+#include <Library/XmlElementLib/Accent5Color.hpp>
+#include <Library/XmlElementLib/Accent6Color.hpp>
+#include <Library/XmlElementLib/ApplicationNonVisualDrawingProperties.hpp>
+#include <Library/XmlElementLib/BackgroundFillStyleList.hpp>
+#include <Library/XmlElementLib/ChildExtents.hpp>
+#include <Library/XmlElementLib/ChildOffset.hpp>
+#include <Library/XmlElementLib/ColorMap.hpp>
+#include <Library/XmlElementLib/ColorScheme.hpp>
+#include <Library/XmlElementLib/CommonSlideData.hpp>
+#include <Library/XmlElementLib/ComplexScriptFont.hpp>
+#include <Library/XmlElementLib/Dark1Color.hpp>
+#include <Library/XmlElementLib/Dark2Color.hpp>
+#include <Library/XmlElementLib/Default.hpp>
+#include <Library/XmlElementLib/DefaultTextStyle.hpp>
+#include <Library/XmlElementLib/EastAsianFont.hpp>
+#include <Library/XmlElementLib/EffectList.hpp>
+#include <Library/XmlElementLib/EffectStyle.hpp>
+#include <Library/XmlElementLib/EffectStyleList.hpp>
+#include <Library/XmlElementLib/Extents.hpp>
+#include <Library/XmlElementLib/FillStyleList.hpp>
+#include <Library/XmlElementLib/FollowedHyperlinkColor.hpp>
+#include <Library/XmlElementLib/FontScheme.hpp>
+#include <Library/XmlElementLib/FormatScheme.hpp>
+#include <Library/XmlElementLib/GradientFill.hpp>
+#include <Library/XmlElementLib/GroupShapeProperties.hpp>
+#include <Library/XmlElementLib/Hyperlink.hpp>
+#include <Library/XmlElementLib/LatinFont.hpp>
+#include <Library/XmlElementLib/Light1Color.hpp>
+#include <Library/XmlElementLib/Light2Color.hpp>
+#include <Library/XmlElementLib/LineStyleList.hpp>
+#include <Library/XmlElementLib/MajorFont.hpp>
+#include <Library/XmlElementLib/MinorFont.hpp>
+#include <Library/XmlElementLib/NonVisualDrawingProperties.hpp>
+#include <Library/XmlElementLib/NonVisualGroupShapeDrawingProperties.hpp>
+#include <Library/XmlElementLib/NonVisualGroupShapeProperties.hpp>
+#include <Library/XmlElementLib/NotesSize.hpp>
+#include <Library/XmlElementLib/Offset.hpp>
+#include <Library/XmlElementLib/Outline.hpp>
+#include <Library/XmlElementLib/Override.hpp>
+#include <Library/XmlElementLib/Relationship.hpp>
+#include <Library/XmlElementLib/RgbColorModelHex.hpp>
+#include <Library/XmlElementLib/ShapeTree.hpp>
+#include <Library/XmlElementLib/SlideMasterId.hpp>
+#include <Library/XmlElementLib/SlideMasterList.hpp>
+#include <Library/XmlElementLib/SlideSize.hpp>
+#include <Library/XmlElementLib/SolidFill.hpp>
+#include <Library/XmlElementLib/SystemColor.hpp>
+#include <Library/XmlElementLib/ThemeElements.hpp>
+#include <Library/XmlElementLib/Transform2D.hpp>
 
 #endif
