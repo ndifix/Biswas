@@ -23,6 +23,7 @@
 #include <Library/XmlElementLib/FormatScheme.hpp>
 #include <Library/XmlElementLib/GroupShapeProperties.hpp>
 #include <Library/XmlElementLib/Hyperlink.hpp>
+#include <Library/XmlElementLib/LatinFont.hpp>
 #include <Library/XmlElementLib/Light1Color.hpp>
 #include <Library/XmlElementLib/Light2Color.hpp>
 #include <Library/XmlElementLib/MajorFont.hpp>
