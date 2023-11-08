@@ -15,10 +15,20 @@ XmlRootElement::Write (
 {
     this->UpdateChildNameSpace();
 
-    ofs << '<' << this->xmlnsSelf.signature << ':' << this->tagName;
+    ofs << '<';
+    if (this->childNameSpace.size() > 1) {
+        ofs << this->xmlnsSelf.signature << ':';
+    }
+    ofs << this->tagName;
 
-    for (auto &cns:this->childNameSpace) {
-        ofs << " xmlns:" << cns.signature << '=' << '"' << cns.nameSpace << '"';
+    if (this->childNameSpace.size() > 1) {
+        for (auto &cns:this->childNameSpace) {
+            ofs << " xmlns:" << cns.signature << '=' << '"' << cns.nameSpace << '"';
+        }
+    } else {
+        for (auto &cns:this->childNameSpace) {
+            ofs << " xmlns" << '=' << '"' << cns.nameSpace << '"';
+        }
     }
 
     for (auto &attr:this->attributes) {
@@ -27,8 +37,12 @@ XmlRootElement::Write (
     ofs << '>';
 
     for (auto& child:this->childs) {
-        child->Write(ofs);
+        child->Write(ofs, this->childNameSpace.size() > 1);
     }
 
-    ofs << "</" << this->xmlnsSelf.signature << ':' << this->tagName << ">";
+    ofs << "</";
+    if (this->childNameSpace.size() > 1) {
+        ofs << this->xmlnsSelf.signature << ':';
+    }
+    ofs << this->tagName << ">";
 }

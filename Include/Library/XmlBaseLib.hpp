@@ -77,7 +77,8 @@ public:
     virtual
     void
     Write (
-        std::ofstream &ofs
+        std::ofstream &ofs,
+        bool useSignature
         );
 
 friend class XmlRootElement;
@@ -95,7 +96,7 @@ public:
     void
     Write (
         std::ofstream &ofs
-        ) final override;
+        );
 };
 
 class XmlFile {

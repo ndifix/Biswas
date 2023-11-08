@@ -13,7 +13,7 @@ public:
     uint32_t Cx = 0;
     uint32_t Cy = 0;
     NotesSize();
-    virtual void Write (std::ofstream &ofs) final override;
+    virtual void Write (std::ofstream &ofs, bool sign) final override;
 };
 
 }

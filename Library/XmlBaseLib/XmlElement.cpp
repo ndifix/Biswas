@@ -56,10 +56,16 @@ XmlElement::AddChildElement (
 
 void
 XmlElement::Write (
-    std::ofstream &ofs
+    std::ofstream &ofs,
+    bool useSignature
     )
 {
-    ofs << '<' << this->xmlnsSelf.signature << ':' << this->tagName;
+    ofs << '<';
+    if (useSignature) {
+        ofs << this->xmlnsSelf.signature << ':';
+    }
+    ofs << this->tagName;
+
     for (auto &attr:this->attributes) {
         attr->Write(ofs);
     }
@@ -72,8 +78,12 @@ XmlElement::Write (
     ofs << '>';
 
     for (auto& child:this->childs) {
-        child->Write(ofs);
+        child->Write(ofs, useSignature);
     }
 
-    ofs << "</" << this->xmlnsSelf.signature << ':' << this->tagName << ">";
+    ofs << "</";
+    if (useSignature) {
+        ofs << this->xmlnsSelf.signature << ':';
+    }
+    ofs << this->tagName << ">";
 }
