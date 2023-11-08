@@ -26,6 +26,7 @@ Source+=Hyperlink.cpp
 Source+=LatinFont.cpp
 Source+=Light1Color.cpp
 Source+=Light2Color.cpp
+Source+=LineStyleList.cpp
 Source+=MajorFont.cpp
 Source+=MinorFont.cpp
 Source+=NonVisualDrawingProperties.cpp
