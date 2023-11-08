@@ -20,6 +20,7 @@
 #include <Library/XmlElementLib/Default.hpp>
 #include <Library/XmlElementLib/DefaultTextStyle.hpp>
 #include <Library/XmlElementLib/EastAsianFont.hpp>
+#include <Library/XmlElementLib/EffectStyle.hpp>
 #include <Library/XmlElementLib/EffectStyleList.hpp>
 #include <Library/XmlElementLib/Extents.hpp>
 #include <Library/XmlElementLib/FillStyleList.hpp>
