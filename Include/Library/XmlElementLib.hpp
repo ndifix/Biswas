@@ -26,6 +26,7 @@
 #include <Library/XmlElementLib/FollowedHyperlinkColor.hpp>
 #include <Library/XmlElementLib/FontScheme.hpp>
 #include <Library/XmlElementLib/FormatScheme.hpp>
+#include <Library/XmlElementLib/GradientFill.hpp>
 #include <Library/XmlElementLib/GroupShapeProperties.hpp>
 #include <Library/XmlElementLib/Hyperlink.hpp>
 #include <Library/XmlElementLib/LatinFont.hpp>
