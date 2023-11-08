@@ -3,7 +3,7 @@
 
 #include <Library/XmlBaseLib.hpp>
 
-namespace xmlElm {
+namespace OpenXml::Presentation {
 
 class NotesSize : public XmlElement {
 private:

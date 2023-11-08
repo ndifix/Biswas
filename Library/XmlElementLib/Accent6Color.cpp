@@ -1,6 +1,6 @@
 #include <Library/XmlElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml::Drawing;
 
 Accent6Color::Accent6Color (
     ) : XmlElement("accent6", xmlns::drawingm)

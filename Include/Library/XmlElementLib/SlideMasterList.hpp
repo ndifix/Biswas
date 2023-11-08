@@ -4,7 +4,7 @@
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/SlideMasterId.hpp>
 
-namespace xmlElm {
+namespace OpenXml::Presentation {
 
 class SlideMasterList : public XmlElement {
 private:

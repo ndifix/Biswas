@@ -1,6 +1,6 @@
 #include <Library/XmlElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml::Presentation;
 
 ShapeTree::ShapeTree (
     ) : XmlElement("spTree", xmlns::presenta)

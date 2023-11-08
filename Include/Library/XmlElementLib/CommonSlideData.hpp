@@ -4,7 +4,7 @@
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/ShapeTree.hpp>
 
-namespace xmlElm {
+namespace OpenXml::Presentation {
 
 class CommonSlideData : public XmlElement {
 private:

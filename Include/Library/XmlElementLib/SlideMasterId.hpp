@@ -3,7 +3,7 @@
 
 #include <Library/XmlBaseLib.hpp>
 
-namespace xmlElm {
+namespace OpenXml::Presentation {
 
 class SlideMasterId : public XmlElement {
 private:

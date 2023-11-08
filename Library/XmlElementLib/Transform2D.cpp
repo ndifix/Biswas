@@ -1,6 +1,6 @@
 #include <Library/XmlElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml::Drawing;
 
 Transform2D::Transform2D (
     ) : XmlElement("xfrm", xmlns::drawingm)

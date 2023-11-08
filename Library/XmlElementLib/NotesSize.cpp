@@ -1,7 +1,7 @@
 #include <Biswas.hpp>
 #include <Library/XmlElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml::Presentation;
 
 NotesSize::NotesSize (
     ) : XmlElement("notesSz", xmlns::presenta)

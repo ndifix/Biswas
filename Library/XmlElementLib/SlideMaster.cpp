@@ -1,6 +1,6 @@
 #include <Library/XmlRootElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml::Presentation;
 
 SlideMaster::SlideMaster (
     ) : XmlRootElement("sldMaster", xmlns::presenta)

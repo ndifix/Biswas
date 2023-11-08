@@ -1,6 +1,6 @@
 #include <Library/XmlElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml::Presentation;
 
 NonVisualGroupShapeProperties::NonVisualGroupShapeProperties (
     ) : XmlElement("nvGrpSpPr", xmlns::presenta)

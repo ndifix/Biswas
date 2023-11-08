@@ -5,7 +5,7 @@
 #include <Library/XmlElementLib/NonVisualGroupShapeProperties.hpp>
 #include <Library/XmlElementLib/GroupShapeProperties.hpp>
 
-namespace xmlElm {
+namespace OpenXml::Presentation {
 
 class ShapeTree : public XmlElement {
 private:

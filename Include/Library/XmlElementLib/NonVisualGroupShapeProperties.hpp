@@ -6,7 +6,7 @@
 #include <Library/XmlElementLib/NonVisualDrawingProperties.hpp>
 #include <Library/XmlElementLib/NonVisualGroupShapeDrawingProperties.hpp>
 
-namespace xmlElm {
+namespace OpenXml::Presentation {
 
 class NonVisualGroupShapeProperties : public XmlElement {
 private:

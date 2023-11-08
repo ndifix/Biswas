@@ -5,7 +5,7 @@
 #include <Library/XmlElementLib/Extents.hpp>
 #include <Library/XmlElementLib/Offset.hpp>
 
-namespace xmlElm {
+namespace OpenXml::Drawing {
 
 class Transform2D : public XmlElement {
 private:
