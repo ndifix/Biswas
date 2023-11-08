@@ -8,6 +8,7 @@
 #include <Library/XmlElementLib/Accent5Color.hpp>
 #include <Library/XmlElementLib/Accent6Color.hpp>
 #include <Library/XmlElementLib/ApplicationNonVisualDrawingProperties.hpp>
+#include <Library/XmlElementLib/BackgroundFillStyleList.hpp>
 #include <Library/XmlElementLib/ChildExtents.hpp>
 #include <Library/XmlElementLib/ChildOffset.hpp>
 #include <Library/XmlElementLib/ColorMap.hpp>
