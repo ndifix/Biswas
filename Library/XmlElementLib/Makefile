@@ -17,6 +17,7 @@ Source+=Dark2Color.cpp
 Source+=Default.cpp
 Source+=EastAsianFont.cpp
 Source+=Extents.cpp
+Source+=FillStyleList.cpp
 Source+=FollowedHyperlinkColor.cpp
 Source+=FontScheme.cpp
 Source+=FormatScheme.cpp
