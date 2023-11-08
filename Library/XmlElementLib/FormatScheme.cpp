@@ -8,5 +8,7 @@ FormatScheme::FormatScheme (
     this->Name = new Attribute("name", "");
     this->AddAttribute(this->Name);
     this->fillStyleList = new FillStyleList();
+    this->lineStyleList = new LineStyleList();
     this->AddChildElement(this->fillStyleList);
+    this->AddChildElement(this->lineStyleList);
 }
