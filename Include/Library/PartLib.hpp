@@ -91,7 +91,7 @@ public:
 
     Status
     Write (
-        ) const final override;
+        );
 };
 
 class ThemePart : public IPart {
