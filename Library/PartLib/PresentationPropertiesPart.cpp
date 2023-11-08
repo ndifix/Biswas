@@ -10,7 +10,7 @@ PresentationPropertiesPart::PresentationPropertiesPart (
     const std::filesystem::path &dir
     ) : IPart(dir, relType, conType)
 {
-    this->RootElement.reset(new xmlElm::PresentationProperties());
+    this->RootElement.reset(new OpenXml::Presentation::PresentationProperties());
     this->xmlfile.reset(
         new xmlFile::PresentationProperties(
             std::filesystem::path(dir) /= "presProps.xml",

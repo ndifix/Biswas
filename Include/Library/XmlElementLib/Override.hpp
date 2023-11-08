@@ -3,7 +3,7 @@
 
 #include <Library/XmlBaseLib.hpp>
 
-namespace xmlElm {
+namespace OpenXml {
 
 class Override : public XmlElement {
 private:

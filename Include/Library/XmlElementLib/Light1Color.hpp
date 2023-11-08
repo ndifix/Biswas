@@ -4,7 +4,7 @@
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/SystemColor.hpp>
 
-namespace xmlElm {
+namespace OpenXml::Drawing {
 
 class Light1Color : public XmlElement {
 private:

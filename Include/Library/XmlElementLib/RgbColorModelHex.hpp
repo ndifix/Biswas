@@ -3,7 +3,7 @@
 
 #include <Library/XmlBaseLib.hpp>
 
-namespace xmlElm {
+namespace OpenXml::Drawing {
 
 class RgbColorModelHex  : public XmlElement {
 private:

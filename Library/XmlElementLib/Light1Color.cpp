@@ -1,6 +1,6 @@
 #include <Library/XmlElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml::Drawing;
 
 Light1Color::Light1Color (
     ) : XmlElement("lt1", xmlns::drawingm)

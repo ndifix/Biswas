@@ -10,7 +10,7 @@ ThemePart::ThemePart (
     const std::filesystem::path &dir
     ) : IPart(dir, relType, conType)
 {
-    this->RootElement.reset(new xmlElm::Theme());
+    this->RootElement.reset(new OpenXml::Drawing::Theme());
     this->xmlfile.reset(
         new xmlFile::Theme(
             std::filesystem::path(dir) /= "theme1.xml",

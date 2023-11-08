@@ -1,6 +1,6 @@
 #include <Library/XmlElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml;
 
 Default::Default (
     ) : XmlElement("Default", xmlns::content_)

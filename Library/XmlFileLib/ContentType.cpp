@@ -3,6 +3,6 @@
 
 xmlFile::ContentTypes::ContentTypes (
     const std::filesystem::path &path
-    ) : XmlFile(path, std::shared_ptr<xmlElm::Types>(new xmlElm::Types()))
+    ) : XmlFile(path, std::shared_ptr<OpenXml::Types>(new OpenXml::Types()))
 {
 }

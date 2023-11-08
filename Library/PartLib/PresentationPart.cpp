@@ -13,7 +13,7 @@ PresentationPart::PresentationPart (
     const std::filesystem::path &dir
     ) : IPart(dir, relType, conType)
 {
-    this->RootElement.reset(new xmlElm::Presentation());
+    this->RootElement.reset(new OpenXml::Presentation::Presentation());
     this->xmlfile.reset(
         new xmlFile::Presentation(
             std::filesystem::path(dir) /= "presentation.xml",
