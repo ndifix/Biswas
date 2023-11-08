@@ -1,6 +1,6 @@
 #include <Library/XmlElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml::Drawing;
 
 Dark2Color::Dark2Color (
     ) : XmlElement("dk2", xmlns::drawingm)

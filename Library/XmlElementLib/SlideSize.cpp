@@ -1,7 +1,7 @@
 #include <Biswas.hpp>
 #include <Library/XmlElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml::Presentation;
 
 SlideSize::SlideSize (
     ) : XmlElement("sldSz", xmlns::presenta)

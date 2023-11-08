@@ -7,7 +7,7 @@
 #include <Library/XmlElementLib.hpp>
 #include <Library/XmlElementLib/Default.hpp>
 
-namespace xmlElm {
+namespace OpenXml {
 
 class Types : public XmlRootElement {
 private:
@@ -24,13 +24,15 @@ public:
     Status AddRelation(std::unique_ptr<Relationship>);
 };
 
+namespace Presentation {
+
 class Presentation : public XmlRootElement {
 private:
 public:
-    xmlElm::SlideMasterList *slideMasterList;
-    xmlElm::SlideSize *slideSize;
-    xmlElm::NotesSize *notesSize;
-    xmlElm::DefaultTextStyle *defaultTextStyle;
+    SlideMasterList *slideMasterList;
+    SlideSize *slideSize;
+    NotesSize *notesSize;
+    DefaultTextStyle *defaultTextStyle;
     Presentation();
 };
 
@@ -40,6 +42,10 @@ public:
     inline PresentationProperties() : XmlRootElement("presentationPr", xmlns::presenta) {};
 };
 
+}
+
+namespace Drawing {
+
 class Theme : public XmlRootElement {
 private:
     ThemeElements *themeElements;
@@ -48,6 +54,10 @@ public:
     Theme();
 };
 
+}
+
+namespace Presentation {
+
 class SlideMaster : public XmlRootElement {
 private:
     ColorMap *colorMap;
@@ -55,6 +65,8 @@ private:
 public:
     SlideMaster();
 };
+
+}
 
 }
 

@@ -2,7 +2,7 @@
 #include <Library/XmlElementLib.hpp>
 #include <Library/XmlRootElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml;
 
 Status
 Relationships::AddRelation (

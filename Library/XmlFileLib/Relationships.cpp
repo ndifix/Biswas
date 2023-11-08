@@ -5,6 +5,6 @@ using namespace xmlFile;
 
 Relationships::Relationships (
     const std::filesystem::path &path
-    ) : XmlFile(path, std::shared_ptr<xmlElm::Relationships>(new xmlElm::Relationships()))
+    ) : XmlFile(path, std::shared_ptr<OpenXml::Relationships>(new OpenXml::Relationships()))
 {
 }

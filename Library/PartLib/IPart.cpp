@@ -46,7 +46,7 @@ IPart::AddRelationship (
     std::shared_ptr<IPart> newPart
     )
 {
-    xmlElm::Relationship *relation = new xmlElm::Relationship();
+    OpenXml::Relationship *relation = new OpenXml::Relationship();
     relation->Id->val = this->NextPartId();
     relation->Type->val = newPart->relationType;
     relation->Target->val = std::filesystem::relative(newPart->xmlfile->filePath, this->partDir);

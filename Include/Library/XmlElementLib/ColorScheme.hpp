@@ -15,7 +15,7 @@
 #include <Library/XmlElementLib/Light1Color.hpp>
 #include <Library/XmlElementLib/Light2Color.hpp>
 
-namespace xmlElm {
+namespace OpenXml::Drawing {
 
 class ColorScheme : public XmlElement {
 private:

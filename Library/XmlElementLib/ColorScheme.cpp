@@ -1,6 +1,6 @@
 #include <Library/XmlElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml::Drawing;
 
 ColorScheme::ColorScheme (
     ) : XmlElement("clrScheme", xmlns::drawingm)

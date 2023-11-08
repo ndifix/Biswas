@@ -1,6 +1,6 @@
 #include <Library/XmlElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml::Drawing;
 
 FollowedHyperlinkColor::FollowedHyperlinkColor (
     ) : XmlElement("folHlink", xmlns::drawingm)

@@ -1,6 +1,6 @@
 #include <Library/XmlRootElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml::Drawing;
 
 Theme::Theme (
     ) : XmlRootElement("theme", xmlns::drawingm)

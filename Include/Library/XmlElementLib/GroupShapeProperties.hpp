@@ -4,12 +4,12 @@
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/Transform2D.hpp>
 
-namespace xmlElm {
+namespace OpenXml::Presentation {
 
 class GroupShapeProperties : public XmlElement {
 private:
 public:
-    Transform2D *transformGroup;
+    Drawing::Transform2D *transformGroup;
     GroupShapeProperties();
 };
 

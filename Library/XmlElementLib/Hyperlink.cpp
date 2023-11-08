@@ -1,6 +1,6 @@
 #include <Library/XmlElementLib.hpp>
 
-using namespace xmlElm;
+using namespace OpenXml::Drawing;
 
 Hyperlink::Hyperlink (
     ) : XmlElement("hlink", xmlns::drawingm)
