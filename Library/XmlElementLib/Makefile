@@ -23,6 +23,7 @@ Source+=Hyperlink.cpp
 Source+=Light1Color.cpp
 Source+=Light2Color.cpp
 Source+=MajorFont.cpp
+Source+=MinorFont.cpp
 Source+=NonVisualDrawingProperties.cpp
 Source+=NonVisualGroupShapeProperties.cpp
 Source+=NotesSize.cpp
