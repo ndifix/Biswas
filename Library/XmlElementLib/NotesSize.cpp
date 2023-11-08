@@ -14,10 +14,11 @@ NotesSize::NotesSize (
 
 void
 NotesSize::Write (
-    std::ofstream &ofs
+    std::ofstream &ofs,
+    bool sign
     )
 {
     this->CxAttr->val = std::to_string(this->Cx);
     this->CyAttr->val = std::to_string(this->Cy);
-    XmlElement::Write(ofs);
+    XmlElement::Write(ofs, sign);
 }
