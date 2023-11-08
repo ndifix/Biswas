@@ -40,6 +40,7 @@
 #include <Library/XmlElementLib/NonVisualGroupShapeProperties.hpp>
 #include <Library/XmlElementLib/NotesSize.hpp>
 #include <Library/XmlElementLib/Offset.hpp>
+#include <Library/XmlElementLib/Outline.hpp>
 #include <Library/XmlElementLib/Override.hpp>
 #include <Library/XmlElementLib/Relationship.hpp>
 #include <Library/XmlElementLib/RgbColorModelHex.hpp>
