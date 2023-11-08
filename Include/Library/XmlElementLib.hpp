@@ -13,6 +13,7 @@
 #include <Library/XmlElementLib/ColorMap.hpp>
 #include <Library/XmlElementLib/ColorScheme.hpp>
 #include <Library/XmlElementLib/CommonSlideData.hpp>
+#include <Library/XmlElementLib/ComplexScriptFont.hpp>
 #include <Library/XmlElementLib/Dark1Color.hpp>
 #include <Library/XmlElementLib/Dark2Color.hpp>
 #include <Library/XmlElementLib/Default.hpp>
