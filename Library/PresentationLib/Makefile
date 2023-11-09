@@ -1,5 +1,6 @@
 LibName=libPresentation.a
 
-Source =Presentation.cpp
+Source=\
+Presentation.cpp\
 
 include ../lib.mk

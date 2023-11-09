@@ -1,5 +1,6 @@
 LibName=libUtil.a
 
-Source =System.cpp
+Source=\
+System.cpp\
 
 include ../lib.mk
