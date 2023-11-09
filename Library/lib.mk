@@ -4,9 +4,8 @@ IncDir=../../Include/
 
 Object=$(patsubst %.cpp,%.o,$(Source))
 
-all: $(Target)
-
 $(Target): $(Object)
+	@mkdir -p ${OutDir}
 	ar rcs $(Target) $(Object)
 
 %.o: %.cpp
