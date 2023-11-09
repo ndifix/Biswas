@@ -33,3 +33,5 @@
 
 # Powerpoint file
 *.pptx
+*.xml
+*.rels
