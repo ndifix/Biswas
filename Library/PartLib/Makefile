@@ -1,9 +1,10 @@
 LibName=libPart.a
 
-Source =IPart.cpp
-Source+=PresentationPart.cpp
-Source+=PresentationPropertiesPart.cpp
-Source+=ThemePart.cpp
-Source+=SlideMasterPart.cpp
+Source=\
+IPart.cpp\
+PresentationPart.cpp\
+PresentationPropertiesPart.cpp\
+SlideMasterPart.cpp\
+ThemePart.cpp\
 
 include ../lib.mk

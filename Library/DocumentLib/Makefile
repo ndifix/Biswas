@@ -1,5 +1,6 @@
 LibName=libDocument.a
 
-Source =Document.cpp
+Source=\
+Document.cpp\
 
 include ../lib.mk
