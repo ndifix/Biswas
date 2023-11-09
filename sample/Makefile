@@ -2,17 +2,24 @@ Target=../biswas.out
 IncDir=../Include/
 Source=main.cpp\
 
-Archive=\
-../out/libDocument.a\
-../out/libPresentation.a\
-../out/libPart.a\
-../out/libUtil.a\
-../out/libXmlElement.a\
-../out/libXmlFile.a\
-../out/libXmlBase.a
+LibDir=../Library/
+Library=\
+DocumentLib\
+PresentationLib\
+PartLib\
+UtilLib\
+XmlElementLib\
+XmlFileLib\
+XmlBaseLib\
+
+Archive=$(patsubst %Lib, ../out/lib%.a, $(Library))
 
 $(Target): $(Source) $(Archive)
 	g++ -I$(IncDir) $(Source) $(Archive) -o $(Target)
 
-%.a:
-	make -C $(addprefix ../Library/, $(patsubst lib%, %Lib, $(basename $(notdir $@))))
+$(Archive):
+	$(foreach lib, $(Library), make -C $(addprefix $(LibDir), $(lib));)
+
+clean:
+	$(foreach lib, $(Library), make -C $(addprefix $(LibDir), $(lib)) clean;)
+	rm $(Target)
