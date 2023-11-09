@@ -20,7 +20,7 @@ public:
 class Relationships : public XmlRootElement {
 private:
 public:
-    inline Relationships() : XmlRootElement("Relationships", xmlns::relation) {};
+    inline Relationships() : XmlRootElement("Relationships", xmlns::relpack_) {};
     Status AddRelation(std::unique_ptr<Relationship>);
 };
 

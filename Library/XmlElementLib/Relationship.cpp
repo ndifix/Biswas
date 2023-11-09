@@ -3,7 +3,7 @@
 using namespace OpenXml;
 
 Relationship::Relationship (
-    ) : XmlElement("Relationship", xmlns::relation)
+    ) : XmlElement("Relationship", xmlns::relpack_)
 {
     this->Id = new Attribute("Id");
     this->Type = new Attribute("Type");

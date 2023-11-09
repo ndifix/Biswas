@@ -19,6 +19,7 @@ bool operator==(const XmlNameSpace &lhs, const XmlNameSpace &rhs);
 bool operator<(const XmlNameSpace &lhs, const XmlNameSpace &rhs);
 
 extern const XmlNameSpace content_;
+extern const XmlNameSpace relpack_;
 extern const XmlNameSpace drawingm;
 extern const XmlNameSpace relation;
 extern const XmlNameSpace presenta;
