@@ -72,6 +72,10 @@ class PresentationPart : public IPart {
 private:
     std::shared_ptr<OpenXml::Presentation::Presentation> RootElement;
 
+    std::shared_ptr<ThemePart>
+    AddTheme (
+        );
+
     std::shared_ptr<SlideMasterPart>
     AddSlideMaster (
         std::shared_ptr<ThemePart> part
@@ -82,7 +86,7 @@ private:
         ) const;
 public:
     std::shared_ptr<PresentationPropertiesPart> presPropPart;
-    std::shared_ptr<ThemePart> themePart;
+    std::list<std::shared_ptr<ThemePart>> themeParts;
     std::list<std::shared_ptr<SlideMasterPart>> slideMasterParts;
 
     PresentationPart (

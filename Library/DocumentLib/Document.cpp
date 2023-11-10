@@ -109,9 +109,11 @@ Document::WriteContentTypes (
         return Status;
     }
 
-    Status = AddOverride(types, std::move(over), this->presentation.part->themePart, this->tmp);
-    if (Status != Status::Success) {
-        return Status;
+    for (auto &themePart:this->presentation.part->themeParts) {
+        Status = AddOverride(types, std::move(over), themePart, this->tmp);
+        if (Status != Status::Success) {
+            return Status;
+        }
     }
 
     contentType.Write();
