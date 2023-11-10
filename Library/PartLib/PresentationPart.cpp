@@ -1,3 +1,4 @@
+#include <sstream>
 #include <string>
 #include <Biswas.hpp>
 #include <Library/PartLib.hpp>
@@ -21,11 +22,22 @@ PresentationPart::PresentationPart (
         ));
 
     this->presPropPart = std::shared_ptr<PresentationPropertiesPart>(new PresentationPropertiesPart(dir));
-    this->themePart = std::shared_ptr<ThemePart>(new ThemePart(std::filesystem::path(dir) /= "theme/", "theme1.xml"));
 
     this->AddChildPart(this->presPropPart);
-    this->AddChildPart(this->themePart);
-    this->AddSlideMaster(this->themePart);
+    auto theme = this->AddTheme();
+    this->AddSlideMaster(theme);
+}
+
+std::shared_ptr<ThemePart>
+PresentationPart::AddTheme (
+    )
+{
+    std::stringstream filename;
+    filename << "theme" << this->themeParts.size() + 1 << ".xml";
+    std::shared_ptr<ThemePart> part(new ThemePart(std::filesystem::path(this->partDir) /= "theme/", filename.str()));
+    this->themeParts.push_back(part);
+    this->AddChildPart(part);
+    return part;
 }
 
 std::shared_ptr<SlideMasterPart>
@@ -58,8 +70,8 @@ PresentationPart::MakeDir (
         return Status;
     }
 
-    if (this->themePart != nullptr) {
-        Status = ::MakeDir(this->themePart->partDir);
+    if (!this->themeParts.empty()) {
+        Status = ::MakeDir(this->themeParts.front()->partDir);
         if (Status != Status::Success) {
             return Status;
         }
@@ -85,7 +97,9 @@ PresentationPart::Write (
         this->AddRelationship(slideMaster);
     }
     this->AddRelationship(this->presPropPart);
-    this->AddRelationship(this->themePart);
+    for (auto &theme:this->themeParts) {
+        this->AddRelationship(theme);
+    }
 
     Status = this->MakeDir();
     if (Status != Status::Success) {
