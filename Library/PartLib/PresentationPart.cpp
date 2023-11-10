@@ -21,7 +21,7 @@ PresentationPart::PresentationPart (
         ));
 
     this->presPropPart = std::shared_ptr<PresentationPropertiesPart>(new PresentationPropertiesPart(dir));
-    this->themePart = std::shared_ptr<ThemePart>(new ThemePart(std::filesystem::path(dir) /= "theme/"));
+    this->themePart = std::shared_ptr<ThemePart>(new ThemePart(std::filesystem::path(dir) /= "theme/", "theme1.xml"));
 
     this->AddChildPart(this->presPropPart);
     this->AddChildPart(this->themePart);
