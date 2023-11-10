@@ -99,7 +99,8 @@ private:
     std::shared_ptr<OpenXml::Drawing::Theme> RootElement;
 public:
     ThemePart (
-        const std::filesystem::path &dir
+        const std::filesystem::path &dir,
+        const std::filesystem::path &filename
         );
 };
 
