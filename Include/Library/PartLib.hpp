@@ -102,6 +102,8 @@ class ThemePart : public IPart {
 private:
     std::shared_ptr<OpenXml::Drawing::Theme> RootElement;
 public:
+    SlideMasterPart *slideMasterPart = nullptr;
+
     ThemePart (
         const std::filesystem::path &dir,
         const std::filesystem::path &filename
@@ -113,7 +115,8 @@ private:
     std::shared_ptr<OpenXml::Presentation::SlideMaster> RootElement;
 public:
     SlideMasterPart (
-        const std::filesystem::path &dir
+        const std::filesystem::path &dir,
+        const std::filesystem::path &filename
         );
 };
 
