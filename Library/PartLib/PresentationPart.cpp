@@ -1,4 +1,5 @@
 #include <sstream>
+#include <stdexcept>
 #include <string>
 #include <Biswas.hpp>
 #include <Library/PartLib.hpp>
@@ -45,16 +46,25 @@ PresentationPart::AddSlideMaster (
     std::shared_ptr<ThemePart> themePart
     )
 {
+    if (themePart->slideMasterPart != nullptr) {
+        throw std::invalid_argument("this theme already used.");
+    }
+
     this->RootElement->slideMasterList->AddId(
         2147483648 + this->slideMasterParts.size(),
         this->NextPartId()
         );
 
-    std::shared_ptr<SlideMasterPart> part(new SlideMasterPart(std::filesystem::path(this->partDir) /= "slideMasters/"));
+    std::stringstream filename;
+    filename << "slideMaster" << this->slideMasterParts.size() + 1 << ".xml";
+
+    std::shared_ptr<SlideMasterPart> part(new SlideMasterPart(std::filesystem::path(this->partDir) /= "slideMasters/", filename.str()));
     part->AddRelationship(themePart);
+    themePart->slideMasterPart = part.get();
 
     this->slideMasterParts.push_back(part);
     this->AddChildPart(part);
+    this->AddRelationship(part);
 
     return part;
 }
