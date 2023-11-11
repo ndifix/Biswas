@@ -1,5 +1,7 @@
 #pragma once
 
+class Document;
+
 #include <filesystem>
 #include <Biswas.hpp>
 #include <Library/PresentationLib.hpp>
