@@ -1,5 +1,4 @@
-#ifndef BISWAS_HPP
-#define BISWAS_HPP
+#pragma once
 
 enum Status {
     Success,
@@ -7,5 +6,3 @@ enum Status {
     NotReady,
     NotFound,
 };
-
-#endif

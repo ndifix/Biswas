@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_HPP
-#define XML_ELEMENT_LIB_HPP
+#pragma once
 
 #include <Library/XmlElementLib/Accent1Color.hpp>
 #include <Library/XmlElementLib/Accent2Color.hpp>
@@ -54,5 +53,3 @@
 #include <Library/XmlElementLib/SystemColor.hpp>
 #include <Library/XmlElementLib/ThemeElements.hpp>
 #include <Library/XmlElementLib/Transform2D.hpp>
-
-#endif

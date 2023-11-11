@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_ColorScheme
-#define XML_ELEMENT_LIB_ColorScheme
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/Accent1Color.hpp>
@@ -37,5 +36,3 @@ public:
 };
 
 }
-
-#endif

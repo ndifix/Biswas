@@ -1,5 +1,4 @@
-#ifndef UTIL_LIB_HPP
-#define UTIL_LIB_HPP
+#pragma once
 
 #include <filesystem>
 #include <Biswas.hpp>
@@ -19,5 +18,3 @@ BuildPptxFile (
     const std::string &dir,
     const std::filesystem::path &outPath
     );
-
-#endif

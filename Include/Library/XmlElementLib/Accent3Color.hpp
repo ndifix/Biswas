@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_Accent3Color
-#define XML_ELEMENT_LIB_Accent3Color
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/RgbColorModelHex.hpp>
@@ -14,5 +13,3 @@ public:
 };
 
 }
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_Dark1Color
-#define XML_ELEMENT_LIB_Dark1Color
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/SystemColor.hpp>
@@ -14,5 +13,3 @@ public:
 };
 
 }
-
-#endif

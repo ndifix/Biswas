@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_FontScheme
-#define XML_ELEMENT_LIB_FontScheme
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/MajorFont.hpp>
@@ -17,5 +16,3 @@ public:
 };
 
 }
-
-#endif

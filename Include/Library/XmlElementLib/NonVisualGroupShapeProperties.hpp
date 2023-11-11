@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_NonVisualGroupShapeProperties
-#define XML_ELEMENT_LIB_NonVisualGroupShapeProperties
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/ApplicationNonVisualDrawingProperties.hpp>
@@ -18,5 +17,3 @@ public:
 };
 
 }
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_SLIDEMASTERLIST
-#define XML_ELEMENT_LIB_SLIDEMASTERLIST
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/SlideMasterId.hpp>
@@ -15,5 +14,3 @@ public:
 };
 
 }
-
-#endif

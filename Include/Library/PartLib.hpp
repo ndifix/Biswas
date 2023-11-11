@@ -1,5 +1,4 @@
-#ifndef PART_LIB_HPP
-#define PART_LIB_HPP
+#pragma once
 
 #include <filesystem>
 #include <list>
@@ -119,5 +118,3 @@ public:
         const std::filesystem::path &filename
         );
 };
-
-#endif

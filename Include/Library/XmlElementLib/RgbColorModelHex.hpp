@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_RgbColorModelHex
-#define XML_ELEMENT_LIB_RgbColorModelHex
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 
@@ -13,5 +12,3 @@ public:
 };
 
 }
-
-#endif

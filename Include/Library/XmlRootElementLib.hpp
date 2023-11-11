@@ -1,5 +1,4 @@
-#ifndef XML_ROOT_ELEMENT_LIB_HPP
-#define XML_ROOT_ELEMENT_LIB_HPP
+#pragma once
 
 #include <memory>
 #include <Biswas.hpp>
@@ -69,5 +68,3 @@ public:
 }
 
 }
-
-#endif
