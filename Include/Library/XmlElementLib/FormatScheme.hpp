@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_FormatScheme
-#define XML_ELEMENT_LIB_FormatScheme
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/LineStyleList.hpp>
@@ -18,5 +17,3 @@ public:
 };
 
 }
-
-#endif

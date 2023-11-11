@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_RELATIONSHIP
-#define XML_ELEMENT_LIB_RELATIONSHIP
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 
@@ -15,5 +14,3 @@ public:
 };
 
 }
-
-#endif

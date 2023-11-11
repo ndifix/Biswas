@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_ComplexScriptFont
-#define XML_ELEMENT_LIB_ComplexScriptFont
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 
@@ -13,5 +12,3 @@ public:
 };
 
 }
-
-#endif

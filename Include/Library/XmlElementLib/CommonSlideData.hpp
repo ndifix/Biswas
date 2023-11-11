@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_COMMONSLIDEDATA
-#define XML_ELEMENT_LIB_COMMONSLIDEDATA
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/ShapeTree.hpp>
@@ -15,4 +14,3 @@ public:
 
 }
 
-#endif

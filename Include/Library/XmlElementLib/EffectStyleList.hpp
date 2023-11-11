@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_EffectStyleList
-#define XML_ELEMENT_LIB_EffectStyleList
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/EffectStyle.hpp>
@@ -16,5 +15,3 @@ public:
 };
 
 }
-
-#endif

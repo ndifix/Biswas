@@ -1,5 +1,4 @@
-#ifndef XML_BASE_LIB_HPP
-#define XML_BASE_LIB_HPP
+#pragma once
 
 #include <filesystem>
 #include <fstream>
@@ -118,5 +117,3 @@ public:
     Write (
         ) const;
 };
-
-#endif

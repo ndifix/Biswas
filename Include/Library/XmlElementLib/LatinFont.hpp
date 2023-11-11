@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_LatinFont
-#define XML_ELEMENT_LIB_LatinFont
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 
@@ -13,5 +12,3 @@ public:
 };
 
 }
-
-#endif

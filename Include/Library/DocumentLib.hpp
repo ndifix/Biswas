@@ -1,5 +1,4 @@
-#ifndef DOCUMENT_LIB_HPP
-#define DOCUMENT_LIB_HPP
+#pragma once
 
 #include <filesystem>
 #include <Biswas.hpp>
@@ -26,5 +25,3 @@ public:
         const std::filesystem::path path
         ) const;
 };
-
-#endif

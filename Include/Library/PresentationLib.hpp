@@ -1,5 +1,4 @@
-#ifndef PRESENTATION_LIB_HPP
-#define PRESENTATION_LIB_HPP
+#pragma once
 
 #include <memory>
 #include <Biswas.hpp>
@@ -18,5 +17,3 @@ public:
     Write (
         ) const;
 };
-
-#endif

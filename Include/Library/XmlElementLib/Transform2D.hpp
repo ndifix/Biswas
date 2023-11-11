@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_Transform2D
-#define XML_ELEMENT_LIB_Transform2D
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/Extents.hpp>
@@ -18,5 +17,3 @@ public:
 };
 
 }
-
-#endif

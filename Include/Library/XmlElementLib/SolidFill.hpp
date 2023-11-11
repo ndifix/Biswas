@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_SolidFill
-#define XML_ELEMENT_LIB_SolidFill
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 
@@ -12,5 +11,3 @@ public:
 };
 
 }
-
-#endif

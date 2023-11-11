@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_SHAPETREE
-#define XML_ELEMENT_LIB_SHAPETREE
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/NonVisualGroupShapeProperties.hpp>
@@ -16,5 +15,3 @@ public:
 };
 
 }
-
-#endif

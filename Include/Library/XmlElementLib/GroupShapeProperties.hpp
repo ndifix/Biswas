@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_GroupShapeProperties
-#define XML_ELEMENT_LIB_GroupShapeProperties
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/Transform2D.hpp>
@@ -14,5 +13,3 @@ public:
 };
 
 }
-
-#endif

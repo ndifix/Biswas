@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_LineStyleList
-#define XML_ELEMENT_LIB_LineStyleList
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 
@@ -12,5 +11,3 @@ public:
 };
 
 }
-
-#endif

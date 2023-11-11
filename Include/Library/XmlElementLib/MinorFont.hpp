@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_MinorFont
-#define XML_ELEMENT_LIB_MinorFont
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib/EastAsianFont.hpp>
@@ -17,5 +16,3 @@ public:
 };
 
 }
-
-#endif

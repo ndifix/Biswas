@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_NOTESSIZE
-#define XML_ELEMENT_LIB_NOTESSIZE
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 
@@ -17,5 +16,3 @@ public:
 };
 
 }
-
-#endif

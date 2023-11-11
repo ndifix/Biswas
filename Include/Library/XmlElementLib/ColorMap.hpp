@@ -1,5 +1,4 @@
-#ifndef XML_ELEMENT_LIB_ColorMap
-#define XML_ELEMENT_LIB_ColorMap
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 
@@ -24,5 +23,3 @@ public:
 };
 
 }
-
-#endif

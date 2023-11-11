@@ -1,5 +1,4 @@
-#ifndef XML_FILE_LIB_HPP
-#define XML_FILE_LIB_HPP
+#pragma once
 
 #include <Library/XmlBaseLib.hpp>
 
@@ -42,5 +41,3 @@ public:
 };
 
 }
-
-#endif
