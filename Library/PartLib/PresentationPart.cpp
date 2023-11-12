@@ -57,8 +57,14 @@ PresentationPart::Write (
 {
     Status Status;
 
+    auto slideMasterId = this->RootElement->slideMasterList->ids.begin();
     for (auto &slideMaster:this->slideMasterParts) {
-        this->AddRelationship(slideMaster);
+        auto relation = this->AddRelationship(slideMaster);
+        if (slideMasterId == this->RootElement->slideMasterList->ids.end()) {
+            throw std::runtime_error("number of slideMasterId is invalid");
+        }
+        (*slideMasterId)->RelationshipId->val = relation->Id->val;
+        ++slideMasterId;
     }
     this->AddRelationship(this->presPropPart);
     for (auto &theme:this->themeParts) {

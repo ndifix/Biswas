@@ -9,7 +9,7 @@ private:
     Attribute *Id;
 public:
     Attribute *RelationshipId;
-    SlideMasterId(uint32_t id, std::string rid);
+    SlideMasterId(uint32_t id);
 };
 
 }

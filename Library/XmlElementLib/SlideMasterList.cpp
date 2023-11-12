@@ -4,10 +4,9 @@ using namespace OpenXml::Presentation;
 
 void
 SlideMasterList::AddId (
-    uint32_t id,
-    std::string rid
+    uint32_t id
     )
 {
-    this->ids.push_back(new SlideMasterId(id, rid));
+    this->ids.push_back(new SlideMasterId(id));
     this->AddChildElement(this->ids.back());
 }

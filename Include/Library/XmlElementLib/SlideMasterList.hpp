@@ -7,10 +7,10 @@ namespace OpenXml::Presentation {
 
 class SlideMasterList : public XmlElement {
 private:
-    std::list<SlideMasterId*> ids;
 public:
+    std::list<SlideMasterId*> ids;
     inline SlideMasterList() : XmlElement("sldMasterIdLst", xmlns::presenta) {};
-    void AddId (uint32_t id, std::string rid);
+    void AddId (uint32_t id);
 };
 
 }
