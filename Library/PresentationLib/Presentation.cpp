@@ -43,14 +43,11 @@ Presentation::AddSlideMaster (
         throw std::invalid_argument("this theme already used.");
     }
 
-    this->part->RootElement->slideMasterList->AddId(
-        2147483648 + this->part->slideMasterParts.size()
-        );
-
     std::stringstream filename;
     filename << "slideMaster" << this->part->slideMasterParts.size() + 1 << ".xml";
 
     std::shared_ptr<SlideMasterPart> slideMasterPart(new SlideMasterPart(this->part->partDir, filename.str()));
+    this->part->RootElement->slideMasterList->AddId();
     slideMasterPart->AddRelationship(theme.part);
     theme.part->slideMasterPart = slideMasterPart.get();
 

@@ -71,6 +71,11 @@ PresentationPart::Write (
         this->AddRelationship(theme);
     }
 
+    uint32_t id = 0x80000000u;
+    for (auto &slideMasterId:this->RootElement->slideMasterList->ids) {
+        slideMasterId->Id->val = std::to_string(id++);
+    }
+
     Status = this->MakeDir();
     if (Status != Status::Success) {
         return Status;
