@@ -71,15 +71,6 @@ class PresentationPart : public IPart {
 private:
     std::shared_ptr<OpenXml::Presentation::Presentation> RootElement;
 
-    std::shared_ptr<ThemePart>
-    AddTheme (
-        );
-
-    std::shared_ptr<SlideMasterPart>
-    AddSlideMaster (
-        std::shared_ptr<ThemePart> part
-        );
-
     Status
     MakeDir (
         ) const;
@@ -90,6 +81,11 @@ public:
 
     PresentationPart (
         const std::filesystem::path &dir
+        );
+
+    std::shared_ptr<SlideMasterPart>
+    AddSlideMaster (
+        std::shared_ptr<ThemePart> part
         );
 
     Status

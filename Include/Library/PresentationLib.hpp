@@ -9,6 +9,7 @@ namespace biswas {
 
 class Presentation;
 class PresentationProperties;
+class Theme;
 
 class Presentation {
 private:
@@ -25,6 +26,10 @@ friend Document;
     Presentation (
         const std::filesystem::path &tmp
         );
+
+    Theme
+    AddTheme (
+        ) const;
 };
 
 class PresentationProperties {
@@ -37,6 +42,18 @@ friend Presentation;
     PresentationProperties (
         std::shared_ptr<PresentationPropertiesPart> &presProp
         ) { this->part = presProp; }
+};
+
+class Theme {
+private:
+    std::shared_ptr<ThemePart> part;
+public:
+friend Presentation;
+
+    inline
+    Theme (
+        std::shared_ptr<ThemePart> &theme
+        ) { this->part = theme; }
 };
 
 }
