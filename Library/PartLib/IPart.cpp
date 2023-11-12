@@ -3,6 +3,20 @@
 #include <Library/UtilLib.hpp>
 #include <Library/XmlFileLib.hpp>
 
+namespace {
+
+std::string
+NextRelationId (
+    std::list<OpenXml::Relationship*> relations
+    )
+{
+    std::stringstream newId;
+    newId << "rId" << relations.size() + 1;
+    return newId.str();
+}
+
+}
+
 IPart::IPart (
     const std::filesystem::path &dir,
     const char *relType,
@@ -32,26 +46,18 @@ IPart::AddChildPart (
     this->childParts.push_back(newPart);
 }
 
-std::string
-IPart::NextPartId (
-    ) const
-{
-    std::stringstream newId;
-    newId << "rId" << this->relations.size() + 1;
-    return newId.str();
-}
-
-void
+OpenXml::Relationship *
 IPart::AddRelationship (
     std::shared_ptr<IPart> newPart
     )
 {
     OpenXml::Relationship *relation = new OpenXml::Relationship();
-    relation->Id->val = this->NextPartId();
+    relation->Id->val = NextRelationId(this->relations);
     relation->Type->val = newPart->relationType;
     relation->Target->val = std::filesystem::relative(newPart->xmlfile->filePath, this->partDir);
 
-    this->relations.push_back(std::move(relation));
+    this->relations.push_back(relation);
+    return relation;
 }
 
 Status

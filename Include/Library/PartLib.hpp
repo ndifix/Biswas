@@ -26,10 +26,6 @@ public:
         const char *conType
         );
 
-    std::string
-    NextPartId (
-        ) const;
-
     void
     AddChildPart (
         std::shared_ptr<IPart> newPart
@@ -43,7 +39,7 @@ public:
     WriteRelationship (
         ) const;
 
-    void
+    OpenXml::Relationship *
     AddRelationship (
         std::shared_ptr<IPart> newPart
         );

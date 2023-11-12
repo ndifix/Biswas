@@ -44,8 +44,7 @@ Presentation::AddSlideMaster (
     }
 
     this->part->RootElement->slideMasterList->AddId(
-        2147483648 + this->part->slideMasterParts.size(),
-        this->part->NextPartId()
+        2147483648 + this->part->slideMasterParts.size()
         );
 
     std::stringstream filename;
@@ -57,7 +56,6 @@ Presentation::AddSlideMaster (
 
     this->part->slideMasterParts.push_back(slideMasterPart);
     this->part->AddChildPart(slideMasterPart);
-    this->part->AddRelationship(slideMasterPart);
 
     return SlideMaster(slideMasterPart);
 }
