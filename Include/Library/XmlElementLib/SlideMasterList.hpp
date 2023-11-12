@@ -10,7 +10,7 @@ private:
 public:
     std::list<SlideMasterId*> ids;
     inline SlideMasterList() : XmlElement("sldMasterIdLst", xmlns::presenta) {};
-    void AddId (uint32_t id);
+    void AddId ();
 };
 
 }

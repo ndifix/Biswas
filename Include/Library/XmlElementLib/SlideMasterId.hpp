@@ -6,10 +6,10 @@ namespace OpenXml::Presentation {
 
 class SlideMasterId : public XmlElement {
 private:
-    Attribute *Id;
 public:
+    Attribute *Id;
     Attribute *RelationshipId;
-    SlideMasterId(uint32_t id);
+    SlideMasterId();
 };
 
 }
