@@ -7,14 +7,14 @@ const char *conType = "application/vnd.openxmlformats-officedocument.presentatio
 }
 
 SlideMasterPart::SlideMasterPart (
-    const std::filesystem::path &dir,
+    const std::filesystem::path &presDir,
     const std::filesystem::path &filename
-    ) : IPart(dir, relType, conType)
+    ) : IPart(std::filesystem::path(presDir) /= "slideMasters", relType, conType)
 {
     this->RootElement.reset(new OpenXml::Presentation::SlideMaster());
     this->xmlfile.reset(
         new xmlFile::SlideMaster(
-            std::filesystem::path(dir) /= filename,
+            std::filesystem::path(this->partDir) /= filename,
             this->RootElement
         ));
 }

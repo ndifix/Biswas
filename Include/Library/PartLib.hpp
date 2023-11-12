@@ -64,7 +64,7 @@ private:
     std::shared_ptr<OpenXml::Presentation::PresentationProperties> RootElement;
 public:
     PresentationPropertiesPart (
-        const std::filesystem::path &dir
+        const std::filesystem::path &presDir
         );
 };
 
@@ -95,7 +95,7 @@ public:
     SlideMasterPart *slideMasterPart = nullptr;
 
     ThemePart (
-        const std::filesystem::path &dir,
+        const std::filesystem::path &presDir,
         const std::filesystem::path &filename
         );
 };
@@ -105,7 +105,7 @@ private:
     std::shared_ptr<OpenXml::Presentation::SlideMaster> RootElement;
 public:
     SlideMasterPart (
-        const std::filesystem::path &dir,
+        const std::filesystem::path &presDir,
         const std::filesystem::path &filename
         );
 };
