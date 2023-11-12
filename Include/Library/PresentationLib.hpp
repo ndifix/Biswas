@@ -5,6 +5,7 @@
 #include <Library/DocumentLib.hpp>
 #include <Library/PartLib.hpp>
 
+// API用クラス
 namespace biswas {
 
 class Presentation;
