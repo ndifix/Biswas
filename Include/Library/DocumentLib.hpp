@@ -14,7 +14,6 @@ namespace biswas {
 class Document {
 private:
     const std::filesystem::path tmp = std::filesystem::absolute("tmp/");
-    Presentation presentation;
 
     Status
     WriteRelation (
@@ -24,6 +23,8 @@ private:
     WriteContentTypes (
         ) const;
 public:
+    Presentation presentation;
+
     Document ();
 
     Status
