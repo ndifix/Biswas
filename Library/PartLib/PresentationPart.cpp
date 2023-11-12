@@ -22,9 +22,6 @@ PresentationPart::PresentationPart (
             this->RootElement
         ));
 
-    this->presPropPart = std::shared_ptr<PresentationPropertiesPart>(new PresentationPropertiesPart(dir));
-
-    this->AddChildPart(this->presPropPart);
     auto theme = this->AddTheme();
     this->AddSlideMaster(theme);
 }

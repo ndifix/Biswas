@@ -9,7 +9,13 @@ Presentation::Presentation (
     const std::filesystem::path &tmp
     )
 {
-    this->part.reset(new PresentationPart(std::filesystem::path(tmp) /= "ppt/"));
+    auto presentationDir = std::filesystem::path(tmp) /= "ppt/";
+    this->part.reset(new PresentationPart(presentationDir));
+
+    auto presProp = std::shared_ptr<PresentationPropertiesPart>(new PresentationPropertiesPart(presentationDir));
+    this->presentationProperties.reset(new biswas::PresentationProperties(presProp));
+    this->part->presPropPart = presProp;
+    this->part->AddChildPart(this->presentationProperties->part);
 }
 
 Status

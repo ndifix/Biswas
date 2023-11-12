@@ -15,11 +15,6 @@ protected:
     std::list<std::shared_ptr<IPart>> childParts;
     std::list<OpenXml::Relationship*> relations;
 
-    void
-    AddChildPart (
-        std::shared_ptr<IPart> newPart
-        );
-
     std::string
     NextPartId (
         ) const;
@@ -32,6 +27,11 @@ public:
         const std::filesystem::path &dir,
         const char *relType,
         const char *conType
+        );
+
+    void
+    AddChildPart (
+        std::shared_ptr<IPart> newPart
         );
 
     std::string
