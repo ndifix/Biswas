@@ -51,7 +51,7 @@ Presentation::AddSlideMaster (
     std::stringstream filename;
     filename << "slideMaster" << this->part->slideMasterParts.size() + 1 << ".xml";
 
-    std::shared_ptr<SlideMasterPart> slideMasterPart(new SlideMasterPart(std::filesystem::path(this->part->partDir) /= "slideMasters/", filename.str()));
+    std::shared_ptr<SlideMasterPart> slideMasterPart(new SlideMasterPart(this->part->partDir, filename.str()));
     slideMasterPart->AddRelationship(theme.part);
     theme.part->slideMasterPart = slideMasterPart.get();
 
@@ -68,7 +68,7 @@ Presentation::AddTheme (
 {
     std::stringstream filename;
     filename << "theme" << this->part->themeParts.size() + 1 << ".xml";
-    std::shared_ptr<ThemePart> themePart(new ThemePart(std::filesystem::path(this->part->partDir) /= "theme/", filename.str()));
+    std::shared_ptr<ThemePart> themePart(new ThemePart(this->part->partDir, filename.str()));
 
     Theme theme(themePart);
     this->part->themeParts.push_back(themePart);

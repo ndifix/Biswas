@@ -7,13 +7,13 @@ const char *conType = "application/vnd.openxmlformats-officedocument.presentatio
 }
 
 PresentationPropertiesPart::PresentationPropertiesPart (
-    const std::filesystem::path &dir
-    ) : IPart(dir, relType, conType)
+    const std::filesystem::path &presDir
+    ) : IPart(presDir, relType, conType)
 {
     this->RootElement.reset(new OpenXml::Presentation::PresentationProperties());
     this->xmlfile.reset(
         new xmlFile::PresentationProperties(
-            std::filesystem::path(dir) /= "presProps.xml",
+            std::filesystem::path(presDir) /= "presProps.xml",
             this->RootElement
         ));
 }

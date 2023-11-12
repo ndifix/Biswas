@@ -7,14 +7,14 @@ const char *conType = "application/vnd.openxmlformats-officedocument.theme+xml";
 }
 
 ThemePart::ThemePart (
-    const std::filesystem::path &dir,
+    const std::filesystem::path &presDir,
     const std::filesystem::path &filename
-    ) : IPart(dir, relType, conType)
+    ) : IPart(std::filesystem::path(presDir) /= "theme", relType, conType)
 {
     this->RootElement.reset(new OpenXml::Drawing::Theme());
     this->xmlfile.reset(
         new xmlFile::Theme(
-            std::filesystem::path(dir) /= filename,
+            std::filesystem::path(this->partDir) /= filename,
             this->RootElement
         ));
 }
