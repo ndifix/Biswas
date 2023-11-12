@@ -17,9 +17,6 @@ Presentation::Presentation (
     this->presentationProperties.reset(new biswas::PresentationProperties(presProp));
     this->part->presPropPart = presProp;
     this->part->AddChildPart(this->presentationProperties->part);
-
-    auto theme = this->AddTheme();
-    this->part->AddSlideMaster(theme.part);
 }
 
 Status
@@ -35,6 +32,34 @@ Presentation::Write (
         }
     }
     return Status::Success;
+}
+
+SlideMaster
+Presentation::AddSlideMaster (
+    const Theme &theme
+    ) const
+{
+    if (theme.part->slideMasterPart != nullptr) {
+        throw std::invalid_argument("this theme already used.");
+    }
+
+    this->part->RootElement->slideMasterList->AddId(
+        2147483648 + this->part->slideMasterParts.size(),
+        this->part->NextPartId()
+        );
+
+    std::stringstream filename;
+    filename << "slideMaster" << this->part->slideMasterParts.size() + 1 << ".xml";
+
+    std::shared_ptr<SlideMasterPart> slideMasterPart(new SlideMasterPart(std::filesystem::path(this->part->partDir) /= "slideMasters/", filename.str()));
+    slideMasterPart->AddRelationship(theme.part);
+    theme.part->slideMasterPart = slideMasterPart.get();
+
+    this->part->slideMasterParts.push_back(slideMasterPart);
+    this->part->AddChildPart(slideMasterPart);
+    this->part->AddRelationship(slideMasterPart);
+
+    return SlideMaster(slideMasterPart);
 }
 
 Theme

@@ -15,9 +15,6 @@ protected:
     std::list<std::shared_ptr<IPart>> childParts;
     std::list<OpenXml::Relationship*> relations;
 
-    std::string
-    NextPartId (
-        ) const;
 public:
     const std::filesystem::path partDir;
     const char *relationType;
@@ -28,6 +25,10 @@ public:
         const char *relType,
         const char *conType
         );
+
+    std::string
+    NextPartId (
+        ) const;
 
     void
     AddChildPart (
@@ -69,23 +70,17 @@ public:
 
 class PresentationPart : public IPart {
 private:
-    std::shared_ptr<OpenXml::Presentation::Presentation> RootElement;
-
     Status
     MakeDir (
         ) const;
 public:
+    std::shared_ptr<OpenXml::Presentation::Presentation> RootElement;
     std::shared_ptr<PresentationPropertiesPart> presPropPart;
     std::list<std::shared_ptr<ThemePart>> themeParts;
     std::list<std::shared_ptr<SlideMasterPart>> slideMasterParts;
 
     PresentationPart (
         const std::filesystem::path &dir
-        );
-
-    std::shared_ptr<SlideMasterPart>
-    AddSlideMaster (
-        std::shared_ptr<ThemePart> part
         );
 
     Status
