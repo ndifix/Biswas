@@ -7,6 +7,8 @@ SlideMaster::SlideMaster (
 {
     this->colorMap = new ColorMap();
     this->commonSlideData = new CommonSlideData();
+    this->slideLayoutIdList = new SlideLayoutIdList();
     this->AddChildElement(this->commonSlideData);
     this->AddChildElement(this->colorMap);
+    this->AddChildElement(this->slideLayoutIdList);
 }
