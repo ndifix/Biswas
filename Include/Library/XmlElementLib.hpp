@@ -11,6 +11,7 @@
 #include <Library/XmlElementLib/ChildExtents.hpp>
 #include <Library/XmlElementLib/ChildOffset.hpp>
 #include <Library/XmlElementLib/ColorMap.hpp>
+#include <Library/XmlElementLib/ColorMapOverride.hpp>
 #include <Library/XmlElementLib/ColorScheme.hpp>
 #include <Library/XmlElementLib/CommonSlideData.hpp>
 #include <Library/XmlElementLib/ComplexScriptFont.hpp>
