@@ -10,6 +10,7 @@ namespace biswas {
 
 class Presentation;
 class PresentationProperties;
+class Slide;
 class SlideLayout;
 class SlideMaster;
 class Theme;
@@ -29,6 +30,11 @@ friend Document;
     Presentation (
         const std::filesystem::path &tmp
         );
+
+    Slide
+    AddSlide (
+        const SlideLayout &slideLayout
+        ) const;
 
     SlideLayout
     AddSlideLayout (
@@ -57,10 +63,22 @@ friend Presentation;
         ) { this->part = presProp; }
 };
 
+class Slide {
+private:
+    std::shared_ptr<SlidePart> part;
+public:
+
+    inline
+    Slide (
+        std::shared_ptr<SlidePart> &slide
+        ) { this->part = slide; }
+};
+
 class SlideLayout {
 private:
     std::shared_ptr<SlideLayoutPart> part;
 public:
+friend Presentation;
 
     inline
     SlideLayout (
