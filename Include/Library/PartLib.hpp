@@ -55,6 +55,7 @@ class PresentationPart;
 class ThemePart;
 class SlideMasterPart;
 class SlideLayoutPart;
+class SlidePart;
 
 class PresentationPropertiesPart : public IPart {
 private:
@@ -75,6 +76,7 @@ public:
     std::shared_ptr<PresentationPropertiesPart> presPropPart;
     std::list<std::shared_ptr<ThemePart>> themeParts;
     std::list<std::shared_ptr<SlideMasterPart>> slideMasterParts;
+    std::list<std::shared_ptr<SlidePart>> slideParts;
 
     PresentationPart (
         const std::filesystem::path &dir
@@ -122,6 +124,17 @@ public:
     SlideMasterPart *slideMasterPart = nullptr;
 
     SlideLayoutPart (
+        const std::filesystem::path &presDir,
+        const std::filesystem::path &filename
+        );
+};
+
+class SlidePart : public IPart {
+private:
+    std::shared_ptr<OpenXml::Presentation::Slide> RootElement;
+public:
+
+    SlidePart (
         const std::filesystem::path &presDir,
         const std::filesystem::path &filename
         );
