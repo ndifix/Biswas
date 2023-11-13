@@ -3,6 +3,8 @@
 #include <Library/UtilLib.hpp>
 #include <Library/XmlRootElementLib.hpp>
 
+using namespace biswas;
+
 Document::Document (
     ) : presentation(this->tmp)
 {

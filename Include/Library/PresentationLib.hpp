@@ -5,6 +5,8 @@
 #include <Library/DocumentLib.hpp>
 #include <Library/PartLib.hpp>
 
+namespace biswas {
+
 class Presentation {
 private:
     std::unique_ptr<PresentationPart> part;
@@ -19,3 +21,5 @@ friend Document;
         const std::filesystem::path &tmp
         );
 };
+
+}

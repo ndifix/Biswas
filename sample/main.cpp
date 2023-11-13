@@ -1,6 +1,6 @@
 #include <Library/DocumentLib.hpp>
 
 int main() {
-    Document doc;
+    biswas::Document doc;
     doc.Write("sample.pptx");
 }

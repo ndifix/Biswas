@@ -3,6 +3,8 @@
 #include <Library/PartLib.hpp>
 #include <Library/PresentationLib.hpp>
 
+using namespace biswas;
+
 Presentation::Presentation (
     const std::filesystem::path &tmp
     )
