@@ -91,7 +91,7 @@ IPart::WriteRelationship (
 
 Status
 IPart::Write (
-    ) const
+    )
 {
     Status Status;
 
