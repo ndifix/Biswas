@@ -35,5 +35,9 @@ SlideMasterPart::Write (
         ++slideLayoutId;
     }
 
+    if (this->themePart) {
+        this->AddRelationship(themePart);
+    }
+
     return IPart::Write();
 }
