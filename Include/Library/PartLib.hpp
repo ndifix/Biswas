@@ -47,13 +47,14 @@ public:
     virtual
     Status
     Write (
-        ) const;
+        );
 };
 
 class PresentationPropertiesPart;
 class PresentationPart;
 class ThemePart;
 class SlideMasterPart;
+class SlideLayoutPart;
 
 class PresentationPropertiesPart : public IPart {
 private:
@@ -98,18 +99,27 @@ public:
 
 class SlideMasterPart : public IPart {
 private:
-    std::shared_ptr<OpenXml::Presentation::SlideMaster> RootElement;
 public:
+    std::shared_ptr<OpenXml::Presentation::SlideMaster> RootElement;
+    std::list<std::shared_ptr<SlideLayoutPart>> slideLayoutParts;
+
     SlideMasterPart (
         const std::filesystem::path &presDir,
         const std::filesystem::path &filename
         );
+
+    virtual
+    Status
+    Write (
+        ) override;
 };
 
 class SlideLayoutPart : public IPart {
 private:
     std::shared_ptr<OpenXml::Presentation::SlideLayout> RootElement;
 public:
+    SlideMasterPart *slideMasterPart = nullptr;
+
     SlideLayoutPart (
         const std::filesystem::path &presDir,
         const std::filesystem::path &filename

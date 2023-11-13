@@ -34,6 +34,29 @@ Presentation::Write (
     return Status::Success;
 }
 
+SlideLayout
+Presentation::AddSlideLayout (
+    const SlideMaster &slideMaster
+    ) const
+{
+    std::stringstream filename;
+    uint16_t slideLayouts = 0;
+    for (auto slideMaster:this->part->slideMasterParts) {
+        slideLayouts += slideMaster->slideLayoutParts.size();
+    }
+    filename << "slideLayout" << slideLayouts + 1 << ".xml";
+
+    std::shared_ptr<SlideLayoutPart> slideLayoutPart(new SlideLayoutPart(this->part->partDir, filename.str()));
+    slideMaster.part->RootElement->slideLayoutIdList->AddId();
+    slideLayoutPart->AddRelationship(slideMaster.part);
+    slideLayoutPart->slideMasterPart = slideMaster.part.get();
+
+    slideMaster.part->slideLayoutParts.push_back(slideLayoutPart);
+    slideMaster.part->AddChildPart(slideLayoutPart);
+
+    return SlideLayout(slideLayoutPart);
+}
+
 SlideMaster
 Presentation::AddSlideMaster (
     const Theme &theme

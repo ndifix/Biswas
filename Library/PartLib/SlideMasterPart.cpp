@@ -18,3 +18,22 @@ SlideMasterPart::SlideMasterPart (
             this->RootElement
         ));
 }
+
+Status
+SlideMasterPart::Write (
+    )
+{
+    Status Status;
+
+    auto slideLayoutId = this->RootElement->slideLayoutIdList->ids.begin();
+    for (auto &slideLayout:this->slideLayoutParts) {
+        auto relation = this->AddRelationship(slideLayout);
+        if (slideLayoutId == this->RootElement->slideLayoutIdList->ids.end()) {
+            throw std::runtime_error("number of slideLayoutId is invalid");
+        }
+        (*slideLayoutId)->RelationshipId->val = relation->Id->val;
+        ++slideLayoutId;
+    }
+
+    return IPart::Write();
+}

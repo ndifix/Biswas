@@ -118,6 +118,15 @@ Document::WriteContentTypes (
         }
     }
 
+    for (auto &slideMasterPart:this->presentation.part->slideMasterParts) {
+        for (auto &slideLayoutPart:slideMasterPart->slideLayoutParts) {
+            Status = AddOverride(types, std::move(over), slideLayoutPart, this->tmp);
+        }
+        if (Status != Status::Success) {
+            return Status;
+        }
+    }
+
     contentType.Write();
 
     return Status::Success;
