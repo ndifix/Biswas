@@ -11,6 +11,7 @@ BackgroundFillStyleList.cpp\
 ChildExtents.cpp\
 ChildOffset.cpp\
 ColorMap.cpp\
+ColorMapOverride.cpp\
 ColorScheme.cpp\
 CommonSlideData.cpp\
 ComplexScriptFont.cpp\
