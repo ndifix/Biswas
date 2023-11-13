@@ -35,6 +35,7 @@
 #include <Library/XmlElementLib/Light2Color.hpp>
 #include <Library/XmlElementLib/LineStyleList.hpp>
 #include <Library/XmlElementLib/MajorFont.hpp>
+#include <Library/XmlElementLib/MasterColorMapping.hpp>
 #include <Library/XmlElementLib/MinorFont.hpp>
 #include <Library/XmlElementLib/NonVisualDrawingProperties.hpp>
 #include <Library/XmlElementLib/NonVisualGroupShapeDrawingProperties.hpp>
