@@ -7,6 +7,8 @@ Presentation::Presentation (
 {
     this->slideMasterList = new SlideMasterList();
     this->AddChildElement(this->slideMasterList);
+    this->slideIdList = new SlideIdList();
+    this->AddChildElement(this->slideIdList);
     this->slideSize = new SlideSize();
     this->AddChildElement(this->slideSize);
     this->slideSize->Cx = 12192000u;

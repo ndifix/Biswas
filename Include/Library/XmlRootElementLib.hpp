@@ -28,6 +28,7 @@ namespace Presentation {
 class Presentation : public XmlRootElement {
 private:
 public:
+    SlideIdList *slideIdList;
     SlideMasterList *slideMasterList;
     SlideSize *slideSize;
     NotesSize *notesSize;
