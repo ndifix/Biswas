@@ -40,4 +40,10 @@ public:
     inline SlideMaster(const std::filesystem::path &path, std::shared_ptr<XmlRootElement> root) : XmlFile(path, root) {};
 };
 
+class SlideLayout : public XmlFile {
+private:
+public:
+    inline SlideLayout(const std::filesystem::path &path, std::shared_ptr<XmlRootElement> root) : XmlFile(path, root) {};
+};
+
 }

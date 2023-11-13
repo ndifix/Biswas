@@ -105,3 +105,13 @@ public:
         const std::filesystem::path &filename
         );
 };
+
+class SlideLayoutPart : public IPart {
+private:
+    std::shared_ptr<OpenXml::Presentation::SlideLayout> RootElement;
+public:
+    SlideLayoutPart (
+        const std::filesystem::path &presDir,
+        const std::filesystem::path &filename
+        );
+};
