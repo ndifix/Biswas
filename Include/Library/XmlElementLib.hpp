@@ -49,6 +49,7 @@
 #include <Library/XmlElementLib/RgbColorModelHex.hpp>
 #include <Library/XmlElementLib/ShapeTree.hpp>
 #include <Library/XmlElementLib/SlideLayoutId.hpp>
+#include <Library/XmlElementLib/SlideLayoutIdList.hpp>
 #include <Library/XmlElementLib/SlideMasterId.hpp>
 #include <Library/XmlElementLib/SlideMasterList.hpp>
 #include <Library/XmlElementLib/SlideSize.hpp>

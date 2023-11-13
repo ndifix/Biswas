@@ -46,6 +46,7 @@ RgbColorModelHex.cpp\
 ShapeTree.cpp\
 SlideLayout.cpp\
 SlideLayoutId.cpp\
+SlideLayoutIdList.cpp\
 SlideMaster.cpp\
 SlideMasterId.cpp\
 SlideMasterList.cpp\
