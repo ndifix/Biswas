@@ -44,6 +44,7 @@ Relationship.cpp\
 Relationships.cpp\
 RgbColorModelHex.cpp\
 ShapeTree.cpp\
+SlideId.cpp\
 SlideLayout.cpp\
 SlideLayoutId.cpp\
 SlideLayoutIdList.cpp\
