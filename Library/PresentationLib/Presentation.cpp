@@ -34,6 +34,24 @@ Presentation::Write (
     return Status::Success;
 }
 
+Slide
+Presentation::AddSlide (
+    const SlideLayout &slideLayout
+    ) const
+{
+    std::stringstream filename;
+    filename << "slide" << this->part->slideParts.size() + 1 << ".xml";
+
+    std::shared_ptr<SlidePart> slidePart(new SlidePart(this->part->partDir, filename.str()));
+    this->part->RootElement->slideIdList->AddId();
+    slidePart->AddRelationship(slideLayout.part);
+
+    this->part->slideParts.push_back(slidePart);
+    this->part->AddChildPart(slidePart);
+
+    return Slide(slidePart);
+}
+
 SlideLayout
 Presentation::AddSlideLayout (
     const SlideMaster &slideMaster

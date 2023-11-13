@@ -58,6 +58,13 @@ PresentationPart::MakeDir (
         }
     }
 
+    if (!this->slideParts.empty()) {
+        Status = ::MakeDir(this->slideParts.front()->partDir);
+        if (Status != Status::Success) {
+            return Status;
+        }
+    }
+
     return Status::Success;
 }
 
@@ -76,6 +83,17 @@ PresentationPart::Write (
         (*slideMasterId)->RelationshipId->val = relation->Id->val;
         ++slideMasterId;
     }
+
+    auto slideId = this->RootElement->slideIdList->ids.begin();
+    for (auto &slide:this->slideParts) {
+        auto relation = this->AddRelationship(slide);
+        if (slideId == this->RootElement->slideIdList->ids.end()) {
+            throw std::runtime_error("number of slideId is invalid");
+        }
+        (*slideId)->RelationshipId->val = relation->Id->val;
+        ++slideId;
+    }
+
     this->AddRelationship(this->presPropPart);
     for (auto &theme:this->themeParts) {
         this->AddRelationship(theme);
@@ -91,6 +109,11 @@ PresentationPart::Write (
         for (auto &slideLayoutId:(*slideMasterPart)->RootElement->slideLayoutIdList->ids) {
             slideLayoutId->Id->val = std::to_string(id++);
         }
+    }
+
+    id = 0x100u;
+    for (auto &slideId:this->RootElement->slideIdList->ids) {
+        slideId->Id->val = std::to_string(id++);
     }
 
     Status = this->MakeDir();

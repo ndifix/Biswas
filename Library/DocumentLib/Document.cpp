@@ -106,6 +106,13 @@ Document::WriteContentTypes (
         }
     }
 
+    for (auto &sldPart:this->presentation.part->slideParts) {
+        Status = AddOverride(types, std::move(over), sldPart, this->tmp);
+        if (Status != Status::Success) {
+            return Status;
+        }
+    }
+
     Status = AddOverride(types, std::move(over), this->presentation.part->presPropPart, this->tmp);
     if (Status != Status::Success) {
         return Status;
