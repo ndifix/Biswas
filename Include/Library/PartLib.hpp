@@ -102,6 +102,7 @@ private:
 public:
     std::shared_ptr<OpenXml::Presentation::SlideMaster> RootElement;
     std::list<std::shared_ptr<SlideLayoutPart>> slideLayoutParts;
+    std::shared_ptr<ThemePart> themePart;
 
     SlideMasterPart (
         const std::filesystem::path &presDir,

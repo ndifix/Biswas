@@ -71,7 +71,7 @@ Presentation::AddSlideMaster (
 
     std::shared_ptr<SlideMasterPart> slideMasterPart(new SlideMasterPart(this->part->partDir, filename.str()));
     this->part->RootElement->slideMasterList->AddId();
-    slideMasterPart->AddRelationship(theme.part);
+    slideMasterPart->themePart = theme.part;
     theme.part->slideMasterPart = slideMasterPart.get();
 
     this->part->slideMasterParts.push_back(slideMasterPart);
