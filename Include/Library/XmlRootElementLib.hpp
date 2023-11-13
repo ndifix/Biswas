@@ -76,6 +76,14 @@ public:
     SlideLayout();
 };
 
+class Slide : public XmlRootElement {
+private:
+    ColorMapOverride *colorMapOverride;
+    CommonSlideData *commonSlideData;
+public:
+    Slide();
+};
+
 }
 
 }
