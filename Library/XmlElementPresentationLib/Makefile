@@ -7,6 +7,7 @@ CommonSlideData.cpp\
 GroupShapeProperties.cpp\
 NonVisualDrawingProperties.cpp\
 NonVisualGroupShapeProperties.cpp\
+NonVisualShapeProperties.cpp\
 NotesSize.cpp\
 Presentation.cpp\
 Shape.cpp\

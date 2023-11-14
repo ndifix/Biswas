@@ -9,6 +9,7 @@
 #include <Library/XmlElementPresentationLib/NonVisualDrawingProperties.hpp>
 #include <Library/XmlElementPresentationLib/NonVisualGroupShapeDrawingProperties.hpp>
 #include <Library/XmlElementPresentationLib/NonVisualGroupShapeProperties.hpp>
+#include <Library/XmlElementPresentationLib/NonVisualShapeProperties.hpp>
 #include <Library/XmlElementPresentationLib/NotesSize.hpp>
 #include <Library/XmlElementPresentationLib/Shape.hpp>
 #include <Library/XmlElementPresentationLib/ShapeTree.hpp>
