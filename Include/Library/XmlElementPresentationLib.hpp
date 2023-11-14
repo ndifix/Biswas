@@ -21,3 +21,4 @@
 #include <Library/XmlElementPresentationLib/SlideMasterId.hpp>
 #include <Library/XmlElementPresentationLib/SlideMasterList.hpp>
 #include <Library/XmlElementPresentationLib/SlideSize.hpp>
+#include <Library/XmlElementPresentationLib/TextBody.hpp>
