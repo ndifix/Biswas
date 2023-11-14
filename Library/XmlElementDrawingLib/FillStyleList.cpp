@@ -35,6 +35,15 @@ FillStyleList::FillStyleList (
     saturationModulation = new SaturationModulation();
     saturationModulation->Val->val = "109000";
     gradientStopList->gradientStop3->schemeColor->AddChildElement(saturationModulation);
+    auto tint = new Tint();
+    tint->Val->val = "67000";
+    gradientStopList->gradientStop1->schemeColor->AddChildElement(tint);
+    tint = new Tint();
+    tint->Val->val = "73000";
+    gradientStopList->gradientStop2->schemeColor->AddChildElement(tint);
+    tint = new Tint();
+    tint->Val->val = "81000";
+    gradientStopList->gradientStop3->schemeColor->AddChildElement(tint);
     this->AddChildElement(gradientFill);
 
     gradientFill = new GradientFill();
@@ -61,5 +70,8 @@ FillStyleList::FillStyleList (
     saturationModulation = new SaturationModulation();
     saturationModulation->Val->val = "120000";
     gradientStopList->gradientStop3->schemeColor->AddChildElement(saturationModulation);
+    tint = new Tint();
+    tint->Val->val = "94000";
+    gradientStopList->gradientStop1->schemeColor->AddChildElement(tint);
     this->AddChildElement(gradientFill);
 }
