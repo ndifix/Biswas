@@ -6,5 +6,7 @@ Shape::Shape (
     ) : XmlElement("sp", xmlns::presenta)
 {
     this->nonVisualShapeProperties = new NonVisualShapeProperties();
+    this->shapeProperties = new ShapeProperties();
     this->AddChildElement(this->nonVisualShapeProperties);
+    this->AddChildElement(this->shapeProperties);
 }

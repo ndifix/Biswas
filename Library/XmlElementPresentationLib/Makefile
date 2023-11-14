@@ -11,6 +11,7 @@ NonVisualShapeProperties.cpp\
 NotesSize.cpp\
 Presentation.cpp\
 Shape.cpp\
+ShapeProperties.cpp\
 ShapeTree.cpp\
 Slide.cpp\
 SlideId.cpp\

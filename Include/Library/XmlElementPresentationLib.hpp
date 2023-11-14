@@ -12,6 +12,7 @@
 #include <Library/XmlElementPresentationLib/NonVisualShapeProperties.hpp>
 #include <Library/XmlElementPresentationLib/NotesSize.hpp>
 #include <Library/XmlElementPresentationLib/Shape.hpp>
+#include <Library/XmlElementPresentationLib/ShapeProperties.hpp>
 #include <Library/XmlElementPresentationLib/ShapeTree.hpp>
 #include <Library/XmlElementPresentationLib/SlideId.hpp>
 #include <Library/XmlElementPresentationLib/SlideIdList.hpp>
