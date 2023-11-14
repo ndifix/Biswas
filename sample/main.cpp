@@ -8,5 +8,8 @@ int main() {
     biswas::SlideLayout slideLayout = doc.presentation.AddSlideLayout(slideMaster);
     biswas::Slide slide = doc.presentation.AddSlide(slideLayout);
 
+    slideLayout.AddTextBox();
+    slide.AddTextBox();
+
     doc.Write("sample.pptx");
 }
