@@ -23,6 +23,7 @@
 #include <Library/XmlElementDrawingLib/FontScheme.hpp>
 #include <Library/XmlElementDrawingLib/FormatScheme.hpp>
 #include <Library/XmlElementDrawingLib/GradientFill.hpp>
+#include <Library/XmlElementDrawingLib/GradientStopList.hpp>
 #include <Library/XmlElementDrawingLib/Hyperlink.hpp>
 #include <Library/XmlElementDrawingLib/LatinFont.hpp>
 #include <Library/XmlElementDrawingLib/Light1Color.hpp>
