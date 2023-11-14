@@ -10,3 +10,12 @@ ShapeTree::ShapeTree (
     this->groupShapeProperties = new GroupShapeProperties();
     this->AddChildElement(this->groupShapeProperties);
 }
+
+Shape *
+ShapeTree::AddShape (
+    )
+{
+    auto shape = new Shape();
+    this->AddChildElement(shape);
+    return shape;
+}

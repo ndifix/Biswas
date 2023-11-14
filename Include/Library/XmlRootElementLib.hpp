@@ -72,16 +72,18 @@ public:
 class SlideLayout : public XmlRootElement {
 private:
     ColorMapOverride *colorMapOverride;
-    CommonSlideData *commonSlideData;
 public:
+    CommonSlideData *commonSlideData;
+
     SlideLayout();
 };
 
 class Slide : public XmlRootElement {
 private:
     ColorMapOverride *colorMapOverride;
-    CommonSlideData *commonSlideData;
 public:
+    CommonSlideData *commonSlideData;
+
     Slide();
 };
 

@@ -119,8 +119,8 @@ public:
 
 class SlideLayoutPart : public IPart {
 private:
-    std::shared_ptr<OpenXml::Presentation::SlideLayout> RootElement;
 public:
+    std::shared_ptr<OpenXml::Presentation::SlideLayout> RootElement;
     SlideMasterPart *slideMasterPart = nullptr;
 
     SlideLayoutPart (
@@ -131,8 +131,8 @@ public:
 
 class SlidePart : public IPart {
 private:
-    std::shared_ptr<OpenXml::Presentation::Slide> RootElement;
 public:
+    std::shared_ptr<OpenXml::Presentation::Slide> RootElement;
 
     SlidePart (
         const std::filesystem::path &presDir,

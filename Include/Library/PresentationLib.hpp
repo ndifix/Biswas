@@ -4,6 +4,7 @@
 #include <Biswas.hpp>
 #include <Library/DocumentLib.hpp>
 #include <Library/PartLib.hpp>
+#include <Library/SlideObjectLib.hpp>
 
 // API用クラス
 namespace biswas {
@@ -72,6 +73,10 @@ public:
     Slide (
         std::shared_ptr<SlidePart> &slide
         ) { this->part = slide; }
+
+    TextBox
+    AddTextBox (
+        ) const;
 };
 
 class SlideLayout {
@@ -84,6 +89,10 @@ friend Presentation;
     SlideLayout (
         std::shared_ptr<SlideLayoutPart> &slideLayout
         ) { this->part = slideLayout; }
+
+    TextBox
+    AddTextBox (
+        ) const;
 };
 
 class SlideMaster {
