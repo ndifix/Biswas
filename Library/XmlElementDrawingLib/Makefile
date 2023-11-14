@@ -34,6 +34,7 @@ MajorFont.cpp\
 MinorFont.cpp\
 Offset.cpp\
 RgbColorModelHex.cpp\
+SaturationModulation.cpp\
 SchemeColor.cpp\
 SystemColor.cpp\
 Theme.cpp\
