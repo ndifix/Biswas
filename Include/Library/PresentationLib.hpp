@@ -2,7 +2,6 @@
 
 #include <memory>
 #include <Biswas.hpp>
-#include <Library/DocumentLib.hpp>
 #include <Library/PartLib.hpp>
 #include <Library/SlideObjectLib.hpp>
 
@@ -15,42 +14,6 @@ class Slide;
 class SlideLayout;
 class SlideMaster;
 class Theme;
-
-class Presentation {
-private:
-    std::unique_ptr<PresentationPart> part;
-
-    Status
-    Write (
-        ) const;
-public:
-friend Document;
-
-    std::shared_ptr<biswas::PresentationProperties> presentationProperties;
-
-    Presentation (
-        const std::filesystem::path &tmp
-        );
-
-    Slide
-    AddSlide (
-        const SlideLayout &slideLayout
-        ) const;
-
-    SlideLayout
-    AddSlideLayout (
-        const SlideMaster &slideMaster
-        ) const;
-
-    SlideMaster
-    AddSlideMaster (
-        const Theme &theme
-        ) const;
-
-    Theme
-    AddTheme (
-        ) const;
-};
 
 class PresentationProperties {
 private:
@@ -117,6 +80,48 @@ friend Presentation;
     Theme (
         std::shared_ptr<ThemePart> &theme
         ) { this->part = theme; }
+};
+
+}
+
+#include <Library/DocumentLib.hpp>
+
+namespace biswas {
+
+class Presentation {
+private:
+    std::unique_ptr<PresentationPart> part;
+
+    Status
+    Write (
+        ) const;
+public:
+friend Document;
+
+    std::shared_ptr<biswas::PresentationProperties> presentationProperties;
+
+    Presentation (
+        const std::filesystem::path &tmp
+        );
+
+    Slide
+    AddSlide (
+        const SlideLayout &slideLayout
+        ) const;
+
+    SlideLayout
+    AddSlideLayout (
+        const SlideMaster &slideMaster
+        ) const;
+
+    SlideMaster
+    AddSlideMaster (
+        const Theme &theme
+        ) const;
+
+    Theme
+    AddTheme (
+        ) const;
 };
 
 }
