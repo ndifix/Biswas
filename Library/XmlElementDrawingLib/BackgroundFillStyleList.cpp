@@ -5,7 +5,23 @@ using namespace OpenXml::Drawing;
 BackgroundFillStyleList::BackgroundFillStyleList (
     ) : XmlElement("bgFillStyleLst", xmlns::drawingm)
 {
-    this->AddChildElement(new SolidFill());
-    this->AddChildElement(new SolidFill());
+    auto solidFill = new SolidFill();
+    auto schemeColor = new SchemeColor();
+    schemeColor->Val->val = "phClr";
+    solidFill->AddChildElement(schemeColor);
+    this->AddChildElement(solidFill);
+
+    solidFill = new SolidFill();
+    schemeColor = new SchemeColor();
+    schemeColor->Val->val = "phClr";
+    solidFill->AddChildElement(schemeColor);
+    auto tint = new Tint();
+    tint->Val->val = "95000";
+    schemeColor->AddChildElement(tint);
+    auto saturationModulation = new SaturationModulation();
+    saturationModulation->Val->val = "170000";
+    schemeColor->AddChildElement(saturationModulation);
+    this->AddChildElement(solidFill);
+
     this->AddChildElement(new GradientFill());
 }
