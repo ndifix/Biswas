@@ -9,6 +9,7 @@ NonVisualDrawingProperties.cpp\
 NonVisualGroupShapeProperties.cpp\
 NotesSize.cpp\
 Presentation.cpp\
+Shape.cpp\
 ShapeTree.cpp\
 Slide.cpp\
 SlideId.cpp\
