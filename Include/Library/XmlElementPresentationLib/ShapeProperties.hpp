@@ -8,6 +8,8 @@ namespace OpenXml::Presentation {
 class ShapeProperties : public XmlElement {
 private:
 public:
+    Drawing::Transform2D *transform2D;
+
     ShapeProperties();
 };
 
