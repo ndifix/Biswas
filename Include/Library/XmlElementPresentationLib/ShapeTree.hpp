@@ -9,6 +9,7 @@ namespace OpenXml::Presentation {
 
 class ShapeTree : public XmlElement {
 private:
+    std::list<Shape*> shapes;
 public:
     NonVisualGroupShapeProperties *nonVisualGroupShapeProperties;
     GroupShapeProperties *groupShapeProperties;

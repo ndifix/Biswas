@@ -17,5 +17,9 @@ ShapeTree::AddShape (
 {
     auto shape = new Shape();
     this->AddChildElement(shape);
+
+    shape->nonVisualShapeProperties->nonVisualDrawingProperties->Id->value = this->shapes.size() + 2;
+    this->shapes.push_back(shape);
+
     return shape;
 }
