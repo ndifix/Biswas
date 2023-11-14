@@ -12,10 +12,18 @@ FillStyleList::FillStyleList (
     this->AddChildElement(solidFill);
 
     auto gradientFill = new GradientFill();
-    gradientFill->AddChildElement(new GradientStopList());
+    auto gradientStopList = new GradientStopList();
+    gradientFill->AddChildElement(gradientStopList);
+    gradientStopList->gradientStop1->Position->val = "0";
+    gradientStopList->gradientStop2->Position->val = "50000";
+    gradientStopList->gradientStop3->Position->val = "100000";
     this->AddChildElement(gradientFill);
 
     gradientFill = new GradientFill();
-    gradientFill->AddChildElement(new GradientStopList());
+    gradientStopList = new GradientStopList();
+    gradientFill->AddChildElement(gradientStopList);
+    gradientStopList->gradientStop1->Position->val = "0";
+    gradientStopList->gradientStop2->Position->val = "50000";
+    gradientStopList->gradientStop3->Position->val = "100000";
     this->AddChildElement(gradientFill);
 }

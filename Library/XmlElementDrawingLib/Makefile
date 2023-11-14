@@ -22,6 +22,8 @@ FillStyleList.cpp\
 FollowedHyperlinkColor.cpp\
 FontScheme.cpp\
 FormatScheme.cpp\
+GradientStop.cpp\
+GradientStopList.cpp\
 Hyperlink.cpp\
 LatinFont.cpp\
 Light1Color.cpp\
