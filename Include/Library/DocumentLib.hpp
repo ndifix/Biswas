@@ -23,7 +23,7 @@ private:
     WriteContentTypes (
         ) const;
 public:
-    Presentation presentation;
+    std::unique_ptr<Presentation> presentation;
 
     Document ();
 

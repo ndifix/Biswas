@@ -6,11 +6,13 @@
 using namespace biswas;
 
 Document::Document (
-    ) : presentation(this->tmp)
+    )
 {
     // tmp ディレクトリがなければ作成し、あれば中を空にする。
     MakeDir(this->tmp);
     RemoveAll(this->tmp);
+
+    this->presentation.reset(new Presentation(this->tmp));
 }
 
 Status
@@ -19,7 +21,7 @@ Document::WriteRelation (
 {
     Status Status;
 
-    if (!this->presentation.part) {
+    if (!this->presentation->part) {
         return Status::Success;
     }
 
@@ -32,8 +34,8 @@ Document::WriteRelation (
 
     std::unique_ptr<OpenXml::Relationship> relation(new OpenXml::Relationship());
     relation->Id->value = "rId1";
-    relation->Type->value = this->presentation.part->relationType;
-    relation->Target->value = std::filesystem::relative(this->presentation.part->GetXmlFilePath(), this->tmp);
+    relation->Type->value = this->presentation->part->relationType;
+    relation->Target->value = std::filesystem::relative(this->presentation->part->GetXmlFilePath(), this->tmp);
 
     OpenXml::Relationships *rels = static_cast<OpenXml::Relationships*>(relsFile.RootElement.get());
     Status = rels->AddRelation(std::move(relation));
@@ -92,40 +94,40 @@ Document::WriteContentTypes (
     }
 
     std::unique_ptr<OpenXml::Override> over(new OpenXml::Override());
-    over->PartName->value = "/" + std::filesystem::relative(this->presentation.part->GetXmlFilePath(), this->tmp).string();
-    over->ContentType->value = this->presentation.part->contentType;
+    over->PartName->value = "/" + std::filesystem::relative(this->presentation->part->GetXmlFilePath(), this->tmp).string();
+    over->ContentType->value = this->presentation->part->contentType;
     Status = types->AddContentType(std::move(over));
     if (Status != Status::Success) {
         return Status;
     }
 
-    for (auto &sldMasterPart:this->presentation.part->slideMasterParts) {
+    for (auto &sldMasterPart:this->presentation->part->slideMasterParts) {
         Status = AddOverride(types, std::move(over), sldMasterPart, this->tmp);
         if (Status != Status::Success) {
             return Status;
         }
     }
 
-    for (auto &sldPart:this->presentation.part->slideParts) {
+    for (auto &sldPart:this->presentation->part->slideParts) {
         Status = AddOverride(types, std::move(over), sldPart, this->tmp);
         if (Status != Status::Success) {
             return Status;
         }
     }
 
-    Status = AddOverride(types, std::move(over), this->presentation.part->presPropPart, this->tmp);
+    Status = AddOverride(types, std::move(over), this->presentation->part->presPropPart, this->tmp);
     if (Status != Status::Success) {
         return Status;
     }
 
-    for (auto &themePart:this->presentation.part->themeParts) {
+    for (auto &themePart:this->presentation->part->themeParts) {
         Status = AddOverride(types, std::move(over), themePart, this->tmp);
         if (Status != Status::Success) {
             return Status;
         }
     }
 
-    for (auto &slideMasterPart:this->presentation.part->slideMasterParts) {
+    for (auto &slideMasterPart:this->presentation->part->slideMasterParts) {
         for (auto &slideLayoutPart:slideMasterPart->slideLayoutParts) {
             Status = AddOverride(types, std::move(over), slideLayoutPart, this->tmp);
         }
@@ -161,7 +163,7 @@ Document::Write (
         return Status;
     }
 
-    this->presentation.Write();
+    this->presentation->Write();
 
     Status = BuildPptxFile(this->tmp, path);
         if (Status != Status::Success) {
