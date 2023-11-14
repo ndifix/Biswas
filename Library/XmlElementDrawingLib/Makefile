@@ -28,6 +28,7 @@ Hyperlink.cpp\
 LatinFont.cpp\
 Light1Color.cpp\
 Light2Color.cpp\
+LinearGradientFill.cpp\
 LineStyleList.cpp\
 LuminanceModulation.cpp\
 MajorFont.cpp\
