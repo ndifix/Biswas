@@ -4,7 +4,8 @@
 #include <Biswas.hpp>
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib.hpp>
-#include <Library/XmlElementLib/Default.hpp>
+#include <Library/XmlElementDrawingLib.hpp>
+#include <Library/XmlElementPresentationLib.hpp>
 
 namespace OpenXml {
 
