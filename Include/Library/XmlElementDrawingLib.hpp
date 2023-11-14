@@ -42,4 +42,5 @@
 #include <Library/XmlElementDrawingLib/SolidFill.hpp>
 #include <Library/XmlElementDrawingLib/SystemColor.hpp>
 #include <Library/XmlElementDrawingLib/ThemeElements.hpp>
+#include <Library/XmlElementDrawingLib/Tint.hpp>
 #include <Library/XmlElementDrawingLib/Transform2D.hpp>

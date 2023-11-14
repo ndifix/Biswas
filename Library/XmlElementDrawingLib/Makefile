@@ -39,6 +39,7 @@ SchemeColor.cpp\
 SystemColor.cpp\
 Theme.cpp\
 ThemeElements.cpp\
+Tint.cpp\
 Transform2D.cpp\
 
 include ../lib.mk
