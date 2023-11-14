@@ -29,6 +29,7 @@ LatinFont.cpp\
 Light1Color.cpp\
 Light2Color.cpp\
 LineStyleList.cpp\
+LuminanceModulation.cpp\
 MajorFont.cpp\
 MinorFont.cpp\
 Offset.cpp\

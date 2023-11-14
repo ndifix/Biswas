@@ -30,6 +30,7 @@
 #include <Library/XmlElementDrawingLib/Light1Color.hpp>
 #include <Library/XmlElementDrawingLib/Light2Color.hpp>
 #include <Library/XmlElementDrawingLib/LineStyleList.hpp>
+#include <Library/XmlElementDrawingLib/LuminanceModulation.hpp>
 #include <Library/XmlElementDrawingLib/MajorFont.hpp>
 #include <Library/XmlElementDrawingLib/MasterColorMapping.hpp>
 #include <Library/XmlElementDrawingLib/MinorFont.hpp>

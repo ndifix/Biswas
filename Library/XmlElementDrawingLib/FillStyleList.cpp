@@ -17,6 +17,15 @@ FillStyleList::FillStyleList (
     gradientStopList->gradientStop1->Position->val = "0";
     gradientStopList->gradientStop2->Position->val = "50000";
     gradientStopList->gradientStop3->Position->val = "100000";
+    auto luminanceModulation = new LuminanceModulation();
+    luminanceModulation->Val->val = "110000";
+    gradientStopList->gradientStop1->schemeColor->AddChildElement(luminanceModulation);
+    luminanceModulation = new LuminanceModulation();
+    luminanceModulation->Val->val = "105000";
+    gradientStopList->gradientStop2->schemeColor->AddChildElement(luminanceModulation);
+    luminanceModulation = new LuminanceModulation();
+    luminanceModulation->Val->val = "105000";
+    gradientStopList->gradientStop3->schemeColor->AddChildElement(luminanceModulation);
     this->AddChildElement(gradientFill);
 
     gradientFill = new GradientFill();
@@ -25,5 +34,14 @@ FillStyleList::FillStyleList (
     gradientStopList->gradientStop1->Position->val = "0";
     gradientStopList->gradientStop2->Position->val = "50000";
     gradientStopList->gradientStop3->Position->val = "100000";
+    luminanceModulation = new LuminanceModulation();
+    luminanceModulation->Val->val = "102000";
+    gradientStopList->gradientStop1->schemeColor->AddChildElement(luminanceModulation);
+    luminanceModulation = new LuminanceModulation();
+    luminanceModulation->Val->val = "100000";
+    gradientStopList->gradientStop2->schemeColor->AddChildElement(luminanceModulation);
+    luminanceModulation = new LuminanceModulation();
+    luminanceModulation->Val->val = "99000";
+    gradientStopList->gradientStop3->schemeColor->AddChildElement(luminanceModulation);
     this->AddChildElement(gradientFill);
 }
