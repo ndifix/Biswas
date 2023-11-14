@@ -8,6 +8,8 @@ DocumentLib\
 PresentationLib\
 PartLib\
 UtilLib\
+XmlElementPresentationLib\
+XmlElementDrawingLib\
 XmlElementLib\
 XmlFileLib\
 XmlBaseLib\
