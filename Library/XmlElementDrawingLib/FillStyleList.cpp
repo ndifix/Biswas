@@ -26,6 +26,15 @@ FillStyleList::FillStyleList (
     luminanceModulation = new LuminanceModulation();
     luminanceModulation->Val->val = "105000";
     gradientStopList->gradientStop3->schemeColor->AddChildElement(luminanceModulation);
+    auto saturationModulation = new SaturationModulation();
+    saturationModulation->Val->val = "105000";
+    gradientStopList->gradientStop1->schemeColor->AddChildElement(saturationModulation);
+    saturationModulation = new SaturationModulation();
+    saturationModulation->Val->val = "103000";
+    gradientStopList->gradientStop2->schemeColor->AddChildElement(saturationModulation);
+    saturationModulation = new SaturationModulation();
+    saturationModulation->Val->val = "109000";
+    gradientStopList->gradientStop3->schemeColor->AddChildElement(saturationModulation);
     this->AddChildElement(gradientFill);
 
     gradientFill = new GradientFill();
@@ -43,5 +52,14 @@ FillStyleList::FillStyleList (
     luminanceModulation = new LuminanceModulation();
     luminanceModulation->Val->val = "99000";
     gradientStopList->gradientStop3->schemeColor->AddChildElement(luminanceModulation);
+    saturationModulation = new SaturationModulation();
+    saturationModulation->Val->val = "103000";
+    gradientStopList->gradientStop1->schemeColor->AddChildElement(saturationModulation);
+    saturationModulation = new SaturationModulation();
+    saturationModulation->Val->val = "110000";
+    gradientStopList->gradientStop2->schemeColor->AddChildElement(saturationModulation);
+    saturationModulation = new SaturationModulation();
+    saturationModulation->Val->val = "120000";
+    gradientStopList->gradientStop3->schemeColor->AddChildElement(saturationModulation);
     this->AddChildElement(gradientFill);
 }
