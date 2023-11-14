@@ -34,6 +34,7 @@
 #include <Library/XmlElementDrawingLib/Offset.hpp>
 #include <Library/XmlElementDrawingLib/Outline.hpp>
 #include <Library/XmlElementDrawingLib/RgbColorModelHex.hpp>
+#include <Library/XmlElementDrawingLib/SchemeColor.hpp>
 #include <Library/XmlElementDrawingLib/SolidFill.hpp>
 #include <Library/XmlElementDrawingLib/SystemColor.hpp>
 #include <Library/XmlElementDrawingLib/ThemeElements.hpp>
