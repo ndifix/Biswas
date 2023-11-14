@@ -11,6 +11,11 @@ FillStyleList::FillStyleList (
     solidFill->AddChildElement(schemeColor);
     this->AddChildElement(solidFill);
 
-    this->AddChildElement(new GradientFill());
-    this->AddChildElement(new GradientFill());
+    auto gradientFill = new GradientFill();
+    gradientFill->AddChildElement(new GradientStopList());
+    this->AddChildElement(gradientFill);
+
+    gradientFill = new GradientFill();
+    gradientFill->AddChildElement(new GradientStopList());
+    this->AddChildElement(gradientFill);
 }
