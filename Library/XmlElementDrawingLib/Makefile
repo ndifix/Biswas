@@ -36,6 +36,7 @@ Offset.cpp\
 RgbColorModelHex.cpp\
 SaturationModulation.cpp\
 SchemeColor.cpp\
+Shade.cpp\
 SystemColor.cpp\
 Theme.cpp\
 ThemeElements.cpp\

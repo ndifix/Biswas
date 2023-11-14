@@ -73,5 +73,11 @@ FillStyleList::FillStyleList (
     tint = new Tint();
     tint->Val->val = "94000";
     gradientStopList->gradientStop1->schemeColor->AddChildElement(tint);
+    auto shade = new Shade();
+    shade->Val->val = "100000";
+    gradientStopList->gradientStop2->schemeColor->AddChildElement(shade);
+    shade = new Shade();
+    shade->Val->val = "78000";
+    gradientStopList->gradientStop3->schemeColor->AddChildElement(shade);
     this->AddChildElement(gradientFill);
 }
