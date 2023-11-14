@@ -31,6 +31,7 @@
 #include <Library/XmlElementDrawingLib/Light2Color.hpp>
 #include <Library/XmlElementDrawingLib/LinearGradientFill.hpp>
 #include <Library/XmlElementDrawingLib/LineStyleList.hpp>
+#include <Library/XmlElementDrawingLib/ListStyle.hpp>
 #include <Library/XmlElementDrawingLib/LuminanceModulation.hpp>
 #include <Library/XmlElementDrawingLib/MajorFont.hpp>
 #include <Library/XmlElementDrawingLib/MasterColorMapping.hpp>
