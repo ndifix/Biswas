@@ -7,6 +7,8 @@ NonVisualShapeProperties::NonVisualShapeProperties (
 {
     this->applicationNonVisualDrawingProperties = new ApplicationNonVisualDrawingProperties();
     this->nonVisualDrawingProperties = new NonVisualDrawingProperties();
+    this->nonVisualShapeDrawingProperties = new NonVisualShapeDrawingProperties();
     this->AddChildElement(this->nonVisualDrawingProperties);
+    this->AddChildElement(this->nonVisualShapeDrawingProperties);
     this->AddChildElement(this->applicationNonVisualDrawingProperties);
 }
