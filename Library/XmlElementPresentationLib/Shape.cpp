@@ -7,6 +7,8 @@ Shape::Shape (
 {
     this->nonVisualShapeProperties = new NonVisualShapeProperties();
     this->shapeProperties = new ShapeProperties();
+    this->textBody = new TextBody();
     this->AddChildElement(this->nonVisualShapeProperties);
     this->AddChildElement(this->shapeProperties);
+    this->AddChildElement(this->textBody);
 }

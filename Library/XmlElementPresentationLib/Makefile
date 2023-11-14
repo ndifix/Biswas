@@ -22,6 +22,7 @@ SlideLayoutIdList.cpp\
 SlideMaster.cpp\
 SlideMasterId.cpp\
 SlideMasterList.cpp\
-SlideSize.cpp
+SlideSize.cpp\
+TextBody.cpp\
 
 include ../lib.mk
