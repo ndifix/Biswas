@@ -36,6 +36,7 @@
 #include <Library/XmlElementDrawingLib/MajorFont.hpp>
 #include <Library/XmlElementDrawingLib/MasterColorMapping.hpp>
 #include <Library/XmlElementDrawingLib/MinorFont.hpp>
+#include <Library/XmlElementDrawingLib/NoAutoFit.hpp>
 #include <Library/XmlElementDrawingLib/Offset.hpp>
 #include <Library/XmlElementDrawingLib/Outline.hpp>
 #include <Library/XmlElementDrawingLib/RgbColorModelHex.hpp>

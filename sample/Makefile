@@ -7,6 +7,7 @@ Library=\
 DocumentLib\
 PresentationLib\
 PartLib\
+SlideObjectLib\
 UtilLib\
 XmlElementPresentationLib\
 XmlElementDrawingLib\
