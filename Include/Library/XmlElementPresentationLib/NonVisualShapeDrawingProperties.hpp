@@ -7,7 +7,9 @@ namespace OpenXml::Presentation {
 class NonVisualShapeDrawingProperties : public XmlElement {
 private:
 public:
-    inline NonVisualShapeDrawingProperties() : XmlElement("cNvSpPr", xmlns::presenta) {};
+    AttributeBool *TextBox;
+
+    NonVisualShapeDrawingProperties();
 };
 
 }

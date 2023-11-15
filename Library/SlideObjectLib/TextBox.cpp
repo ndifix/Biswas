@@ -9,4 +9,5 @@ TextBox::TextBox (
 {
     this->shape = textBox;
     this->shape->textBody->bodyProperties->AddChildElement(new OpenXml::Drawing::NoAutoFit());
+    this->shape->nonVisualShapeProperties->nonVisualShapeDrawingProperties->TextBox->value = true;
 }
