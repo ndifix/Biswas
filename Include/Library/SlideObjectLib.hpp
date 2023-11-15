@@ -11,10 +11,9 @@ private:
     OpenXml::Presentation::Shape* shape;
 public:
 
-    inline
     TextBox (
         OpenXml::Presentation::Shape* textBox
-        ) { this->shape = textBox; }
+        );
 };
 
 }
