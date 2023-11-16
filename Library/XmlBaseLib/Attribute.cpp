@@ -35,3 +35,15 @@ Attribute::Write (
     }
     ofs << this->key << "=\"" << this->val << '\"';
 }
+
+template<>
+void
+AttributeNullable<bool>::Write (
+    std::ofstream &ofs
+    )
+{
+    if (this->value) {
+        this->val = *this->value.get() ? "1" : "0";
+        Attribute::Write(ofs);
+    }
+}

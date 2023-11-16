@@ -6,7 +6,7 @@ LinearGradientFill::LinearGradientFill (
     ) : XmlElement("lin", xmlns::drawingm)
 {
     this->Angle = new Attribute("ang");
-    this->Scaled = new Attribute("scaled");
+    this->Scaled = new AttributeBool("scaled");
     this->AddAttribute(this->Angle);
     this->AddAttribute(this->Scaled);
 }

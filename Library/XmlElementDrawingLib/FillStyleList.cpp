@@ -46,7 +46,7 @@ FillStyleList::FillStyleList (
     gradientStopList->gradientStop3->schemeColor->AddChildElement(tint);
     auto linearGradientFill = new LinearGradientFill();
     linearGradientFill->Angle->val = "5400000";
-    linearGradientFill->Scaled->val = "0";
+    linearGradientFill->Scaled->value = false;
     gradientFill->AddChildElement(linearGradientFill);
     this->AddChildElement(gradientFill);
 
@@ -85,7 +85,7 @@ FillStyleList::FillStyleList (
     gradientStopList->gradientStop3->schemeColor->AddChildElement(shade);
     linearGradientFill = new LinearGradientFill();
     linearGradientFill->Angle->val = "5400000";
-    linearGradientFill->Scaled->val = "0";
+    linearGradientFill->Scaled->value = false;
     gradientFill->AddChildElement(linearGradientFill);
     this->AddChildElement(gradientFill);
 }
