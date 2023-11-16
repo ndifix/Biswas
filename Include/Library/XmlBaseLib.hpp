@@ -7,6 +7,7 @@
 #include <set>
 #include <string>
 #include <utility>
+#include <Library/UtilType.hpp>
 
 namespace xmlns {
 
@@ -35,8 +36,19 @@ public:
     Attribute (const char *key);
     Attribute (const char *key, const char *val);
     Attribute (const char *key, const xmlns::XmlNameSpace &xmlns);
-    void Write (std::ofstream &ofs);
+    void virtual Write (std::ofstream &ofs);
 };
+
+template<class T>
+class AttributeNullable : public Attribute {
+private:
+public:
+    Nullable<T> value;
+    inline AttributeNullable (const char *key) : Attribute(key) {};
+    inline AttributeNullable (const char *key, const T val) : Attribute(key) { this->value = val; };
+    void virtual Write (std::ofstream &ofs) override;
+};
+using AttributeBool = AttributeNullable<bool>;
 
 class XmlElement {
 protected:

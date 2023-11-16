@@ -8,7 +8,7 @@ class LinearGradientFill : public XmlElement {
 private:
 public:
     Attribute *Angle;
-    Attribute *Scaled;
+    AttributeBool *Scaled;
     LinearGradientFill();
 };
 
