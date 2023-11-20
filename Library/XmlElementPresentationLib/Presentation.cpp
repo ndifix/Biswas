@@ -15,8 +15,8 @@ Presentation::Presentation (
     this->slideSize->Cy = 6858000u;
     this->notesSize = new NotesSize();
     this->AddChildElement(this->notesSize);
-    this->notesSize->Cx = 6858000u;
-    this->notesSize->Cy = 9144000u;
+    this->notesSize->Cx->value = 6858000u;
+    this->notesSize->Cy->value = 9144000u;
     this->defaultTextStyle = new DefaultTextStyle();
     this->AddChildElement(this->defaultTextStyle);
 }
