@@ -49,6 +49,7 @@ public:
     void virtual Write (std::ofstream &ofs) override;
 };
 using AttributeBool = AttributeNullable<bool>;
+using AttributeColorScheme = AttributeNullable<ColorSchemeIndexValues>;
 
 class XmlElement {
 protected:
