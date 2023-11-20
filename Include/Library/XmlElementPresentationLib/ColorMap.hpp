@@ -7,18 +7,18 @@ namespace OpenXml::Presentation {
 class ColorMap : public XmlElement {
 private:
 public:
-    Attribute *Accent1;
-    Attribute *Accent2;
-    Attribute *Accent3;
-    Attribute *Accent4;
-    Attribute *Accent5;
-    Attribute *Accent6;
-    Attribute *Background1;
-    Attribute *Background2;
-    Attribute *FollowedHyperlink;
-    Attribute *Hyperlink;
-    Attribute *Text1;
-    Attribute *Text2;
+    AttributeColorScheme *Accent1;
+    AttributeColorScheme *Accent2;
+    AttributeColorScheme *Accent3;
+    AttributeColorScheme *Accent4;
+    AttributeColorScheme *Accent5;
+    AttributeColorScheme *Accent6;
+    AttributeColorScheme *Background1;
+    AttributeColorScheme *Background2;
+    AttributeColorScheme *FollowedHyperlink;
+    AttributeColorScheme *Hyperlink;
+    AttributeColorScheme *Text1;
+    AttributeColorScheme *Text2;
     ColorMap();
 };
 
