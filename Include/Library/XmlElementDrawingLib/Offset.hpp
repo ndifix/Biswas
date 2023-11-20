@@ -7,8 +7,8 @@ namespace OpenXml::Drawing {
 class Offset : public XmlElement {
 private:
 public:
-    Attribute *X;
-    Attribute *Y;
+    AttributeInt64 *X;
+    AttributeInt64 *Y;
     Offset();
 };
 

@@ -50,6 +50,18 @@ AttributeNullable<bool>::Write (
 
 template<>
 void
+AttributeNullable<int64_t>::Write (
+    std::ofstream &ofs
+    )
+{
+    if (!this->value) return;
+
+    this->val = std::to_string(*this->value.get());
+    Attribute::Write(ofs);
+}
+
+template<>
+void
 AttributeNullable<ColorSchemeIndexValues>::Write (
     std::ofstream &ofs
     )
