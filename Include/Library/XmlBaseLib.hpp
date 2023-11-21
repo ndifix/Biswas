@@ -30,9 +30,10 @@ extern const XmlNameSpace pereleme;
 class Attribute {
 private:
     const char *key;
+protected:
+    std::string val;
 public:
     const xmlns::XmlNameSpace xmlns;
-    std::string val;
     Attribute (const char *key);
     Attribute (const char *key, const char *val);
     Attribute (const char *key, const xmlns::XmlNameSpace &xmlns);
