@@ -86,6 +86,20 @@ AttributeNullable<int64_t>::Write (
 
 template<>
 void
+AttributeNullable<HexBinaryValue>::Write (
+    std::ofstream &ofs
+    )
+{
+    if (!this->value) return;
+
+    std::stringstream ss;
+    ss << std::hex << (0x00ffffff & *this->value.get());
+    this->val = ss.str();
+    Attribute::Write(ofs);
+}
+
+template<>
+void
 AttributeNullable<ColorSchemeIndexValues>::Write (
     std::ofstream &ofs
     )

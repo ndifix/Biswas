@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstdint>
 #include <memory>
 
 template<class T>
@@ -22,6 +23,17 @@ public:
 
         return val;
     };
+};
+
+// using HexBinaryValue = uint_fast32_t;
+class HexBinaryValue {
+private:
+    uint32_t val;
+public:
+    HexBinaryValue(const uint32_t value) : val(value) {};
+
+    inline uint32_t operator=(const uint32_t value) noexcept { return this->val = value;};
+    operator uint32_t() const noexcept { return this->val; };
 };
 
 enum ColorSchemeIndexValues {

@@ -7,7 +7,7 @@ namespace OpenXml::Drawing {
 class RgbColorModelHex  : public XmlElement {
 private:
 public:
-    Attribute *Val;
+    AttributeHexBinaryValue *Val;
     RgbColorModelHex ();
 };
 

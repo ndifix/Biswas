@@ -7,6 +7,6 @@ Light1Color::Light1Color (
 {
     this->systemColor = new SystemColor();
     this->systemColor->Val->value = SystemColorValues::Window;
-    this->systemColor->LastColor->val = "FFFFFF";
+    this->systemColor->LastColor->value = 0xFFFFFF;
     this->AddChildElement(this->systemColor);
 }
