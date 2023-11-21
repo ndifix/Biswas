@@ -7,7 +7,7 @@ FillStyleList::FillStyleList (
 {
     auto solidFill = new SolidFill();
     auto schemeColor = new SchemeColor();
-    schemeColor->Val->val = "phClr";
+    schemeColor->Val->value = SchemeColorValues::PhColor;
     solidFill->AddChildElement(schemeColor);
     this->AddChildElement(solidFill);
 

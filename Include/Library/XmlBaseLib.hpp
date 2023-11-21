@@ -51,6 +51,7 @@ public:
 using AttributeBool = AttributeNullable<bool>;
 using AttributeInt64 = AttributeNullable<int64_t>;
 using AttributeColorScheme = AttributeNullable<ColorSchemeIndexValues>;
+using AttributeSchemeColor = AttributeNullable<SchemeColorValues>;
 
 class XmlElement {
 protected:
