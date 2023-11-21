@@ -7,7 +7,7 @@ namespace OpenXml::Drawing {
 class SaturationModulation : public XmlElement {
 private:
 public:
-    Attribute *Val;
+    AttributeInt32 *Val;
     SaturationModulation();
 };
 

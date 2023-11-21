@@ -5,6 +5,6 @@ using namespace OpenXml::Drawing;
 LuminanceModulation::LuminanceModulation (
     ) : XmlElement("lumMod", xmlns::drawingm)
 {
-    this->Val = new Attribute("val");
+    this->Val = new AttributeInt32("val");
     this->AddAttribute(this->Val);
 }

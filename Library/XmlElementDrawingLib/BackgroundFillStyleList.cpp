@@ -16,10 +16,10 @@ BackgroundFillStyleList::BackgroundFillStyleList (
     schemeColor->Val->value = SchemeColorValues::PhColor;
     solidFill->AddChildElement(schemeColor);
     auto tint = new Tint();
-    tint->Val->val = "95000";
+    tint->Val->value = 95000;
     schemeColor->AddChildElement(tint);
     auto saturationModulation = new SaturationModulation();
-    saturationModulation->Val->val = "170000";
+    saturationModulation->Val->value = 170000;
     schemeColor->AddChildElement(saturationModulation);
     this->AddChildElement(solidFill);
 

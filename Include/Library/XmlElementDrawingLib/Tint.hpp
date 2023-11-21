@@ -7,7 +7,7 @@ namespace OpenXml::Drawing {
 class Tint : public XmlElement {
 private:
 public:
-    Attribute *Val;
+    AttributeInt32 *Val;
     Tint();
 };
 
