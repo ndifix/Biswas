@@ -7,9 +7,9 @@ namespace OpenXml {
 class Relationship : public XmlElement {
 private:
 public:
-    Attribute *Id;
-    Attribute *Type;
-    Attribute *Target;
+    AttributeString *Id;
+    AttributeString *Type;
+    AttributeString *Target;
     Relationship();
 };
 

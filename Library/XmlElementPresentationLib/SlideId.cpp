@@ -6,7 +6,7 @@ SlideId::SlideId (
     ) : XmlElement("sldId", xmlns::presenta)
 {
     this->Id = new AttributeUint32("id");
-    this->RelationshipId = new Attribute("id", xmlns::relation);
+    this->RelationshipId = new AttributeString("id", xmlns::relation);
     this->AddAttribute(this->Id);
     this->AddAttribute(this->RelationshipId);
 }

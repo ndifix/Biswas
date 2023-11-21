@@ -7,7 +7,7 @@ namespace OpenXml::Drawing {
 class EastAsianFont : public XmlElement {
 private:
 public:
-    Attribute *Typeface;
+    AttributeString *Typeface;
     EastAsianFont();
 };
 

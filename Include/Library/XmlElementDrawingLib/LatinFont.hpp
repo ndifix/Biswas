@@ -7,7 +7,7 @@ namespace OpenXml::Drawing {
 class LatinFont : public XmlElement {
 private:
 public:
-    Attribute *Typeface;
+    AttributeString *Typeface;
     LatinFont();
 };
 

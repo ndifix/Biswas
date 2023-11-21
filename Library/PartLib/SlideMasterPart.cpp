@@ -31,7 +31,7 @@ SlideMasterPart::Write (
         if (slideLayoutId == this->RootElement->slideLayoutIdList->ids.end()) {
             throw std::runtime_error("number of slideLayoutId is invalid");
         }
-        (*slideLayoutId)->RelationshipId->val = relation->Id->val;
+        (*slideLayoutId)->RelationshipId->value = *relation->Id->value.get();
         ++slideLayoutId;
     }
 

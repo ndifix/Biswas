@@ -7,7 +7,7 @@ namespace OpenXml::Drawing {
 class ComplexScriptFont : public XmlElement {
 private:
 public:
-    Attribute *Typeface;
+    AttributeString *Typeface;
     ComplexScriptFont();
 };
 

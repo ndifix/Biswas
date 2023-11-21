@@ -8,7 +8,7 @@ class NonVisualDrawingProperties : public XmlElement {
 private:
 public:
     AttributeUint32 *Id;
-    Attribute *Name;
+    AttributeString *Name;
     NonVisualDrawingProperties();
 };
 

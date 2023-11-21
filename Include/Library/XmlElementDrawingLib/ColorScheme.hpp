@@ -31,7 +31,7 @@ private:
     Light1Color*light1Color;
     Light2Color*light2Color;
 public:
-    Attribute *Name;
+    AttributeString *Name;
     ColorScheme();
 };
 

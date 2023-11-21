@@ -11,7 +11,7 @@ private:
     MajorFont *majorFont;
     MinorFont *minorFont;
 public:
-    Attribute *Name;
+    AttributeString *Name;
     FontScheme();
 };
 

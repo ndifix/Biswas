@@ -52,9 +52,9 @@ IPart::AddRelationship (
     )
 {
     OpenXml::Relationship *relation = new OpenXml::Relationship();
-    relation->Id->val = NextRelationId(this->relations);
-    relation->Type->val = newPart->relationType;
-    relation->Target->val = std::filesystem::relative(newPart->xmlfile->filePath, this->partDir);
+    relation->Id->value = NextRelationId(this->relations);
+    relation->Type->value = newPart->relationType;
+    relation->Target->value = std::filesystem::relative(newPart->xmlfile->filePath, this->partDir);
 
     this->relations.push_back(relation);
     return relation;

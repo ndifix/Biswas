@@ -80,7 +80,7 @@ PresentationPart::Write (
         if (slideMasterId == this->RootElement->slideMasterList->ids.end()) {
             throw std::runtime_error("number of slideMasterId is invalid");
         }
-        (*slideMasterId)->RelationshipId->val = relation->Id->val;
+        (*slideMasterId)->RelationshipId->value = *relation->Id->value.get();
         ++slideMasterId;
     }
 
@@ -90,7 +90,7 @@ PresentationPart::Write (
         if (slideId == this->RootElement->slideIdList->ids.end()) {
             throw std::runtime_error("number of slideId is invalid");
         }
-        (*slideId)->RelationshipId->val = relation->Id->val;
+        (*slideId)->RelationshipId->value = *relation->Id->value.get();
         ++slideId;
     }
 

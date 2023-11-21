@@ -5,7 +5,7 @@ using namespace OpenXml::Drawing;
 ColorScheme::ColorScheme (
     ) : XmlElement("clrScheme", xmlns::drawingm)
 {
-    this->Name = new Attribute("name", "");
+    this->Name = new AttributeString("name", "");
     this->AddAttribute(this->Name);
     this->accent1Color = new Accent1Color();
     this->accent2Color = new Accent2Color();

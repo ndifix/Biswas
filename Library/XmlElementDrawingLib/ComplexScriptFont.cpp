@@ -5,6 +5,6 @@ using namespace OpenXml::Drawing;
 ComplexScriptFont::ComplexScriptFont (
     ) : XmlElement("cs", xmlns::drawingm)
 {
-    this->Typeface = new Attribute("typeface", "");
+    this->Typeface = new AttributeString("typeface", "");
     this->AddAttribute(this->Typeface);
 }
