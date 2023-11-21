@@ -11,8 +11,8 @@ Presentation::Presentation (
     this->AddChildElement(this->slideIdList);
     this->slideSize = new SlideSize();
     this->AddChildElement(this->slideSize);
-    this->slideSize->Cx = 12192000u;
-    this->slideSize->Cy = 6858000u;
+    this->slideSize->Cx->value = 12192000u;
+    this->slideSize->Cy->value = 6858000u;
     this->notesSize = new NotesSize();
     this->AddChildElement(this->notesSize);
     this->notesSize->Cx->value = 6858000u;

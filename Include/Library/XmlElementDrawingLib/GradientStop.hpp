@@ -8,7 +8,7 @@ namespace OpenXml::Drawing {
 class GradientStop : public XmlElement {
 private:
 public:
-    Attribute *Position;
+    AttributeInt32 *Position;
     SchemeColor *schemeColor;
     GradientStop();
 };

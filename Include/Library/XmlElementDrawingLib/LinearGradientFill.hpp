@@ -7,7 +7,7 @@ namespace OpenXml::Drawing {
 class LinearGradientFill : public XmlElement {
 private:
 public:
-    Attribute *Angle;
+    AttributeInt32 *Angle;
     AttributeBool *Scaled;
     LinearGradientFill();
 };

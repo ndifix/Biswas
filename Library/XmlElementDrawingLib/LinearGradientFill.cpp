@@ -5,7 +5,7 @@ using namespace OpenXml::Drawing;
 LinearGradientFill::LinearGradientFill (
     ) : XmlElement("lin", xmlns::drawingm)
 {
-    this->Angle = new Attribute("ang");
+    this->Angle = new AttributeInt32("ang");
     this->Scaled = new AttributeBool("scaled");
     this->AddAttribute(this->Angle);
     this->AddAttribute(this->Scaled);

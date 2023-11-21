@@ -7,7 +7,7 @@ namespace OpenXml::Drawing {
 class Shade  : public XmlElement {
 private:
 public:
-    Attribute *Val;
+    AttributeInt32 *Val;
     Shade ();
 };
 

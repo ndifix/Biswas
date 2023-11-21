@@ -5,19 +5,9 @@ using namespace OpenXml::Presentation;
 SlideSize::SlideSize (
     ) : XmlElement("sldSz", xmlns::presenta)
 {
-    this->CxAttr = new Attribute("cx");
-    this->CyAttr = new Attribute("cy");
-    this->AddAttribute(this->CxAttr);
-    this->AddAttribute(this->CyAttr);
+    this->Cx = new AttributeInt32("cx", 0);
+    this->Cy = new AttributeInt32("cy", 0);
+    this->AddAttribute(this->Cx);
+    this->AddAttribute(this->Cy);
 }
 
-void
-SlideSize::Write (
-    std::ofstream &ofs,
-    bool sign
-    )
-{
-    this->CxAttr->val = std::to_string(this->Cx);
-    this->CyAttr->val = std::to_string(this->Cy);
-    XmlElement::Write(ofs, sign);
-}

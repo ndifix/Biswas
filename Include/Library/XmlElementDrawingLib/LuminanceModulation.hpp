@@ -7,7 +7,7 @@ namespace OpenXml::Drawing {
 class LuminanceModulation : public XmlElement {
 private:
 public:
-    Attribute *Val;
+    AttributeInt32 *Val;
     LuminanceModulation();
 };
 

@@ -49,6 +49,7 @@ public:
     void virtual Write (std::ofstream &ofs) override;
 };
 using AttributeBool = AttributeNullable<bool>;
+using AttributeInt32 = AttributeNullable<int32_t>;
 using AttributeInt64 = AttributeNullable<int64_t>;
 using AttributeColorScheme = AttributeNullable<ColorSchemeIndexValues>;
 using AttributeSchemeColor = AttributeNullable<SchemeColorValues>;

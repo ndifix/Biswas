@@ -6,13 +6,10 @@ namespace OpenXml::Presentation {
 
 class SlideSize : public XmlElement {
 private:
-    Attribute *CxAttr;
-    Attribute *CyAttr;
 public:
-    uint32_t Cx = 0;
-    uint32_t Cy = 0;
+    AttributeInt32 *Cx;
+    AttributeInt32 *Cy;
     SlideSize();
-    virtual void Write (std::ofstream &ofs, bool sign) final override;
 };
 
 }
