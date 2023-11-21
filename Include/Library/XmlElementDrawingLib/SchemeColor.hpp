@@ -7,7 +7,7 @@ namespace OpenXml::Drawing {
 class SchemeColor : public XmlElement {
 private:
 public:
-    Attribute *Val;
+    AttributeSchemeColor *Val;
     SchemeColor();
 };
 

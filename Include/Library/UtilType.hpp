@@ -38,3 +38,23 @@ enum ColorSchemeIndexValues {
     Light1            = 1,
     Light2            = 3,
 };
+
+enum class SchemeColorValues {
+    Accent1	          = 4,
+    Accent2	          = 5,
+    Accent3	          = 6,
+    Accent4	          = 7,
+    Accent5	          = 8,
+    Accent6	          = 9,
+    Background1       = 0,
+    Background2       = 2,
+    Dark1             = 13,
+    Dark2             = 15,
+    FollowedHyperlink = 11,
+    Hyperlink         = 10,
+    Light1            = 14,
+    Light2            = 16,
+    PhColor	          = 12,
+    Text1             = 1,
+    Text2             = 3,
+};

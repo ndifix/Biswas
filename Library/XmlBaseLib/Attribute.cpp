@@ -108,3 +108,67 @@ AttributeNullable<ColorSchemeIndexValues>::Write (
     }
     Attribute::Write(ofs);
 }
+
+template<>
+void
+AttributeNullable<SchemeColorValues>::Write (
+    std::ofstream &ofs
+    )
+{
+    if (!this->value) return;
+
+    switch (*this->value.get()) {
+    case SchemeColorValues::Accent1:
+        this->val = "accent1";
+        break;
+    case SchemeColorValues::Accent2:
+        this->val = "accent2";
+        break;
+    case SchemeColorValues::Accent3:
+        this->val = "accent3";
+        break;
+    case SchemeColorValues::Accent4:
+        this->val = "accent4";
+        break;
+    case SchemeColorValues::Accent5:
+        this->val = "accent5";
+        break;
+    case SchemeColorValues::Accent6:
+        this->val = "accent6";
+        break;
+    case SchemeColorValues::Background1:
+        this->val = "bg1";
+        break;
+    case SchemeColorValues::Background2:
+        this->val = "bg2";
+        break;
+    case SchemeColorValues::Dark1:
+        this->val = "dk1";
+        break;
+    case SchemeColorValues::Dark2:
+        this->val = "dk2";
+        break;
+    case SchemeColorValues::FollowedHyperlink:
+        this->val = "folHlink";
+        break;
+    case SchemeColorValues::Hyperlink:
+        this->val = "hlink";
+        break;
+    case SchemeColorValues::Light1:
+        this->val = "lt1";
+        break;
+    case SchemeColorValues::Light2:
+        this->val = "lt2";
+        break;
+    case SchemeColorValues::PhColor:
+        this->val = "phClr";
+        break;
+    case SchemeColorValues::Text1:
+        this->val = "tx1";
+        break;
+    case SchemeColorValues::Text2:
+        this->val = "tx2";
+        break;
+    }
+    Attribute::Write(ofs);
+}

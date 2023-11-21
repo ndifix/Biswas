@@ -8,6 +8,6 @@ GradientStop::GradientStop (
     this->Position = new Attribute("pos");
     this->AddAttribute(this->Position);
     this->schemeColor = new SchemeColor();
-    this->schemeColor->Val->val = "phClr";
+    this->schemeColor->Val->value = SchemeColorValues::PhColor;
     this->AddChildElement(this->schemeColor);
 }

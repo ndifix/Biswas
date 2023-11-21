@@ -7,13 +7,13 @@ BackgroundFillStyleList::BackgroundFillStyleList (
 {
     auto solidFill = new SolidFill();
     auto schemeColor = new SchemeColor();
-    schemeColor->Val->val = "phClr";
+    schemeColor->Val->value = SchemeColorValues::PhColor;
     solidFill->AddChildElement(schemeColor);
     this->AddChildElement(solidFill);
 
     solidFill = new SolidFill();
     schemeColor = new SchemeColor();
-    schemeColor->Val->val = "phClr";
+    schemeColor->Val->value = SchemeColorValues::PhColor;
     solidFill->AddChildElement(schemeColor);
     auto tint = new Tint();
     tint->Val->val = "95000";
