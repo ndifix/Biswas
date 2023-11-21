@@ -102,18 +102,18 @@ PresentationPart::Write (
     uint32_t id = 0x80000000u;
     auto slideMasterPart = this->slideMasterParts.begin();
     for (auto &slideMasterId:this->RootElement->slideMasterList->ids) {
-        slideMasterId->Id->val = std::to_string(id++);
+        slideMasterId->Id->value = id++;
         if (slideMasterPart == this->slideMasterParts.end()) {
             throw std::runtime_error("number of slideMaster is invalid");
         }
         for (auto &slideLayoutId:(*slideMasterPart)->RootElement->slideLayoutIdList->ids) {
-            slideLayoutId->Id->val = std::to_string(id++);
+            slideLayoutId->Id->value = id++;
         }
     }
 
     id = 0x100u;
     for (auto &slideId:this->RootElement->slideIdList->ids) {
-        slideId->Id->val = std::to_string(id++);
+        slideId->Id->value = id++;
     }
 
     Status = this->MakeDir();
