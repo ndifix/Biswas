@@ -7,7 +7,7 @@ namespace OpenXml::Drawing {
 class SystemColor  : public XmlElement {
 private:
 public:
-    Attribute *LastColor;
+    AttributeHexBinaryValue *LastColor;
     AttributeSystemColor *Val;
     SystemColor ();
 };

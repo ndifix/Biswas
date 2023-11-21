@@ -6,6 +6,6 @@ FollowedHyperlinkColor::FollowedHyperlinkColor (
     ) : XmlElement("folHlink", xmlns::drawingm)
 {
     this->rgbColorModelHex = new RgbColorModelHex();
-    this->rgbColorModelHex->Val->val = "954F72";
+    this->rgbColorModelHex->Val->value = 0x954F72;
     this->AddChildElement(this->rgbColorModelHex);
 }
