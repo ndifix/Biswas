@@ -7,7 +7,7 @@ namespace OpenXml::Presentation {
 class NonVisualDrawingProperties : public XmlElement {
 private:
 public:
-    Attribute *Id;
+    AttributeUint32 *Id;
     Attribute *Name;
     NonVisualDrawingProperties();
 };
