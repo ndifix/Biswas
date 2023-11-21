@@ -8,7 +8,7 @@ class SlideLayoutId : public XmlElement {
 private:
 public:
     AttributeUint32 *Id;
-    Attribute *RelationshipId;
+    AttributeString *RelationshipId;
     SlideLayoutId();
 };
 

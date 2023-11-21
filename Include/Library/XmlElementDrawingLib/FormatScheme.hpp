@@ -12,7 +12,7 @@ private:
     FillStyleList *fillStyleList;
     LineStyleList *lineStyleList;
 public:
-    Attribute *Name;
+    AttributeString *Name;
     FormatScheme();
 };
 

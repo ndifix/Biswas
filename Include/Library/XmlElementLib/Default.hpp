@@ -7,8 +7,8 @@ namespace OpenXml {
 class Default : public XmlElement {
 private:
 public:
-    Attribute *Extension;
-    Attribute *ContentType;
+    AttributeString *Extension;
+    AttributeString *ContentType;
     Default();
 };
 

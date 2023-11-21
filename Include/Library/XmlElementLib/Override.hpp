@@ -7,8 +7,8 @@ namespace OpenXml {
 class Override : public XmlElement {
 private:
 public:
-    Attribute *PartName;
-    Attribute *ContentType;
+    AttributeString *PartName;
+    AttributeString *ContentType;
     Override();
 };
 

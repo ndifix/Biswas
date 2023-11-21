@@ -8,7 +8,7 @@ class SlideMasterId : public XmlElement {
 private:
 public:
     AttributeUint32 *Id;
-    Attribute *RelationshipId;
+    AttributeString *RelationshipId;
     SlideMasterId();
 };
 

@@ -86,6 +86,18 @@ AttributeNullable<int64_t>::Write (
 
 template<>
 void
+AttributeNullable<std::string>::Write (
+    std::ofstream &ofs
+    )
+{
+    if (!this->value) return;
+
+    this->val = *this->value.get();
+    Attribute::Write(ofs);
+}
+
+template<>
+void
 AttributeNullable<HexBinaryValue>::Write (
     std::ofstream &ofs
     )
