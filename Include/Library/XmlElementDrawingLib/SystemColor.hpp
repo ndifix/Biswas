@@ -8,7 +8,7 @@ class SystemColor  : public XmlElement {
 private:
 public:
     Attribute *LastColor;
-    Attribute *Val;
+    AttributeSystemColor *Val;
     SystemColor ();
 };
 

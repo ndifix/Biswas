@@ -172,3 +172,27 @@ AttributeNullable<SchemeColorValues>::Write (
     }
     Attribute::Write(ofs);
 }
+
+template<>
+void
+AttributeNullable<SystemColorValues>::Write (
+    std::ofstream &ofs
+    )
+{
+    if (!this->value) return;
+
+    switch (*this->value.get()) {
+    case SystemColorValues::Window:
+        this->val = "window";
+        break;
+    case SystemColorValues::WindowText:
+        this->val = "windowText";
+        break;
+    default:
+        std::stringstream ss;
+        ss << "this system color is not implemented: "
+            << (int)*this->value.get();
+        throw std::domain_error(ss.str());
+    }
+    Attribute::Write(ofs);
+}

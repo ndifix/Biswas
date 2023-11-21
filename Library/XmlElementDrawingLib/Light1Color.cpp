@@ -6,7 +6,7 @@ Light1Color::Light1Color (
     ) : XmlElement("lt1", xmlns::drawingm)
 {
     this->systemColor = new SystemColor();
-    this->systemColor->Val->val = "window";
+    this->systemColor->Val->value = SystemColorValues::Window;
     this->systemColor->LastColor->val = "FFFFFF";
     this->AddChildElement(this->systemColor);
 }
