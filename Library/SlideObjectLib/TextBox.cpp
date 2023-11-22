@@ -10,4 +10,8 @@ TextBox::TextBox (
     this->shape = textBox;
     this->shape->textBody->bodyProperties->AddChildElement(new OpenXml::Drawing::NoAutoFit());
     this->shape->nonVisualShapeProperties->nonVisualShapeDrawingProperties->TextBox->value = true;
+
+    auto presetGeometry = new OpenXml::Drawing::PresetGeometry();
+    presetGeometry->Preset->value = ShapeTypeValues::Rectangle;
+    this->shape->shapeProperties->AddChildElement(presetGeometry);
 }

@@ -58,6 +58,7 @@ using AttributeString = AttributeNullable<std::string>;
 using AttributeHexBinaryValue = AttributeNullable<HexBinaryValue>;
 using AttributeColorScheme = AttributeNullable<ColorSchemeIndexValues>;
 using AttributeSchemeColor = AttributeNullable<SchemeColorValues>;
+using AttributeShapeType = AttributeNullable<ShapeTypeValues>;
 using AttributeSystemColor = AttributeNullable<SystemColorValues>;
 
 class XmlElement {

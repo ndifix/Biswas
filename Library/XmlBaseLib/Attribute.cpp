@@ -247,3 +247,24 @@ AttributeNullable<SystemColorValues>::Write (
     }
     Attribute::Write(ofs);
 }
+
+template<>
+void
+AttributeNullable<ShapeTypeValues>::Write (
+    std::ofstream &ofs
+    )
+{
+    if (!this->value) return;
+
+    switch (*this->value.get()) {
+    case ShapeTypeValues::Rectangle:
+        this->val = "rect";
+        break;
+    default:
+        std::stringstream ss;
+        ss << "this shape type is not implemented: "
+            << (int)*this->value.get();
+        throw std::domain_error(ss.str());
+    }
+    Attribute::Write(ofs);
+}
