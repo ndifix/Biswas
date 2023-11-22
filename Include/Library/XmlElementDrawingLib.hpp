@@ -6,6 +6,7 @@
 #include <Library/XmlElementDrawingLib/Accent4Color.hpp>
 #include <Library/XmlElementDrawingLib/Accent5Color.hpp>
 #include <Library/XmlElementDrawingLib/Accent6Color.hpp>
+#include <Library/XmlElementDrawingLib/AdjustValueList.hpp>
 #include <Library/XmlElementDrawingLib/BackgroundFillStyleList.hpp>
 #include <Library/XmlElementDrawingLib/ChildExtents.hpp>
 #include <Library/XmlElementDrawingLib/ChildOffset.hpp>
