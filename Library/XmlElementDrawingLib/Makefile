@@ -34,6 +34,7 @@ LuminanceModulation.cpp\
 MajorFont.cpp\
 MinorFont.cpp\
 Offset.cpp\
+PresetGeometry.cpp\
 RgbColorModelHex.cpp\
 SaturationModulation.cpp\
 SchemeColor.cpp\

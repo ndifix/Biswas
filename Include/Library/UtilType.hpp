@@ -103,3 +103,7 @@ enum class SystemColorValues {
     WindowFrame             = 6,
     WindowText              = 8,
 };
+
+enum class ShapeTypeValues {
+    Rectangle                  = 4,
+};
