@@ -105,7 +105,8 @@ AttributeNullable<HexBinaryValue>::Write (
     if (!this->value) return;
 
     std::stringstream ss;
-    ss << std::hex << (0x00ffffff & *this->value.get());
+    ss.fill('0');
+    ss << std::hex << std::setw(6) << (0x00ffffff & *this->value.get());
     this->val = ss.str();
     Attribute::Write(ofs);
 }
