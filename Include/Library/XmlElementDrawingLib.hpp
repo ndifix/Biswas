@@ -40,6 +40,7 @@
 #include <Library/XmlElementDrawingLib/NoAutoFit.hpp>
 #include <Library/XmlElementDrawingLib/Offset.hpp>
 #include <Library/XmlElementDrawingLib/Outline.hpp>
+#include <Library/XmlElementDrawingLib/Paragraph.hpp>
 #include <Library/XmlElementDrawingLib/PresetGeometry.hpp>
 #include <Library/XmlElementDrawingLib/RgbColorModelHex.hpp>
 #include <Library/XmlElementDrawingLib/SaturationModulation.hpp>
