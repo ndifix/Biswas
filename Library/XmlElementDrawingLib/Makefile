@@ -37,6 +37,7 @@ Offset.cpp\
 Paragraph.cpp\
 PresetGeometry.cpp\
 RgbColorModelHex.cpp\
+Run.cpp\
 SaturationModulation.cpp\
 SchemeColor.cpp\
 Shade.cpp\
