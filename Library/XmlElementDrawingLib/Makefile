@@ -43,6 +43,7 @@ SaturationModulation.cpp\
 SchemeColor.cpp\
 Shade.cpp\
 SystemColor.cpp\
+Text.cpp\
 Theme.cpp\
 ThemeElements.cpp\
 Tint.cpp\
