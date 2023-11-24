@@ -38,6 +38,7 @@ Paragraph.cpp\
 PresetGeometry.cpp\
 RgbColorModelHex.cpp\
 Run.cpp\
+RunProperties.cpp\
 SaturationModulation.cpp\
 SchemeColor.cpp\
 Shade.cpp\

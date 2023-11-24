@@ -44,6 +44,7 @@
 #include <Library/XmlElementDrawingLib/PresetGeometry.hpp>
 #include <Library/XmlElementDrawingLib/RgbColorModelHex.hpp>
 #include <Library/XmlElementDrawingLib/Run.hpp>
+#include <Library/XmlElementDrawingLib/RunProperties.hpp>
 #include <Library/XmlElementDrawingLib/SaturationModulation.hpp>
 #include <Library/XmlElementDrawingLib/SchemeColor.hpp>
 #include <Library/XmlElementDrawingLib/Shade.hpp>
