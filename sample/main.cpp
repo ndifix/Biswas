@@ -8,8 +8,10 @@ int main() {
     biswas::SlideLayout slideLayout = doc.presentation->AddSlideLayout(slideMaster);
     biswas::Slide slide = doc.presentation->AddSlide(slideLayout);
 
-    slideLayout.AddTextBox();
-    slide.AddTextBox();
+    biswas::TextBox textBoxLayout = slideLayout.AddTextBox();
+    textBoxLayout.paragraph->AddRun("hoge");
+    biswas::TextBox textboxSlide = slide.AddTextBox();
+    textboxSlide.paragraph->AddRun("fuga", false, true);
 
     doc.Write("sample.pptx");
 }

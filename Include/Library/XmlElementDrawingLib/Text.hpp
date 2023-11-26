@@ -8,8 +8,9 @@ namespace OpenXml::Drawing {
 
 class Text : public XmlElement {
 private:
-    std::string text;
 public:
+    std::string text;
+
     inline Text() : XmlElement("t", xmlns::drawingm) {};
 
     virtual void
