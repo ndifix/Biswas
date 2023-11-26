@@ -35,14 +35,14 @@ public:
 
     void
     SetSize (
-        int64_t cx,
-        int64_t cy
+        Emu cx,
+        Emu cy
         );
 
     void
     SetPosition (
-        int64_t x,
-        int64_t y
+        Emu x,
+        Emu y
         );
 };
 
