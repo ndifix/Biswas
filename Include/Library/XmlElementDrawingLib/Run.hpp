@@ -8,9 +8,10 @@ namespace OpenXml::Drawing {
 
 class Run : public XmlElement {
 private:
+public:
     RunProperties *runProperties;
     Text *text;
-public:
+
     Run();
 };
 

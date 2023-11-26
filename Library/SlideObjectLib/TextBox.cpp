@@ -14,4 +14,8 @@ TextBox::TextBox (
     auto presetGeometry = new OpenXml::Drawing::PresetGeometry();
     presetGeometry->Preset->value = ShapeTypeValues::Rectangle;
     this->shape->shapeProperties->AddChildElement(presetGeometry);
+
+    auto paragraph = new OpenXml::Drawing::Paragraph();
+    this->shape->textBody->AddChildElement(paragraph);
+    this->paragraph.reset(new Paragraph(paragraph));
 }
