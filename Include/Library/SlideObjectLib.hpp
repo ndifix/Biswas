@@ -38,6 +38,12 @@ public:
         int64_t cx,
         int64_t cy
         );
+
+    void
+    SetPosition (
+        int64_t x,
+        int64_t y
+        );
 };
 
 }
