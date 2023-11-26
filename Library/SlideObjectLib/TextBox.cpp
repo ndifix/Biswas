@@ -29,3 +29,13 @@ TextBox::SetSize (
     this->shape->shapeProperties->transform2D->extents->Cx->value = cx;
     this->shape->shapeProperties->transform2D->extents->Cy->value = cy;
 }
+
+void
+TextBox::SetPosition (
+    int64_t x,
+    int64_t y
+    )
+{
+    this->shape->shapeProperties->transform2D->offset->X->value = x;
+    this->shape->shapeProperties->transform2D->offset->Y->value = y;
+}
