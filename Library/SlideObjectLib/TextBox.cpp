@@ -22,8 +22,8 @@ TextBox::TextBox (
 
 void
 TextBox::SetSize (
-    int64_t cx,
-    int64_t cy
+    Emu cx,
+    Emu cy
     )
 {
     this->shape->shapeProperties->transform2D->extents->Cx->value = cx;
@@ -32,8 +32,8 @@ TextBox::SetSize (
 
 void
 TextBox::SetPosition (
-    int64_t x,
-    int64_t y
+    Emu x,
+    Emu y
     )
 {
     this->shape->shapeProperties->transform2D->offset->X->value = x;

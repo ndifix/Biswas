@@ -25,6 +25,15 @@ public:
     };
 };
 
+class Emu {
+private:
+    int64_t val;
+public:
+    inline explicit Emu(int64_t value) : val(value) {};
+    operator int64_t() const noexcept { return this->val; };
+};
+inline Emu EmuFromMm (int val) { return Emu(static_cast<int64_t>(val) * 36000); }
+
 // using HexBinaryValue = uint_fast32_t;
 class HexBinaryValue {
 private:
