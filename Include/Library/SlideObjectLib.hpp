@@ -32,6 +32,12 @@ public:
     TextBox (
         OpenXml::Presentation::Shape* textBox
         );
+
+    void
+    SetSize (
+        int64_t cx,
+        int64_t cy
+        );
 };
 
 }

@@ -19,3 +19,13 @@ TextBox::TextBox (
     this->shape->textBody->AddChildElement(paragraph);
     this->paragraph.reset(new Paragraph(paragraph));
 }
+
+void
+TextBox::SetSize (
+    int64_t cx,
+    int64_t cy
+    )
+{
+    this->shape->shapeProperties->transform2D->extents->Cx->value = cx;
+    this->shape->shapeProperties->transform2D->extents->Cy->value = cy;
+}
