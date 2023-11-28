@@ -40,6 +40,10 @@ public:
     TextBox
     AddTextBox (
         ) const;
+
+    Picture
+    AddPicture (
+        ) const;
 };
 
 class SlideLayout {
@@ -55,6 +59,10 @@ friend Presentation;
 
     TextBox
     AddTextBox (
+        ) const;
+
+    Picture
+    AddPicture (
         ) const;
 };
 

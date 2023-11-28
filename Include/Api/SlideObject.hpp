@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <Library/XmlElementDrawingLib/Paragraph.hpp>
+#include <Library/XmlElementPresentationLib/Picture.hpp>
 #include <Library/XmlElementPresentationLib/Shape.hpp>
 
 // API用クラス
@@ -43,6 +44,15 @@ public:
     SetPosition (
         Emu x,
         Emu y
+        );
+};
+
+class Picture {
+private:
+    OpenXml::Presentation::Picture* picture;
+public:
+    Picture (
+        OpenXml::Presentation::Picture* pic
         );
 };
 

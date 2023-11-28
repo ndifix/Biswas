@@ -17,5 +17,7 @@ int main() {
     textboxSlide.SetSize(EmuFromMm(100), EmuFromMm(100));
     textboxSlide.paragraph->AddRun("fuga", false, true);
 
+    biswas::Picture picture = slide.AddPicture();
+
     doc.Write("sample.pptx");
 }

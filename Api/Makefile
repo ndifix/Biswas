@@ -17,6 +17,7 @@ Include=-IInclude/ -I../Include/
 Source=\
 src/Document.cpp\
 src/Paragraph.cpp\
+src/Picture.cpp\
 src/Presentation.cpp\
 src/Slide.cpp\
 src/SlideLayout.cpp\

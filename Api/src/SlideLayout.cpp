@@ -9,3 +9,11 @@ SlideLayout::AddTextBox (
     auto shape =  this->part->RootElement->commonSlideData->shapeTree->AddShape();
     return TextBox(shape);
 }
+
+Picture
+SlideLayout::AddPicture (
+    ) const
+{
+    auto picture = this->part->RootElement->commonSlideData->shapeTree->AddPicture();
+    return Picture(picture);
+}

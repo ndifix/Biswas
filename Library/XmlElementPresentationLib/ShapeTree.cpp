@@ -18,8 +18,21 @@ ShapeTree::AddShape (
     auto shape = new Shape();
     this->AddChildElement(shape);
 
-    shape->nonVisualShapeProperties->nonVisualDrawingProperties->Id->value = this->shapes.size() + 2;
-    this->shapes.push_back(shape);
+    shape->nonVisualShapeProperties->nonVisualDrawingProperties->Id->value = this->cNvPrs.size() + 2;
+    this->cNvPrs.push_back(shape->nonVisualShapeProperties->nonVisualDrawingProperties);
 
     return shape;
+}
+
+Picture *
+ShapeTree::AddPicture (
+    )
+{
+    auto picture = new Picture();
+    this->AddChildElement(picture);
+
+    picture->nonVisualPictureProperties->nonVisualDrawingProperties->Id->value = this->cNvPrs.size() + 2;
+    this->cNvPrs.push_back(picture->nonVisualPictureProperties->nonVisualDrawingProperties);
+
+    return picture;
 }
