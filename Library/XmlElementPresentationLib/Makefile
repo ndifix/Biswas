@@ -10,6 +10,7 @@ NonVisualGroupShapeProperties.cpp\
 NonVisualShapeDrawingProperties.cpp\
 NonVisualShapeProperties.cpp\
 NotesSize.cpp\
+Picture.cpp\
 Presentation.cpp\
 Shape.cpp\
 ShapeProperties.cpp\
