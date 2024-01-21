@@ -1,6 +1,7 @@
 LibName=libXmlElementPresentation.a
 
 Source=\
+BlipFill.cpp\
 ColorMap.cpp\
 ColorMapOverride.cpp\
 CommonSlideData.cpp\
