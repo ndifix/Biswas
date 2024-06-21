@@ -1,28 +1,25 @@
-Target=../biswas.out
+Target=sample.out
+
+Api=../out/libApi.a
+Libary=\
+../out/libPart.a\
+../out/libUtil.a\
+../out/libXmlElementPresentation.a\
+../out/libXmlElementDrawing.a\
+../out/libXmlElement.a\
+../out/libXmlFile.a\
+../out/libXmlBase.a\
+
 IncDir=../Include/
-Source=main.cpp\
+Source=\
+main.cpp\
 
-LibDir=../Library/
-Library=\
-DocumentLib\
-PresentationLib\
-PartLib\
-SlideObjectLib\
-UtilLib\
-XmlElementPresentationLib\
-XmlElementDrawingLib\
-XmlElementLib\
-XmlFileLib\
-XmlBaseLib\
+$(Target): $(Source) $(Api)
+	g++ -I$(IncDir) $(Source) $(Api) $(Libary) -o $(Target)
 
-Archive=$(patsubst %Lib, ../out/lib%.a, $(Library))
-
-$(Target): $(Source) $(Archive)
-	g++ -I$(IncDir) $(Source) $(Archive) -o $(Target)
-
-$(Archive):
-	$(foreach lib, $(Library), make -C $(addprefix $(LibDir), $(lib));)
+$(Api):
+	make -C ../Api
 
 clean:
-	$(foreach lib, $(Library), make -C $(addprefix $(LibDir), $(lib)) clean;)
+	make -C ../Api clean
 	rm $(Target)

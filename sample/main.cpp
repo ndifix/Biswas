@@ -1,4 +1,4 @@
-#include <Library/DocumentLib.hpp>
+#include <Api/Document.hpp>
 
 int main() {
     biswas::Document doc;

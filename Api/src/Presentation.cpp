@@ -1,8 +1,8 @@
 #include <sstream>
 #include <Biswas.hpp>
-#include <Library/DocumentLib.hpp>
 #include <Library/PartLib.hpp>
-#include <Library/PresentationLib.hpp>
+#include <Api/Document.hpp>
+#include <Api/Presentation.hpp>
 
 using namespace biswas;
 

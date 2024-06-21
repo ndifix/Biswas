@@ -1,4 +1,4 @@
-#include <Library/SlideObjectLib.hpp>
+#include <Api/SlideObject.hpp>
 #include <Library/XmlElementDrawingLib.hpp>
 
 using namespace biswas;
