@@ -9,7 +9,7 @@ $(Target): $(Object)
 	ar rcs $(Target) $(Object)
 
 %.o: %.cpp
-	g++ -I$(IncDir) -c $<
+	g++ -Wall -I$(IncDir) -c $<
 
 clean:
 	rm $(Target) $(Object)

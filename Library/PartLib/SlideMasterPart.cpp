@@ -23,8 +23,6 @@ Status
 SlideMasterPart::Write (
     )
 {
-    Status Status;
-
     auto slideLayoutId = this->RootElement->slideLayoutIdList->ids.begin();
     for (auto &slideLayout:this->slideLayoutParts) {
         auto relation = this->AddRelationship(slideLayout);
