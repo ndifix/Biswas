@@ -1,6 +1,8 @@
 OutDir=../out/
 Target=$(OutDir)libApi.a
 
+CXXFLAGS = -Wall -MMD
+
 LibDir=../Library/
 Library=\
 PartLib\
@@ -22,6 +24,7 @@ src/TextBox.cpp\
 
 Archive=$(patsubst %Lib, ../out/lib%.a, $(Library))
 Object=$(notdir $(Source:.cpp=.o))
+Depend=$(patsubst %.o,%.d,$(Object))
 
 .PHONY: all
 all: $(Target)
@@ -29,8 +32,10 @@ all: $(Target)
 $(Target): $(Object) $(Archive)
 	ar rc $(Target) $(Object)
 
-$(Object): $(Source)
-	g++ -Wall $(Include) -c $^
+$(Object):
+	g++ $(CXXFLAGS) $(Include) -c src/$(@:.o=.cpp)
+
+-include $(Depend)
 
 $(Archive): FORCE
 	make -C ../Library/$(patsubst lib%,%, $(basename $(@F)))Lib
@@ -40,6 +45,5 @@ FORCE:
 
 .PHONY: clean
 clean:
-	rm $(Object)
-	rm $(Target)
 	$(foreach lib, $(Library), make -C $(addprefix $(LibDir), $(lib)) clean;)
+	rm $(Object) $(Target) $(Depend)

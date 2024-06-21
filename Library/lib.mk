@@ -1,15 +1,20 @@
 OutDir=../../out/
 Target=$(OutDir)$(LibName)
+
+CXXFLAGS = -Wall -MMD
 IncDir=../../Include/
 
 Object=$(patsubst %.cpp,%.o,$(Source))
+Depend=$(patsubst %.cpp,%.d,$(Source))
 
 $(Target): $(Object)
 	@mkdir -p ${OutDir}
 	ar rcs $(Target) $(Object)
 
 %.o: %.cpp
-	g++ -Wall -I$(IncDir) -c $<
+	g++ $(CXXFLAGS) -I$(IncDir) -c $<
+
+-include $(Depend)
 
 clean:
-	rm $(Target) $(Object)
+	rm $(Target) $(Object) $(Depend)
