@@ -15,7 +15,7 @@ Source=\
 main.cpp\
 
 $(Target): $(Source) $(Api)
-	g++ -Wall -I$(IncDir) $(Source) $(Api) $(Libary) -o $(Target)
+	g++ -Wall -std=c++17 -I$(IncDir) $(Source) $(Api) $(Libary) -o $(Target)
 
 $(Api):
 	make -C ../Api
