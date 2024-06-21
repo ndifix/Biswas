@@ -1,7 +1,7 @@
 OutDir=../out/
 Target=$(OutDir)libApi.a
 
-CXXFLAGS = -Wall -MMD
+CXXFLAGS = -Wall -MMD -std=c++17
 
 LibDir=../Library/
 Library=\

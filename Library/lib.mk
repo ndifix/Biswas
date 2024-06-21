@@ -1,7 +1,7 @@
 OutDir=../../out/
 Target=$(OutDir)$(LibName)
 
-CXXFLAGS = -Wall -MMD
+CXXFLAGS = -Wall -MMD -std=c++17
 IncDir=../../Include/
 
 Object=$(patsubst %.cpp,%.o,$(Source))
