@@ -30,7 +30,7 @@ $(Target): $(Object) $(Archive)
 	ar rc $(Target) $(Object)
 
 $(Object): $(Source)
-	g++ $(Include) -c $^
+	g++ -Wall $(Include) -c $^
 
 $(Archive): FORCE
 	make -C ../Library/$(patsubst lib%,%, $(basename $(@F)))Lib
