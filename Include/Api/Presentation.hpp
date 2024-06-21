@@ -3,7 +3,7 @@
 #include <memory>
 #include <Biswas.hpp>
 #include <Library/PartLib.hpp>
-#include <Library/SlideObjectLib.hpp>
+#include <Api/SlideObject.hpp>
 
 // API用クラス
 namespace biswas {
@@ -84,7 +84,7 @@ friend Presentation;
 
 }
 
-#include <Library/DocumentLib.hpp>
+#include <Api/Document.hpp>
 
 namespace biswas {
 
