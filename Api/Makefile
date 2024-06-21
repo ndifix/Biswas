@@ -32,8 +32,11 @@ $(Target): $(Object) $(Archive)
 $(Object): $(Source)
 	g++ $(Include) -c $^
 
-$(Archive):
-	$(foreach lib, $(Library), make -C $(addprefix $(LibDir), $(lib));)
+$(Archive): FORCE
+	make -C ../Library/$(patsubst lib%,%, $(basename $(@F)))Lib
+
+.PHONY: FORCE
+FORCE:
 
 .PHONY: clean
 clean:
