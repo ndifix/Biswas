@@ -1,4 +1,4 @@
-#include <Library/XmlElementPresentationLib.hpp>
+#include <Library/XmlElementPresentationLib/TextBody.hpp>
 
 using namespace OpenXml::Presentation;
 

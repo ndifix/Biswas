@@ -1,4 +1,4 @@
-#include <Library/XmlElementPresentationLib.hpp>
+#include <Library/XmlElementPresentationLib/GroupShapeProperties.hpp>
 #include <Library/XmlElementDrawingLib/ChildExtents.hpp>
 #include <Library/XmlElementDrawingLib/ChildOffset.hpp>
 

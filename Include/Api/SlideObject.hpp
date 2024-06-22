@@ -2,7 +2,7 @@
 
 #include <memory>
 #include <Library/XmlElementDrawingLib/Paragraph.hpp>
-#include <Library/XmlElementPresentationLib.hpp>
+#include <Library/XmlElementPresentationLib/Shape.hpp>
 
 // API用クラス
 namespace biswas {
