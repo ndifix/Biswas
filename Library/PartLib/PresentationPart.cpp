@@ -1,3 +1,4 @@
+#include <iostream>
 #include <sstream>
 #include <stdexcept>
 #include <string>
@@ -13,7 +14,8 @@ const char *conType = "application/vnd.openxmlformats-officedocument.presentatio
 
 PresentationPart::PresentationPart (
     const std::filesystem::path &presDir
-    ) : IPart(presDir, relType, conType)
+    ) : IPart(presDir, relType, conType),
+        mediaDir(presDir / "media/")
 {
     this->RootElement.reset(new OpenXml::Presentation::Presentation());
     this->xmlfile.reset(
@@ -32,6 +34,13 @@ PresentationPart::MakeDir (
     Status = ::MakeDir(this->partDir);
     if (Status != Status::Success) {
         return Status;
+    }
+
+    if (!this->picutrePaths.empty()) {
+        Status = ::MakeDir(this->mediaDir);
+        if (Status != Status::Success) {
+            return Status;
+        }
     }
 
     if (!this->themeParts.empty()) {
@@ -66,6 +75,29 @@ PresentationPart::MakeDir (
     }
 
     return Status::Success;
+}
+
+std::filesystem::path
+PresentationPart::GetPicturePath (
+    std::filesystem::path originalPath
+    )
+{
+    const auto absOriginal = std::filesystem::absolute(originalPath);
+    if (this->picutrePaths.count(absOriginal.string()) > 0) {
+        return this->picutrePaths.at(absOriginal.string());
+    }
+
+    std::stringstream filename;
+    filename
+        << "image"
+        << this->picutrePaths.size() + 1
+        << absOriginal.extension().string()
+        ;
+
+    std::filesystem::path mediaPath = this->mediaDir / filename.str();
+    this->picutrePaths.emplace(absOriginal.string(), mediaPath);
+
+    return mediaPath;
 }
 
 Status
@@ -119,6 +151,23 @@ PresentationPart::Write (
     Status = this->MakeDir();
     if (Status != Status::Success) {
         return Status;
+    }
+
+    if (!this->picutrePaths.empty()) {
+        for (auto path:this->picutrePaths) {
+            auto original = std::filesystem::path(path.first);
+            try {
+                std::filesystem::copy_file(original, path.second);
+            } catch(std::exception &e) {
+                std::cerr
+                    << "Failed to copy file: "
+                    << original.string()
+                    << " -> "
+                    << path.second.string()
+                    << "\n";
+                return Status::Error;
+            }
+        }
     }
 
     return IPart::Write();

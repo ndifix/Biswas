@@ -43,6 +43,7 @@ public:
 
     Picture
     AddPicture (
+        const std::filesystem::path path
         ) const;
 };
 
@@ -63,6 +64,7 @@ friend Presentation;
 
     Picture
     AddPicture (
+        const std::filesystem::path path
         ) const;
 };
 

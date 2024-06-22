@@ -49,6 +49,8 @@ Presentation::AddSlide (
     this->part->slideParts.push_back(slidePart);
     this->part->AddChildPart(slidePart);
 
+    slidePart->presentationPart = this->part.get();
+
     return Slide(slidePart);
 }
 
@@ -68,6 +70,7 @@ Presentation::AddSlideLayout (
     slideMaster.part->RootElement->slideLayoutIdList->AddId();
     slideLayoutPart->AddRelationship(slideMaster.part);
     slideLayoutPart->slideMasterPart = slideMaster.part.get();
+    slideLayoutPart->presentationPart = this->part.get();
 
     slideMaster.part->slideLayoutParts.push_back(slideLayoutPart);
     slideMaster.part->AddChildPart(slideLayoutPart);

@@ -2,6 +2,7 @@
 
 #include <filesystem>
 #include <list>
+#include <map>
 #include <memory>
 #include <string>
 #include <Biswas.hpp>
@@ -68,6 +69,10 @@ public:
 
 class PresentationPart : public IPart {
 private:
+    const std::filesystem::path mediaDir;
+    // 画像の情報を格納する構造体。{key: value} = {src: dst}
+    std::map<const std::string, const std::filesystem::path> picutrePaths;
+
     Status
     MakeDir (
         ) const;
@@ -80,6 +85,11 @@ public:
 
     PresentationPart (
         const std::filesystem::path &dir
+        );
+
+    std::filesystem::path
+    GetPicturePath (
+        const std::filesystem::path originalPath
         );
 
     Status
@@ -121,6 +131,7 @@ class SlideLayoutPart : public IPart {
 private:
 public:
     std::shared_ptr<OpenXml::Presentation::SlideLayout> RootElement;
+    PresentationPart *presentationPart = nullptr;
     SlideMasterPart *slideMasterPart = nullptr;
 
     SlideLayoutPart (
@@ -133,6 +144,7 @@ class SlidePart : public IPart {
 private:
 public:
     std::shared_ptr<OpenXml::Presentation::Slide> RootElement;
+    PresentationPart *presentationPart = nullptr;
 
     SlidePart (
         const std::filesystem::path &presDir,

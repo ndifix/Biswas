@@ -12,8 +12,11 @@ SlideLayout::AddTextBox (
 
 Picture
 SlideLayout::AddPicture (
+    const std::filesystem::path path
     ) const
 {
+    const std::filesystem::path picturePath = this->part->presentationPart->GetPicturePath(path);
+
     auto picture = this->part->RootElement->commonSlideData->shapeTree->AddPicture();
     return Picture(picture);
 }
