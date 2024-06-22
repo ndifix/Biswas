@@ -1,6 +1,9 @@
 #pragma once
 
 #include <Library/XmlBaseLib.hpp>
+#include <Library/XmlElementDrawingLib/BackgroundFillStyleList.hpp>
+#include <Library/XmlElementDrawingLib/EffectStyleList.hpp>
+#include <Library/XmlElementDrawingLib/FillStyleList.hpp>
 #include <Library/XmlElementDrawingLib/LineStyleList.hpp>
 
 namespace OpenXml::Drawing {

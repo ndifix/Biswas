@@ -1,6 +1,9 @@
 #pragma once
 
 #include <Library/XmlBaseLib.hpp>
+#include <Library/XmlElementDrawingLib/ColorScheme.hpp>
+#include <Library/XmlElementDrawingLib/FontScheme.hpp>
+#include <Library/XmlElementDrawingLib/FormatScheme.hpp>
 
 namespace OpenXml::Drawing {
 
