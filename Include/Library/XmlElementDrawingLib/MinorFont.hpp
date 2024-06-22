@@ -1,7 +1,9 @@
 #pragma once
 
 #include <Library/XmlBaseLib.hpp>
+#include <Library/XmlElementDrawingLib/ComplexScriptFont.hpp>
 #include <Library/XmlElementDrawingLib/EastAsianFont.hpp>
+#include <Library/XmlElementDrawingLib/LatinFont.hpp>
 #include <Library/XmlElementDrawingLib/MinorFont.hpp>
 
 namespace OpenXml::Drawing {

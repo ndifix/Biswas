@@ -1,4 +1,5 @@
-#include <Library/XmlElementDrawingLib.hpp>
+#include <Library/XmlElementDrawingLib/EffectList.hpp>
+#include <Library/XmlElementDrawingLib/EffectStyle.hpp>
 
 using namespace OpenXml::Drawing;
 

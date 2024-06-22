@@ -1,4 +1,4 @@
-#include <Library/XmlElementDrawingLib.hpp>
+#include <Library/XmlElementDrawingLib/FormatScheme.hpp>
 
 using namespace OpenXml::Drawing;
 

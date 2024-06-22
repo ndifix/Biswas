@@ -1,4 +1,5 @@
-#include <Library/XmlElementDrawingLib.hpp>
+#include <Library/XmlElementDrawingLib/LineStyleList.hpp>
+#include <Library/XmlElementDrawingLib/Outline.hpp>
 
 using namespace OpenXml::Drawing;
 

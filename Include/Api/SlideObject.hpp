@@ -1,7 +1,7 @@
 #pragma once
 
 #include <memory>
-#include <Library/XmlElementDrawingLib.hpp>
+#include <Library/XmlElementDrawingLib/Paragraph.hpp>
 #include <Library/XmlElementPresentationLib.hpp>
 
 // API用クラス
