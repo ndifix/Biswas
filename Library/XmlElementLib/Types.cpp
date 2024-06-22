@@ -4,20 +4,20 @@
 
 using namespace OpenXml;
 
-Status
+biswas::Status
 Types::AddContentType (
     std::unique_ptr<Default> def
     )
 {
     this->AddChildElement(def.release());
-    return Status::Success;
+    return biswas::Status::Success;
 }
 
-Status
+biswas::Status
 Types::AddContentType (
     std::unique_ptr<Override> ovr
     )
 {
     this->AddChildElement(ovr.release());
-    return Status::Success;
+    return biswas::Status::Success;
 }

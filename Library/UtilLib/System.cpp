@@ -2,7 +2,7 @@
 #include <Biswas.hpp>
 #include <Library/UtilLib.hpp>
 
-Status
+biswas::Status
 Execute (
     std::string cmd
     )
@@ -10,49 +10,49 @@ Execute (
     int ret = std::system(cmd.c_str());
 
     return ret == 0 ?
-        Status::Success:
-        Status::Error;
+        biswas::Status::Success:
+        biswas::Status::Error;
 }
 
-Status
+biswas::Status
 MakeDir (
     const std::filesystem::path &path
     )
 {
     if (std::filesystem::exists(path)) {
-        return Status::Success;
+        return biswas::Status::Success;
     }
 
     if (std::filesystem::create_directory(path)) {
-        return Status::Success;
+        return biswas::Status::Success;
     } else {
-        return Status::Error;
+        return biswas::Status::Error;
     }
 }
 
-Status
+biswas::Status
 RemoveAll (
     const std::filesystem::path &path
     )
 {
     if (!std::filesystem::exists(path)) {
-        return Status::Success;
+        return biswas::Status::Success;
     }
 
     if (std::filesystem::remove_all(path) > 0) {
-        return Status::Success;
+        return biswas::Status::Success;
     } else {
-        return Status::Error;
+        return biswas::Status::Error;
     }
 }
 
-Status
+biswas::Status
 BuildPptxFile (
     const std::string &dir,
     const std::filesystem::path &outPath
     )
 {
-    Status Status;
+    biswas::Status Status;
 
     const std::filesystem::path current = std::filesystem::current_path();
     const std::filesystem::path absOut = std::filesystem::absolute(outPath);
@@ -66,11 +66,11 @@ BuildPptxFile (
             + " "
             + std::filesystem::relative(iter.path(), targetDir).string();
         Status = Execute(cmd);
-        if (Status != Status::Success) {
+        if (Status != biswas::Status::Success) {
             return Status;
         }
     }
 
     std::filesystem::current_path(current);
-    return Status::Success;
+    return biswas::Status::Success;
 }

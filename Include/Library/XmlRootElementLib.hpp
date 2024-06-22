@@ -21,15 +21,15 @@ class Types : public XmlRootElement {
 private:
 public:
     inline Types() : XmlRootElement("Types", xmlns::content_) {};
-    Status AddContentType(std::unique_ptr<Default>);
-    Status AddContentType(std::unique_ptr<Override>);
+    biswas::Status AddContentType(std::unique_ptr<Default>);
+    biswas::Status AddContentType(std::unique_ptr<Override>);
 };
 
 class Relationships : public XmlRootElement {
 private:
 public:
     inline Relationships() : XmlRootElement("Relationships", xmlns::relpack_) {};
-    Status AddRelation(std::unique_ptr<Relationship>);
+    biswas::Status AddRelation(std::unique_ptr<Relationship>);
 };
 
 namespace Presentation {

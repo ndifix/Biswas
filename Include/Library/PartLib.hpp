@@ -36,7 +36,7 @@ public:
     GetXmlFilePath (
         ) const;
 
-    Status
+    biswas::Status
     WriteRelationship (
         ) const;
 
@@ -46,7 +46,7 @@ public:
         );
 
     virtual
-    Status
+    biswas::Status
     Write (
         );
 };
@@ -73,7 +73,7 @@ private:
     // 画像の情報を格納する構造体。{key: value} = {src: dst}
     std::map<const std::string, const std::filesystem::path> picutrePaths;
 
-    Status
+    biswas::Status
     MakeDir (
         ) const;
 public:
@@ -92,7 +92,7 @@ public:
         const std::filesystem::path originalPath
         );
 
-    Status
+    biswas::Status
     Write (
         );
 };
@@ -122,7 +122,7 @@ public:
         );
 
     virtual
-    Status
+    biswas::Status
     Write (
         ) override;
 };

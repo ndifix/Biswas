@@ -60,22 +60,22 @@ IPart::AddRelationship (
     return relation;
 }
 
-Status
+biswas::Status
 IPart::WriteRelationship (
     ) const
 {
-    Status Status;
+    biswas::Status Status;
 
     if (this->relations.empty()) {
-        return Status::Success;
+        return biswas::Status::Success;
     }
     if (this->relations.empty()) {
-        return Status::Success;
+        return biswas::Status::Success;
     }
 
     std::filesystem::path relDir = std::filesystem::path(this->partDir) /= "_rels/";
     Status = ::MakeDir(relDir);
-    if (Status != Status::Success) {
+    if (Status != biswas::Status::Success) {
         return Status;
     }
 
@@ -86,31 +86,31 @@ IPart::WriteRelationship (
     }
     relationXml.Write();
 
-    return Status::Success;
+    return biswas::Status::Success;
 }
 
-Status
+biswas::Status
 IPart::Write (
     )
 {
-    Status Status;
+    biswas::Status Status;
 
     if (this->xmlfile == nullptr) {
-        return Status::NotReady;
+        return biswas::Status::NotReady;
     }
     this->xmlfile->Write();
 
     for (auto part:this->childParts) {
         Status = part->Write();
-        if (Status != Status::Success) {
+        if (Status != biswas::Status::Success) {
             return Status;
         }
     }
 
     Status = this->WriteRelationship();
-    if (Status != Status::Success) {
+    if (Status != biswas::Status::Success) {
         return Status;
     }
 
-    return Status::Success;
+    return biswas::Status::Success;
 }

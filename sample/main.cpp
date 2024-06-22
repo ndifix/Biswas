@@ -1,3 +1,4 @@
+#include <iostream>
 #include <Api/Document.hpp>
 
 int main() {
@@ -19,5 +20,10 @@ int main() {
 
     biswas::Picture picture = slide.AddPicture("black.png");
 
-    doc.Write("sample.pptx");
+    biswas::Status Status = doc.Write("sample.pptx");
+    if (Status == biswas::Status::Success) {
+        std::cout << "done!\n";
+    } else {
+        std::cout << "failed...\n";
+    }
 }

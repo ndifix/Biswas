@@ -19,7 +19,7 @@ SlideMasterPart::SlideMasterPart (
         ));
 }
 
-Status
+biswas::Status
 SlideMasterPart::Write (
     )
 {

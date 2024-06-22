@@ -4,12 +4,12 @@
 
 using namespace OpenXml;
 
-Status
+biswas::Status
 Relationships::AddRelation (
     std::unique_ptr<Relationship> relation
     )
 {
     this->AddChildElement(relation.release());
 
-    return Status::Success;
+    return biswas::Status::Success;
 }

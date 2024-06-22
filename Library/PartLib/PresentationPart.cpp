@@ -25,34 +25,34 @@ PresentationPart::PresentationPart (
         ));
 }
 
-Status
+biswas::Status
 PresentationPart::MakeDir (
     ) const
 {
-    Status Status;
+    biswas::Status Status;
 
     Status = ::MakeDir(this->partDir);
-    if (Status != Status::Success) {
+    if (Status != biswas::Status::Success) {
         return Status;
     }
 
     if (!this->picutrePaths.empty()) {
         Status = ::MakeDir(this->mediaDir);
-        if (Status != Status::Success) {
+        if (Status != biswas::Status::Success) {
             return Status;
         }
     }
 
     if (!this->themeParts.empty()) {
         Status = ::MakeDir(this->themeParts.front()->partDir);
-        if (Status != Status::Success) {
+        if (Status != biswas::Status::Success) {
             return Status;
         }
     }
 
     if (!this->slideMasterParts.empty()) {
         Status = ::MakeDir(this->slideMasterParts.front()->partDir);
-        if (Status != Status::Success) {
+        if (Status != biswas::Status::Success) {
             return Status;
         }
     }
@@ -60,7 +60,7 @@ PresentationPart::MakeDir (
     for (auto slideMaster:this->slideMasterParts) {
         if (!slideMaster->slideLayoutParts.empty()) {
             Status = ::MakeDir(slideMaster->slideLayoutParts.front()->partDir);
-            if (Status != Status::Success) {
+            if (Status != biswas::Status::Success) {
                 return Status;
             }
             break;
@@ -69,12 +69,12 @@ PresentationPart::MakeDir (
 
     if (!this->slideParts.empty()) {
         Status = ::MakeDir(this->slideParts.front()->partDir);
-        if (Status != Status::Success) {
+        if (Status != biswas::Status::Success) {
             return Status;
         }
     }
 
-    return Status::Success;
+    return biswas::Status::Success;
 }
 
 std::filesystem::path
@@ -100,11 +100,11 @@ PresentationPart::GetPicturePath (
     return mediaPath;
 }
 
-Status
+biswas::Status
 PresentationPart::Write (
     )
 {
-    Status Status;
+    biswas::Status Status;
 
     auto slideMasterId = this->RootElement->slideMasterList->ids.begin();
     for (auto &slideMaster:this->slideMasterParts) {
@@ -149,7 +149,7 @@ PresentationPart::Write (
     }
 
     Status = this->MakeDir();
-    if (Status != Status::Success) {
+    if (Status != biswas::Status::Success) {
         return Status;
     }
 
@@ -165,7 +165,7 @@ PresentationPart::Write (
                     << " -> "
                     << path.second.string()
                     << "\n";
-                return Status::Error;
+                return biswas::Status::Error;
             }
         }
     }

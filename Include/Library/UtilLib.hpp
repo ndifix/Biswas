@@ -3,17 +3,17 @@
 #include <filesystem>
 #include <Biswas.hpp>
 
-Status
+biswas::Status
 MakeDir (
     const std::filesystem::path &path
     );
 
-Status
+biswas::Status
 RemoveAll (
     const std::filesystem::path &path
     );
 
-Status
+biswas::Status
 BuildPptxFile (
     const std::string &dir,
     const std::filesystem::path &outPath
