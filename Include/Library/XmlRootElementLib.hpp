@@ -4,8 +4,16 @@
 #include <Biswas.hpp>
 #include <Library/XmlBaseLib.hpp>
 #include <Library/XmlElementLib.hpp>
-#include <Library/XmlElementDrawingLib.hpp>
-#include <Library/XmlElementPresentationLib.hpp>
+#include <Library/XmlElementDrawingLib/ThemeElements.hpp>
+#include <Library/XmlElementPresentationLib/ColorMap.hpp>
+#include <Library/XmlElementPresentationLib/ColorMapOverride.hpp>
+#include <Library/XmlElementPresentationLib/CommonSlideData.hpp>
+#include <Library/XmlElementPresentationLib/DefaultTextStyle.hpp>
+#include <Library/XmlElementPresentationLib/NotesSize.hpp>
+#include <Library/XmlElementPresentationLib/SlideIdList.hpp>
+#include <Library/XmlElementPresentationLib/SlideLayoutIdList.hpp>
+#include <Library/XmlElementPresentationLib/SlideMasterList.hpp>
+#include <Library/XmlElementPresentationLib/SlideSize.hpp>
 
 namespace OpenXml {
 
