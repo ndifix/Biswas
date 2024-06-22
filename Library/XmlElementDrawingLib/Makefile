@@ -8,6 +8,7 @@ Accent4Color.cpp\
 Accent5Color.cpp\
 Accent6Color.cpp\
 BackgroundFillStyleList.cpp\
+Blip.cpp\
 ChildExtents.cpp\
 ChildOffset.cpp\
 ColorScheme.cpp\
