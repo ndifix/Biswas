@@ -163,10 +163,13 @@ Document::Write (
         return Status;
     }
 
-    this->presentation->Write();
+    Status = this->presentation->Write();
+    if (Status != Status::Success) {
+        return Status;
+    }
 
     Status = BuildPptxFile(this->tmp, path);
-        if (Status != Status::Success) {
+    if (Status != Status::Success) {
         return Status;
     }
 
