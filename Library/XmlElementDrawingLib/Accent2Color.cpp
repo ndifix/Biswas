@@ -1,4 +1,5 @@
-#include <Library/XmlElementDrawingLib.hpp>
+#include <Library/XmlElementDrawingLib/Accent2Color.hpp>
+#include <Library/XmlElementDrawingLib/RgbColorModelHex.hpp>
 
 using namespace OpenXml::Drawing;
 

@@ -1,4 +1,4 @@
-#include <Library/XmlElementDrawingLib.hpp>
+#include <Library/XmlElementDrawingLib/Dark1Color.hpp>
 
 using namespace OpenXml::Drawing;
 

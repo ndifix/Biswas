@@ -1,4 +1,4 @@
-#include <Library/XmlElementDrawingLib.hpp>
+#include <Library/XmlElementDrawingLib/Light2Color.hpp>
 
 using namespace OpenXml::Drawing;
 

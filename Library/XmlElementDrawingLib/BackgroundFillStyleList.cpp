@@ -1,4 +1,9 @@
-#include <Library/XmlElementDrawingLib.hpp>
+#include <Library/XmlElementDrawingLib/BackgroundFillStyleList.hpp>
+#include <Library/XmlElementDrawingLib/GradientFill.hpp>
+#include <Library/XmlElementDrawingLib/SaturationModulation.hpp>
+#include <Library/XmlElementDrawingLib/SchemeColor.hpp>
+#include <Library/XmlElementDrawingLib/SolidFill.hpp>
+#include <Library/XmlElementDrawingLib/Tint.hpp>
 
 using namespace OpenXml::Drawing;
 

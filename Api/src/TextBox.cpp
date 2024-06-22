@@ -1,5 +1,7 @@
 #include <Api/SlideObject.hpp>
-#include <Library/XmlElementDrawingLib.hpp>
+#include <Library/XmlElementDrawingLib/NoAutoFit.hpp>
+#include <Library/XmlElementDrawingLib/PresetGeometry.hpp>
+#include <Library/XmlElementDrawingLib/Shade.hpp>
 
 using namespace biswas;
 

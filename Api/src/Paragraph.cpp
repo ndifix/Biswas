@@ -1,4 +1,5 @@
 #include <Api/SlideObject.hpp>
+#include <Library/XmlElementDrawingLib/Run.hpp>
 
 using namespace biswas;
 

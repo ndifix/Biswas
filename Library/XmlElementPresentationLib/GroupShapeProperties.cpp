@@ -1,5 +1,6 @@
 #include <Library/XmlElementPresentationLib.hpp>
-#include <Library/XmlElementDrawingLib.hpp>
+#include <Library/XmlElementDrawingLib/ChildExtents.hpp>
+#include <Library/XmlElementDrawingLib/ChildOffset.hpp>
 
 using namespace OpenXml::Presentation;
 

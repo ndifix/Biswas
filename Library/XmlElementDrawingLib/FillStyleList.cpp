@@ -1,4 +1,13 @@
-#include <Library/XmlElementDrawingLib.hpp>
+#include <Library/XmlElementDrawingLib/FillStyleList.hpp>
+#include <Library/XmlElementDrawingLib/GradientFill.hpp>
+#include <Library/XmlElementDrawingLib/GradientStopList.hpp>
+#include <Library/XmlElementDrawingLib/LinearGradientFill.hpp>
+#include <Library/XmlElementDrawingLib/LuminanceModulation.hpp>
+#include <Library/XmlElementDrawingLib/SaturationModulation.hpp>
+#include <Library/XmlElementDrawingLib/SchemeColor.hpp>
+#include <Library/XmlElementDrawingLib/Shade.hpp>
+#include <Library/XmlElementDrawingLib/SolidFill.hpp>
+#include <Library/XmlElementDrawingLib/Tint.hpp>
 
 using namespace OpenXml::Drawing;
 

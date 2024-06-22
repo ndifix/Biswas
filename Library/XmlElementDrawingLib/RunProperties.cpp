@@ -1,4 +1,4 @@
-#include <Library/XmlElementDrawingLib.hpp>
+#include <Library/XmlElementDrawingLib/RunProperties.hpp>
 
 using namespace OpenXml::Drawing;
 
