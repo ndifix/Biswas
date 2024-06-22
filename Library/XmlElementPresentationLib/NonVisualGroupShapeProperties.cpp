@@ -1,4 +1,4 @@
-#include <Library/XmlElementPresentationLib.hpp>
+#include <Library/XmlElementPresentationLib/NonVisualGroupShapeProperties.hpp>
 
 using namespace OpenXml::Presentation;
 
