@@ -25,12 +25,12 @@ Document::WriteRelation (
         return Status::Success;
     }
 
-    std::filesystem::path relsDir = std::filesystem::path(this->tmp) /= "_rels";
+    const std::filesystem::path relsDir = this->tmp / "_rels";
     Status = MakeDir(relsDir);
     if (Status != Status::Success) {
         return Status;
     }
-    xmlFile::Relationships relsFile(relsDir /= ".rels");
+    xmlFile::Relationships relsFile(relsDir / ".rels");
 
     std::unique_ptr<OpenXml::Relationship> relation(new OpenXml::Relationship());
     relation->Id->value = "rId1";
@@ -75,7 +75,7 @@ Document::WriteContentTypes (
 {
     Status Status;
 
-    xmlFile::ContentTypes contentType(std::filesystem::path(this->tmp) /= "[Content_Types].xml");
+    xmlFile::ContentTypes contentType(this->tmp / "[Content_Types].xml");
 
     std::unique_ptr<OpenXml::Default> defRels(new OpenXml::Default()), defExt(new OpenXml::Default());
     defRels->Extension->value = "rels";

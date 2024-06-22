@@ -13,7 +13,7 @@ PresentationPropertiesPart::PresentationPropertiesPart (
     this->RootElement.reset(new OpenXml::Presentation::PresentationProperties());
     this->xmlfile.reset(
         new xmlFile::PresentationProperties(
-            std::filesystem::path(presDir) /= "presProps.xml",
+            presDir / "presProps.xml",
             this->RootElement
         ));
 }

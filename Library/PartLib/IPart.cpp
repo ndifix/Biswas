@@ -73,14 +73,14 @@ IPart::WriteRelationship (
         return biswas::Status::Success;
     }
 
-    std::filesystem::path relDir = std::filesystem::path(this->partDir) /= "_rels/";
+    const std::filesystem::path relDir = this->partDir / "_rels/";
     Status = ::MakeDir(relDir);
     if (Status != biswas::Status::Success) {
         return Status;
     }
 
     std::filesystem::path filename = this->xmlfile->filePath.filename() += ".rels";
-    xmlFile::Relationships relationXml(relDir /= filename);
+    xmlFile::Relationships relationXml(relDir / filename);
     for (auto rels:this->relations) {
         relationXml.RootElement->AddChildElement(rels);
     }

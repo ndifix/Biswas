@@ -9,12 +9,12 @@ const char *conType = "application/vnd.openxmlformats-officedocument.presentatio
 SlidePart::SlidePart (
     const std::filesystem::path &presDir,
     const std::filesystem::path &filename
-    ) : IPart(std::filesystem::path(presDir) /= "slides", relType, conType)
+    ) : IPart(presDir / "slides", relType, conType)
 {
     this->RootElement.reset(new OpenXml::Presentation::Slide());
     this->xmlfile.reset(
         new xmlFile::Slide(
-            std::filesystem::path(this->partDir) /= filename,
+            this->partDir / filename,
             this->RootElement
         ));
 }

@@ -20,7 +20,7 @@ PresentationPart::PresentationPart (
     this->RootElement.reset(new OpenXml::Presentation::Presentation());
     this->xmlfile.reset(
         new xmlFile::Presentation(
-            std::filesystem::path(presDir) /= "presentation.xml",
+            presDir / "presentation.xml",
             this->RootElement
         ));
 }
