@@ -49,7 +49,6 @@ public:
 
 class OpenXmlPackage : public OpenXmlPartContainer {
 private:
-    const std::filesystem::path tmp = std::filesystem::absolute("tmp/");
     const std::string path;
 public:
     std::shared_ptr<OpenXmlPart>  rootPart;
