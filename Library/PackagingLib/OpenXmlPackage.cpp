@@ -3,6 +3,12 @@
 
 using namespace OpenXml::Packaging;
 
+OpenXmlPackage::OpenXmlPackage (
+    OpenXmlPart *openXmlPart
+    ) : rootPart(openXmlPart)
+{
+}
+
 void
 OpenXmlPackage::Dispose (
     ) const
@@ -11,4 +17,6 @@ OpenXmlPackage::Dispose (
     ::MakeDir(this->tmp);
     ::RemoveAll(this->tmp);
     ::MakeDir(this->tmp);
+
+    ::MakeDir(this->tmp / this->rootPart->uri);
 }

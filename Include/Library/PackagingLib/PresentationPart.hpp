@@ -4,8 +4,11 @@
 
 namespace OpenXml::Packaging {
 
-class PresentationPart : OpenXmlPart {
+class PresentationPart : public OpenXmlPart {
 public:
+    PresentationPart (
+        OpenXmlPackage *openXmlPackage
+        );
 };
 
 }

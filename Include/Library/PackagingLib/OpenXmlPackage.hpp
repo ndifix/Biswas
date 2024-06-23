@@ -12,6 +12,12 @@ private:
     const std::filesystem::path tmp = std::filesystem::absolute("tmp/");
     const std::string path;
 public:
+    const std::unique_ptr<OpenXmlPart>  rootPart;
+
+    OpenXmlPackage (
+        OpenXmlPart *openXmlPart
+        );
+
     void
     Dispose (
         ) const;

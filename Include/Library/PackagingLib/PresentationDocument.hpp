@@ -1,12 +1,13 @@
 #pragma once
 
 #include <Library/PackagingLib/OpenXmlPackage.hpp>
+#include <Library/PackagingLib/PresentationPart.hpp>
 
 namespace OpenXml::Packaging {
 
 class PresentationDocument : public OpenXmlPackage {
 public:
-    const std::unique_ptr<OpenXmlPart> rootPart;
+    const PresentationPart *presentationPart;
 
     PresentationDocument (
         );
