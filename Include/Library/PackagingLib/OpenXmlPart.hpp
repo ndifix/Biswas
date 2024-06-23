@@ -17,7 +17,7 @@ public:
     const std::string                contentType;
     const OpenXmlPackage            *openXmlPackage;
     const std::string                relationshipType;
-    std::unique_ptr<XmlRootElement>  rootElement;
+    std::shared_ptr<XmlRootElement>  rootElement;
     const std::filesystem::path      uri;
 
     OpenXmlPart (
@@ -27,6 +27,11 @@ public:
         XmlRootElement                  *openXmlPartRootElement,
         const std::filesystem::path      uri
         );
+
+    virtual
+    void
+    Write (
+        ) const = 0;
 };
 
 }

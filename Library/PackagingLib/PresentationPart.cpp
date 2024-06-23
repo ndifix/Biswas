@@ -1,4 +1,5 @@
 #include <Library/PackagingLib/PresentationPart.hpp>
+#include <Library/XmlFileLib.hpp>
 #include <Library/XmlRootElementLib.hpp>
 
 using namespace OpenXml::Packaging;
@@ -18,4 +19,16 @@ PresentationPart::PresentationPart (
             "ppt"
             )
 {
+    this->xmlfile.reset(
+        new xmlFile::Presentation(
+            this->uri / "presentation.xml",
+            this->rootElement
+        ));
+}
+
+void
+PresentationPart::Write (
+    ) const
+{
+    this->xmlfile->Write();
 }

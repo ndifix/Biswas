@@ -18,5 +18,7 @@ OpenXmlPackage::Dispose (
     ::RemoveAll(this->tmp);
     ::MakeDir(this->tmp);
 
-    ::MakeDir(this->tmp / this->rootPart->uri);
+    std::filesystem::current_path(this->tmp);
+    ::MakeDir(this->rootPart->uri);
+    this->rootPart->Write();
 }
