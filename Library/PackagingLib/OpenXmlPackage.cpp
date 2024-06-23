@@ -3,12 +3,6 @@
 
 using namespace OpenXml::Packaging;
 
-OpenXmlPackage::OpenXmlPackage (
-    OpenXmlPart *openXmlPart
-    ) : rootPart(openXmlPart)
-{
-}
-
 void
 OpenXmlPackage::Dispose (
     ) const

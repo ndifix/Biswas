@@ -7,7 +7,7 @@ namespace OpenXml::Packaging {
 
 class PresentationDocument : public OpenXmlPackage {
 public:
-    const PresentationPart *presentationPart;
+    PresentationPart *presentationPart;
 
     PresentationDocument (
         );

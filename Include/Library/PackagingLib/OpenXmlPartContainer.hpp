@@ -2,6 +2,7 @@
 
 #include <list>
 #include <memory>
+#include <string>
 #include <Library/PackagingLib/DataPartReferenceRelationship.hpp>
 #include <Library/XmlRootElementLib.hpp>
 
@@ -9,11 +10,18 @@ namespace OpenXml::Packaging {
 
 class IdPartPair;
 class OpenXmlPackage;
+class OpenXmlPart;
 
 class OpenXmlPartContainer {
 private:
     std::list<std::unique_ptr<DataPartReferenceRelationship>> dataPartReferenceRelationships;
-    std::list<std::shared_ptr<IdPartPair>>                    parts;
+public:
+    std::list<IdPartPair>                                     parts;
+
+    std::shared_ptr<OpenXmlPart>
+    AddPart (
+        std::shared_ptr<OpenXmlPart> part
+        );
 };
 
 class OpenXmlPart : OpenXmlPartContainer {
@@ -39,20 +47,31 @@ public:
         ) const = 0;
 };
 
-class OpenXmlPackage : OpenXmlPartContainer {
+class OpenXmlPackage : public OpenXmlPartContainer {
 private:
     const std::filesystem::path tmp = std::filesystem::absolute("tmp/");
     const std::string path;
 public:
-    const std::unique_ptr<OpenXmlPart>  rootPart;
-
-    OpenXmlPackage (
-        OpenXmlPart *openXmlPart
-        );
+    std::shared_ptr<OpenXmlPart>  rootPart;
 
     void
     Dispose (
         ) const;
+};
+
+class IdPartPair {
+public:
+    std::shared_ptr<OpenXmlPart> openXmlPart;
+    const std::string            relationshipId;
+
+    inline
+    IdPartPair (
+        std::shared_ptr<OpenXmlPart> openXmlPart,
+        const std::string  relationshipId
+        ) : relationshipId(relationshipId)
+        {
+            this->openXmlPart = openXmlPart;
+        }
 };
 
 }

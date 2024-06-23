@@ -3,7 +3,9 @@
 using namespace OpenXml::Packaging;
 
 PresentationDocument::PresentationDocument (
-    ) : OpenXmlPackage(new PresentationPart(this))
+    )
 {
-    this->presentationPart = static_cast<PresentationPart *>(this->rootPart.get());
+    this->presentationPart = new PresentationPart(this);
+    this->rootPart.reset(this->presentationPart);
+    this->AddPart(this->rootPart);
 }
