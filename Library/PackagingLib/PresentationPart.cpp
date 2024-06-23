@@ -10,10 +10,8 @@ const char *relationshipType = "http://schemas.openxmlformats.org/officeDocument
 }
 
 PresentationPart::PresentationPart (
-    OpenXmlPackage *openXmlPackage
     ) : OpenXmlPart(
             contentType,
-            openXmlPackage,
             relationshipType,
             new Presentation::Presentation,
             "ppt"

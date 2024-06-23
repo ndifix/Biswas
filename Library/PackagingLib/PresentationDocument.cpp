@@ -5,7 +5,7 @@ using namespace OpenXml::Packaging;
 PresentationDocument::PresentationDocument (
     )
 {
-    this->presentationPart = new PresentationPart(this);
+    this->presentationPart = new PresentationPart;
     this->rootPart.reset(this->presentationPart);
     this->AddPart(this->rootPart);
 }

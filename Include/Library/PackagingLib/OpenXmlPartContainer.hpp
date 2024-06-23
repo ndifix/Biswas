@@ -9,7 +9,6 @@
 namespace OpenXml::Packaging {
 
 class IdPartPair;
-class OpenXmlPackage;
 class OpenXmlPart;
 
 class OpenXmlPartContainer {
@@ -28,14 +27,12 @@ class OpenXmlPart : OpenXmlPartContainer {
 private:
 public:
     const std::string                contentType;
-    const OpenXmlPackage            *openXmlPackage;
     const std::string                relationshipType;
     std::shared_ptr<XmlRootElement>  rootElement;
     const std::filesystem::path      uri;
 
     OpenXmlPart (
         const std::string                contentType,
-        const OpenXmlPackage            *openXmlPackage,
         const std::string                relationshipType,
         XmlRootElement                  *openXmlPartRootElement,
         const std::filesystem::path      uri
