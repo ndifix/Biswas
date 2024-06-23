@@ -3,6 +3,7 @@
 #include <list>
 #include <memory>
 #include <string>
+#include <Library/XmlRootElementLib.hpp>
 
 class OpenXmlPartContainer;
 
@@ -31,4 +32,16 @@ class OpenXmlPartContainer {
 private:
     std::list<std::unique_ptr<DataPartReferenceRelationship>> dataPartReferenceRelationships;
     std::list<std::shared_ptr<IdPartPair>>                    parts;
+};
+
+class OpenXmlPackage;
+
+class OpenXmlPart : OpenXmlPartContainer {
+private:
+public:
+    const std::string                contentType;
+    const OpenXmlPackage            *openXmlPackage;
+    const std::string                relationshipType;
+    std::unique_ptr<XmlRootElement> *openXmlPartRootElement;
+    const std::string                uri;
 };
