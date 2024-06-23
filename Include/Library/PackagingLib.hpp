@@ -15,3 +15,10 @@ public:
     // リレーションシップのターゲット URI
     const std::string           uri;
 };
+
+class DataPart;
+
+class DataPartReferenceRelationship : ReferenceRelationship {
+public:
+    const DataPart *dataPart;
+};
