@@ -1,5 +1,7 @@
 #pragma once
 
+#include <list>
+#include <memory>
 #include <string>
 
 class OpenXmlPartContainer;
@@ -21,4 +23,12 @@ class DataPart;
 class DataPartReferenceRelationship : ReferenceRelationship {
 public:
     const DataPart *dataPart;
+};
+
+class IdPartPair;
+
+class OpenXmlPartContainer {
+private:
+    std::list<std::unique_ptr<DataPartReferenceRelationship>> dataPartReferenceRelationships;
+    std::list<std::shared_ptr<IdPartPair>>                    parts;
 };
