@@ -2,6 +2,7 @@ Target=sample.out
 
 Api=../out/libApi.a
 Libary=\
+../out/libPackaging.a\
 ../out/libPart.a\
 ../out/libUtil.a\
 ../out/libXmlElementPresentation.a\

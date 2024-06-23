@@ -4,9 +4,12 @@
 
 namespace OpenXml::Packaging {
 
-class PresentationDocument : OpenXmlPackage {
+class PresentationDocument : public OpenXmlPackage {
 public:
     const std::unique_ptr<OpenXmlPart> rootPart;
+
+    PresentationDocument (
+        );
 };
 
 }

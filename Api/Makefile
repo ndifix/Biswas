@@ -5,6 +5,7 @@ CXXFLAGS = -Wall -MMD -std=c++17
 
 LibDir=../Library/
 Library=\
+PackagingLib\
 PartLib\
 UtilLib\
 XmlElementPresentationLib\
@@ -15,6 +16,7 @@ XmlBaseLib\
 
 Include=-IInclude/ -I../Include/
 Source=\
+src/.Document.cpp\
 src/Document.cpp\
 src/Paragraph.cpp\
 src/Presentation.cpp\
