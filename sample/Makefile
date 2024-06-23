@@ -12,7 +12,7 @@ Libary=\
 
 IncDir=../Include/
 Source=\
-main.cpp\
+dev.cpp\
 
 $(Target): $(Source) $(Api)
 	g++ -Wall -std=c++17 -I$(IncDir) $(Source) $(Api) $(Libary) -o $(Target)
