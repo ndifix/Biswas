@@ -1,6 +1,7 @@
 #pragma once
 
-#include <Library/PackagingLib/OpenXmlPart.hpp>
+#include <Library/PackagingLib/OpenXmlPartContainer.hpp>
+#include <Library/XmlFileLib.hpp>
 
 namespace OpenXml::Packaging {
 

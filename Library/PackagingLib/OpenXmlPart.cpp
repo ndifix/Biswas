@@ -1,4 +1,4 @@
-#include <Library/PackagingLib/OpenXmlPart.hpp>
+#include <Library/PackagingLib/OpenXmlPartContainer.hpp>
 
 using namespace OpenXml::Packaging;
 
