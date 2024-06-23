@@ -5,6 +5,8 @@
 #include <string>
 #include <Library/XmlRootElementLib.hpp>
 
+namespace OpenXml::packaging {
+
 class OpenXmlPartContainer;
 
 class ReferenceRelationship {
@@ -45,3 +47,5 @@ public:
     std::unique_ptr<XmlRootElement> *openXmlPartRootElement;
     const std::string                uri;
 };
+
+}
