@@ -3,6 +3,7 @@
 #include <list>
 #include <memory>
 #include <string>
+#include <Library/PackagingLib/DataPart.hpp>
 #include <Library/PackagingLib/DataPartReferenceRelationship.hpp>
 #include <Library/XmlRootElementLib.hpp>
 
@@ -48,6 +49,7 @@ class OpenXmlPackage : public OpenXmlPartContainer {
 private:
     const std::string path;
 public:
+    std::list<DataPart>           dataParts;
     std::shared_ptr<OpenXmlPart>  rootPart;
 
     void
